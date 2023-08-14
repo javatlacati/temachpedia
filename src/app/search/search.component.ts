@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {DatasetLoaderService} from "../services/dataset-loader.service";
 import {Transcription} from "../model/Transcription";
 import {PaginatorState} from "primeng/paginator";
-import {first} from "rxjs";
 
 @Component({
   selector: 'app-search',
@@ -44,6 +43,37 @@ export class SearchComponent implements OnInit {
     '24 - transcripts.json',
     '25 - transcripts.json',
     '26 - transcripts.json',
+    '27 - transcripts.json',
+    '28 - transcripts.json',
+    '29 - transcripts.json',
+    '30 - transcripts.json',
+    '31 - transcripts.json',
+    '32 - transcripts.json',
+    '33 - transcripts.json',
+    '34 - transcripts.json',
+    '35 - transcripts.json',
+    '36 - transcripts.json',
+    '37 - transcripts.json',
+    '38 - transcripts.json',
+    '39 - transcripts.json',
+    '40 - transcripts.json',
+    '41 - transcripts.json',
+    '42 - transcripts.json',
+    '43 - transcripts.json',
+    '44 - transcripts.json',
+    '45 - transcripts.json',
+    '46 - transcripts.json',
+    '47 - transcripts.json',
+    '48 - transcripts.json',
+    '49 - transcripts.json',
+    '50 - transcripts.json',
+    '51 - transcripts.json',
+    '52 - transcripts.json',
+    '53 - transcripts.json',
+    '54 - transcripts.json',
+    '55 - transcripts.json',
+    '56 - transcripts.json',
+    '57 - transcripts.json',
   ];
 
   constructor(private dataloader: DatasetLoaderService) {
@@ -73,17 +103,19 @@ export class SearchComponent implements OnInit {
   }
 
   searchForText() {
-    this.matches = this.studentData;
+    this.matches = JSON.parse(JSON.stringify(this.studentData));
 
-    //deja videos que contengan por lo menos una vez la palabra
-    this.matches = this.matches.filter((aVideoTranscription) => {
-      return aVideoTranscription.transcript.some(phrase => phrase.text.includes(this.searchQuery))
-    });
-    //remplaza las transcripciones por aquellas que contengan la palabra a buscar
-    this.matches.forEach(transcription => transcription.transcript = transcription.transcript.filter(phrase => phrase.text.includes(this.searchQuery)))
-    // console.log(`strings: ${JSON.stringify(this.matches)}`)
-    if (this.matches.length > 0) {
-      this.first = 0;
+    if (this.matches) {
+      //deja videos que contengan por lo menos una vez la palabra
+      this.matches = this.matches.filter((aVideoTranscription) => {
+        return aVideoTranscription.transcript.some(phrase => phrase.text.includes(this.searchQuery))
+      });
+      //remplaza las transcripciones por aquellas que contengan la palabra a buscar
+      this.matches.forEach(transcription => transcription.transcript = transcription.transcript.filter(phrase => phrase.text.includes(this.searchQuery)))
+      // console.log(`strings: ${JSON.stringify(this.matches)}`)
+      if (this.matches.length > 0) {
+        this.first = 0;
+      }
     }
 
   }

@@ -10,8 +10,8 @@
       <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length-1" (onPageChange)="onPageChange($event)"
                    [showJumpToPageDropdown]="false" [showPageLinks]="false" [showCurrentPageReport]="true"></p-paginator>
       <!--      <div *ngFor="let match of matches" class="flex m-2 px-5 py-3">-->
-      <p-card header="{{matches[first+1].video_title}}">
-        <div *ngFor="let transcript of matches[first+1].transcript">
+      <p-card header="{{matches[first].video_title}}">
+        <div *ngFor="let transcript of matches[first].transcript">
           {{transcript.text}}
           <a [href]="transcript.url" target="_blank">Abrir</a>
         </div>
