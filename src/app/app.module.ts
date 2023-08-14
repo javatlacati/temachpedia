@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {CardModule} from "primeng/card";
+import {PaginatorModule} from "primeng/paginator";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CardModule} from "primeng/card";
     FormsModule,
     ButtonModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

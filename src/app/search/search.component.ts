@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DatasetLoaderService} from "../services/dataset-loader.service";
 import {Transcription} from "../model/Transcription";
+import {PaginatorState} from "primeng/paginator";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-search',
@@ -12,6 +14,9 @@ export class SearchComponent implements OnInit {
   studentData: Transcription[] = [];
   searchQuery: string = '';
   matches: Transcription[] | undefined = undefined;
+
+  //paginator
+  first: number = 0;
   readonly fileNames = [
     '1 - transcripts.json',
     '2 - transcripts.json',
@@ -23,6 +28,22 @@ export class SearchComponent implements OnInit {
     '8 - transcripts.json',
     '9 - transcripts.json',
     '10 - transcripts.json',
+    '11 - transcripts.json',
+    '12 - transcripts.json',
+    '13 - transcripts.json',
+    '14 - transcripts.json',
+    '15 - transcripts.json',
+    // '16 - transcripts.json', video musical
+    '17 - transcripts.json',
+    '18 - transcripts.json',
+    '19 - transcripts.json',
+    '20 - transcripts.json',
+    '21 - transcripts.json',
+    '22 - transcripts.json',
+    '23 - transcripts.json',
+    '24 - transcripts.json',
+    '25 - transcripts.json',
+    '26 - transcripts.json',
   ];
 
   constructor(private dataloader: DatasetLoaderService) {
@@ -32,7 +53,7 @@ export class SearchComponent implements OnInit {
       if (data) {
         let aData = data;
         if (aData) {
-          console.log(`aData: ${JSON.stringify(aData[0])}`);
+          // console.log(`aData: ${JSON.stringify(aData[0])}`);
           aData.forEach(value => {
             if (value) {
               let valueElement = value[0];
@@ -61,8 +82,14 @@ export class SearchComponent implements OnInit {
     //remplaza las transcripciones por aquellas que contengan la palabra a buscar
     this.matches.forEach(transcription => transcription.transcript = transcription.transcript.filter(phrase => phrase.text.includes(this.searchQuery)))
     // console.log(`strings: ${JSON.stringify(this.matches)}`)
+    if (this.matches.length > 0) {
+      this.first = 0;
+    }
 
   }
 
-  protected readonly undefined = undefined;
+  onPageChange($event: PaginatorState) {
+    this.first = $event.first || 0;
+  }
+
 }
