@@ -1,0 +1,30 @@
+<div *ngIf="studentData">
+  <p-card>
+    <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input type="text" pInputText [(ngModel)]="searchQuery"/>
+    </span>
+    <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
+    <br>
+    <div class="flex flex-column card-container" *ngIf="matches && matches.length">
+      <div *ngFor="let match of matches" class="flex m-2 px-5 py-3">
+        <p-card header="{{match.video_title}}">
+          <div *ngFor="let transcript of match.transcript">
+            {{transcript.text}}
+            <a [href]="transcript.url" target="_blank">Abrir</a>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<ins
+  class="adsbygoogle"
+  style="display:block; text-align:center;"
+  data-ad-client="ca-pub-4207300711287771"
+  data-ad-slot="3223642428"
+  data-ad-format="auto"
+  data-full-width-responsive="true"
+  data-adtest="on"
+></ins>
