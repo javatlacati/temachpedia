@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {DatasetLoaderService} from "../services/dataset-loader.service";
-import {Transcript, Transcription} from "../model/Transcription";
+import {Transcription} from "../model/Transcription";
 
 @Component({
   selector: 'app-search',
@@ -41,7 +40,7 @@ export class SearchComponent implements OnInit {
                 this.studentData.push(valueElement);
             }
           });
-          console.log(`loaded data ${JSON.stringify(this.studentData)}`)
+          // console.log(`loaded data ${JSON.stringify(this.studentData)}`)
         }
       }
     });
@@ -61,7 +60,7 @@ export class SearchComponent implements OnInit {
     });
     //remplaza las transcripciones por aquellas que contengan la palabra a buscar
     this.matches.forEach(transcription => transcription.transcript = transcription.transcript.filter(phrase => phrase.text.includes(this.searchQuery)))
-    console.log(`strings: ${JSON.stringify(this.matches)}`)
+    // console.log(`strings: ${JSON.stringify(this.matches)}`)
 
   }
 
