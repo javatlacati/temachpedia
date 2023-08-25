@@ -65,10 +65,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "host": "javapro.org",
-            "port": 4200
-          },
           "configurations": {
             "production": {
               "browserTarget": "temachpedia:build:production"

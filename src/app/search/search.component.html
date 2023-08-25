@@ -1,4 +1,3 @@
-<div *ngIf="studentData">
   <p-card>
     <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
@@ -7,7 +6,7 @@
     <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
     <br>
     <div class="flex flex-column card-container" *ngIf="matches && matches.length">
-      <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length-1" (onPageChange)="onPageChange($event)"
+      <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length" (onPageChange)="onPageChange($event)"
                    [showJumpToPageDropdown]="false" [showPageLinks]="false"
                    [showCurrentPageReport]="true"></p-paginator>
       <p-card header="{{matches[first].video_title}}">
@@ -19,7 +18,6 @@
     </div>
   </p-card>
 
-</div>
 
 <ins
   class="adsbygoogle"
@@ -28,5 +26,4 @@
   data-ad-slot="3223642428"
   data-ad-format="auto"
   data-full-width-responsive="true"
-  data-adtest="on"
 ></ins>

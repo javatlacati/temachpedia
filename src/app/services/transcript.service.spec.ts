@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DatasetLoaderService } from './dataset-loader.service';
+import { TranscriptService } from './transcript.service';
 
-describe('DatasetLoaderService', () => {
-  let service: DatasetLoaderService;
+describe('TranscriptService', () => {
+  let service: TranscriptService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DatasetLoaderService);
+    service = TestBed.inject(TranscriptService);
   });
 
   it('should be created', () => {
