@@ -10,6 +10,9 @@ import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {CardModule} from "primeng/card";
 import {PaginatorModule} from "primeng/paginator";
+import {ToastModule} from "primeng/toast";
+import {MessageService} from "primeng/api";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -24,9 +27,13 @@ import {PaginatorModule} from "primeng/paginator";
     ButtonModule,
     InputTextModule,
     CardModule,
-    PaginatorModule
+    PaginatorModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

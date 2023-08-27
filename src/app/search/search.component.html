@@ -1,22 +1,24 @@
-  <p-card>
-    <span class="p-input-icon-left">
+<p-card>
+  <p-toast></p-toast>
+  <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
-          <input type="text" pInputText [(ngModel)]="searchQuery" (keydown.enter)="searchForText()" name="searchText"/>
+          <input type="text" pInputText [(ngModel)]="searchQuery" (keydown.enter)="searchForText()" name="searchText"
+                 [minlength]="4" [maxlength]="25"/>
     </span>
-    <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
-    <br>
-    <div class="flex flex-column card-container" *ngIf="matches && matches.length">
-      <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length" (onPageChange)="onPageChange($event)"
-                   [showJumpToPageDropdown]="false" [showPageLinks]="false"
-                   [showCurrentPageReport]="true"></p-paginator>
-      <p-card header="{{matches[first].video_title}}">
-        <div *ngFor="let transcript of matches[first].transcript">
-          {{transcript.text}}
-          <a [href]="transcript.url" target="_blank">Abrir</a>
-        </div>
-      </p-card>
-    </div>
-  </p-card>
+  <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
+  <br>
+  <div class="flex flex-column card-container" *ngIf="matches && matches.length">
+    <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length" (onPageChange)="onPageChange($event)"
+                 [showJumpToPageDropdown]="false" [showPageLinks]="false"
+                 [showCurrentPageReport]="true"></p-paginator>
+    <p-card header="{{matches[first].video_title}}">
+      <div *ngFor="let transcript of matches[first].transcript">
+        {{transcript.text}}
+        <a [href]="transcript.url" target="_blank">Abrir</a>
+      </div>
+    </p-card>
+  </div>
+</p-card>
 
 
 <ins
