@@ -3,7 +3,7 @@
   <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
           <input type="text" pInputText [(ngModel)]="searchQuery" (keydown.enter)="searchForText()" name="searchText"
-                 [minlength]="4" [maxlength]="25"/>
+                 [minlength]="3" [maxlength]="25"/>
     </span>
   <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
   <br>
