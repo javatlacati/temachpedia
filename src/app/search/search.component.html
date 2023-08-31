@@ -1,15 +1,16 @@
 <p-card>
   <p-toast></p-toast>
-   <div>
+  <div>
       <span class="p-input-icon-left col">
           <i class="pi pi-search"></i>
           <input type="text" pInputText [(ngModel)]="searchQuery" (keydown.enter)="searchForText()" name="searchText"
-                 [minlength]="5" [maxlength]="25" #catName="ngModel"/>
+                 [minlength]="5" [maxlength]="25" #searchText="ngModel"/>
     </span>
-     <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
-   </div>
+    <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
+  </div>
   <span class="col">
-      <small style="color:red" *ngIf="catName.invalid && searchQuery.length !=0">Agregue m&aacute;s letras mi compa</small>
+      <small style="color:red"
+             *ngIf="searchText.invalid && searchQuery.length !=0">Agregue m&aacute;s letras mi compa</small>
     </span>
   <br>
   <div class="flex flex-column card-container" *ngIf="matches && matches.length">
@@ -23,14 +24,33 @@
       </div>
     </p-card>
   </div>
+  <br />
+  <div class="grid">
+    <div class="col-6">
+      <p-card>
+        <ins
+          class="adsbygoogle"
+          style="display:block; text-align:center;"
+          data-ad-client="ca-pub-4207300711287771"
+          data-ad-slot="3686639812"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        >
+        </ins>
+      </p-card>
+    </div>
+    <div class="col-6">
+      <p-card>
+        <ins
+          class="adsbygoogle"
+          style="display:block; text-align:center;"
+          data-ad-client="ca-pub-4207300711287771"
+          data-ad-slot="2790406837"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        >
+        </ins>
+      </p-card>
+    </div>
+  </div>
 </p-card>
-
-
-<ins
-  class="adsbygoogle"
-  style="display:block; text-align:center;"
-  data-ad-client="ca-pub-4207300711287771"
-  data-ad-slot="3223642428"
-  data-ad-format="auto"
-  data-full-width-responsive="true"
-></ins>
