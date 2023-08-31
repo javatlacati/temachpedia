@@ -1,11 +1,16 @@
 <p-card>
   <p-toast></p-toast>
-  <span class="p-input-icon-left">
+   <div>
+      <span class="p-input-icon-left col">
           <i class="pi pi-search"></i>
           <input type="text" pInputText [(ngModel)]="searchQuery" (keydown.enter)="searchForText()" name="searchText"
-                 [minlength]="3" [maxlength]="25"/>
+                 [minlength]="5" [maxlength]="25" #catName="ngModel"/>
     </span>
-  <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
+     <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
+   </div>
+  <span class="col">
+      <small style="color:red" *ngIf="catName.invalid && searchQuery.length !=0">Agregue m&aacute;s letras mi compa</small>
+    </span>
   <br>
   <div class="flex flex-column card-container" *ngIf="matches && matches.length">
     <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length" (onPageChange)="onPageChange($event)"
