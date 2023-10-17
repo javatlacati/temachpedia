@@ -12,8 +12,8 @@ export class TranscriptService {
   }
 
   public getTransriptForWord(word: string): Observable<Transcription[]> {
-    //http://localhost:8081/api/video-transcription
-    return this.httpClient.post('https://8wnah05m3h.execute-api.us-east-2.amazonaws.com/default/searchTranscriptionFromPublicElTemachVideos', {
+    return this.httpClient.post('http://localhost:8081/api/video-transcription', {
+    // return this.httpClient.post('https://z6hdo7e4zc.execute-api.us-east-1.amazonaws.com/default/temachpedia_search', {
       "title": word
     }) as Observable<Transcription[]>
   }
