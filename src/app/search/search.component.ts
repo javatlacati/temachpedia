@@ -41,8 +41,6 @@ export class SearchComponent implements OnInit {
 
   searchForText() {
     if (this.searchQuery.length > 4) {
-      this.matches = [];
-      if (this.matches) {
         this.transcriptionService.getTransriptForWord(this.searchQuery).subscribe(value => {
             console.log(JSON.stringify(value));
             this.matches = value;
@@ -57,7 +55,6 @@ export class SearchComponent implements OnInit {
             }
           }
         );
-      }
     } else {
       this.messageService.add({
         severity: 'warn',
