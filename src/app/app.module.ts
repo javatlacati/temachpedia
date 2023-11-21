@@ -3,7 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {SearchComponent} from './search/search.component';
+import {SearchComponent} from "./controllers/search/search.component";
+
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
@@ -13,11 +14,13 @@ import {PaginatorModule} from "primeng/paginator";
 import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { HomeComponent } from './controllers/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

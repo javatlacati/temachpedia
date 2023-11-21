@@ -12,6 +12,12 @@
       <small style="color:red"
              *ngIf="searchText.invalid && searchQuery.length !=0">Agregue m&aacute;s letras mi compa</small>
     </span>
+  Para buscar puede poner un texto entre comillas si desea buscar una frase o usar <code>-</code> para excluir una
+  palabra. por ejemplo:
+  <br>
+  Si deseas buscar información acerca de la mujer del proceso, pero que no tenga exactamente la palabra seas como en la
+  frase "no seas la mujer del proceso" puedes hacer la siguiente consulta
+  <pre>"mujer del proceso" -seas</pre>
   <br>
   <div class="flex flex-column card-container" *ngIf="matches && matches.length">
     <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length" (onPageChange)="onPageChange($event)"

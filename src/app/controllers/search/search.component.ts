@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit, Renderer2, SecurityContext} from '@angular/core';
-import {Transcription} from "../model/Transcription";
+import {Transcription} from "./model/Transcription";
 import {PaginatorState} from "primeng/paginator";
-import {TranscriptService} from "../services/transcript.service";
+import {TranscriptService} from "./services/transcript.service";
 import {MessageService} from "primeng/api";
 import {DOCUMENT} from "@angular/common";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -42,7 +42,7 @@ export class SearchComponent implements OnInit {
   searchForText() {
     if (this.searchQuery.length > 4) {
         this.transcriptionService.getTransriptForWord(this.searchQuery).subscribe(value => {
-            console.log(JSON.stringify(value));
+            // console.log(JSON.stringify(value));
             this.matches = value;
             if (this.matches.length > 0) {
               this.first = 0;
