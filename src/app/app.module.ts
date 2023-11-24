@@ -15,6 +15,7 @@ import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { HomeComponent } from './controllers/home/home.component';
+import {TooltipModule} from "primeng/tooltip";
 
 @NgModule({
   declarations: [
@@ -22,18 +23,19 @@ import { HomeComponent } from './controllers/home/home.component';
     SearchComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ButtonModule,
-    InputTextModule,
-    CardModule,
-    PaginatorModule,
-    ToastModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ButtonModule,
+        InputTextModule,
+        CardModule,
+        PaginatorModule,
+        ToastModule,
+        BrowserAnimationsModule,
+        TooltipModule
+    ],
   providers: [
     MessageService
   ],

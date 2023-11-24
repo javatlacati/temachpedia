@@ -4,7 +4,7 @@
       <span class="p-input-icon-left col">
           <i class="pi pi-search"></i>
           <input type="text" pInputText [(ngModel)]="searchQuery" (keydown.enter)="searchForText()" name="searchText"
-                 [minlength]="5" [maxlength]="25" #searchText="ngModel"/>
+                 [minlength]="5" [maxlength]="35" #searchText="ngModel"/>
     </span>
     <span class="col"><p-button label="Search" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
   </div>
@@ -12,13 +12,7 @@
       <small style="color:red"
              *ngIf="searchText.invalid && searchQuery.length !=0">Agregue m&aacute;s letras mi compa</small>
     </span>
-  Para buscar puede poner un texto entre comillas si desea buscar una frase o usar <code>-</code> para excluir una
-  palabra. por ejemplo:
-  <br>
-  Si deseas buscar información acerca de la mujer del proceso, pero que no tenga exactamente la palabra seas como en la
-  frase "no seas la mujer del proceso" puedes hacer la siguiente consulta
-  <pre>"mujer del proceso" -seas</pre>
-  <br>
+
   <div class="flex flex-column card-container" *ngIf="matches && matches.length">
     <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length" (onPageChange)="onPageChange($event)"
                  [showJumpToPageDropdown]="false" [showPageLinks]="false"
@@ -31,6 +25,22 @@
     </p-card>
   </div>
   <br/>
+  <p>Para buscar puede poner un texto entre comillas si desea buscar una frase o usar <code>-</code> para excluir una
+    palabra. por ejemplo:
+    <br>
+    Si desea buscar información acerca de la mujer del proceso, pero que no tenga exactamente la palabra seas como en
+    la
+    frase "no seas la mujer del proceso" puedes hacer la siguiente consulta
+  </p>
+  <pre>"mujer del proceso" -seas</pre>
+  <p>Y obtendrá una respuesta tipo: <i>la famosa mujer del proceso que al final</i></p>
+  <p>
+    Si desea por ejemplo buscar algo acerca de cómo volver del amazon puedes hacer la siguiente consulta:
+  </p>
+  <pre>"amazon" "volver"</pre>
+  <p>Y obtendrá una respuesta tipo: <i>Amazon tienes que volver a romper</i></p>
+  <p>Si no usa comillas en el ejemplo anterior obtendrá todas las transcripciones donde se hable de <i>volver</i> junto
+    con todas en las que se hable del <i>amazon</i></p>
   <div class="grid">
     <div class="col-6">
       <p-card>
