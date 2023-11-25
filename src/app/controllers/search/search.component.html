@@ -1,12 +1,12 @@
 <p-card>
   <p-toast></p-toast>
-  <div>
-      <span class="p-input-icon-left col">
+  <div class="grid">
+      <span class="p-input-icon-left col-12 md:col-11">
           <i class="pi pi-search"></i>
-          <input type="text" pInputText [(ngModel)]="searchQuery" (keydown.enter)="searchForText()" name="searchText"
-                 [minlength]="5" [maxlength]="35" #searchText="ngModel"/>
+          <input type="text" pInputText class="w-full" [(ngModel)]="searchQuery" (keydown.enter)="searchForText()"
+                 name="searchText" [minlength]="5" [maxlength]="35" #searchText="ngModel"/>
     </span>
-    <span class="col"><p-button label="Buscar" styleClass="p-button-text" (click)="searchForText()"></p-button></span>
+    <span class="col-12 md:col-1"><p-button [text]="true" label="Buscar" (click)="searchForText()"></p-button></span>
   </div>
   <span class="col">
       <small style="color:red"
@@ -33,14 +33,14 @@
     frase "no seas la mujer del proceso" puedes hacer la siguiente consulta
   </p>
   <pre>"mujer del proceso" -seas</pre>
-  <p>Y obtendrá una respuesta tipo: <i>la famosa mujer del proceso que al final</i></p>
+  <p>Y obtendrá una respuesta tipo: <i>la famosa <u>mujer del proceso</u> que al final</i></p>
   <p>
     Si desea por ejemplo buscar algo acerca de cómo volver del amazon puedes hacer la siguiente consulta:
   </p>
   <pre>"amazon" "volver"</pre>
-  <p>Y obtendrá una respuesta tipo: <i>Amazon tienes que volver a romper</i></p>
-  <p>Si no usa comillas en el ejemplo anterior obtendrá todas las transcripciones donde se hable de <i>volver</i> junto
-    con todas en las que se hable del <i>amazon</i></p>
+  <p>Y obtendrá una respuesta tipo: <i><u>Amazon</u> tienes que <u>volver</u> a romper</i></p>
+  <p>Si no usa comillas obtendrá todas las transcripciones que puedan tener <b>por lo menos una</b> de las palabras que ponga, por ejemplo</p>
+  <pre>estoico estoicismo</pre>
   <div class="grid">
     <div class="col-6">
       <p-card>
