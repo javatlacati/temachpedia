@@ -1,0 +1,3 @@
+<ul *ngFor="let lyric of lyrics">
+  <li><a [routerLink]="['/song',lyric.title]">{{lyric.title}}</a> - {{lyric.authors.join(',')}}</li>
+</ul>
