@@ -1,0 +1,22 @@
+<p-card [header]="song?.title">
+  {{song?.authors?.join(', ')}}
+  <br>
+  <br>
+  <div *ngFor="let paragraph of song?.paragraphs">
+    <div *ngFor="let verse of paragraph.verses; let i = index">
+      <span *ngIf="paragraph.chords && paragraph.chords[i]; else nochords">
+
+        <p>
+          <span *ngFor="let line of paragraph.chords[i].lines">
+          {{'&nbsp;'.repeat(line.spacesBefore)}} {{line.chordName}}
+        </span>
+        </p>
+        <p>{{verse}}</p>
+      </span>
+      <ng-template #nochords>
+        <p>{{verse}}</p>
+      </ng-template>
+    </div>
+    <br>
+  </div>
+</p-card>
