@@ -12,12 +12,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { HomeComponent } from './controllers/home/home.component';
 import {TooltipModule} from "primeng/tooltip";
 import { DirectoryComponent } from './controllers/directory/directory.component';
+import { CompasDeHierroComponent } from './controllers/directory/compas-de-hierro/compas-de-hierro.component';
+import {ListboxModule} from "primeng/listbox";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DirectoryComponent
+    DirectoryComponent,
+    CompasDeHierroComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { DirectoryComponent } from './controllers/directory/directory.component'
     FormsModule,
     CardModule,
     BrowserAnimationsModule,
-    TooltipModule
+    TooltipModule,
+    ListboxModule
   ],
   providers: [
     MessageService
