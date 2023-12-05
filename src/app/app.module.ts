@@ -18,6 +18,7 @@ import { HomeComponent } from './controllers/home/home.component';
 import {TooltipModule} from "primeng/tooltip";
 import { SongListComponent } from './controllers/lyrics/song-list/song-list.component';
 import { SongComponent } from './controllers/lyrics/song/song.component';
+import { DirectoryComponent } from './controllers/directory/directory.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SongComponent } from './controllers/lyrics/song/song.component';
     SearchComponent,
     HomeComponent,
     SongListComponent,
-    SongComponent
+    SongComponent,
+    DirectoryComponent
   ],
     imports: [
         BrowserModule,
