@@ -19,6 +19,8 @@ import {TooltipModule} from "primeng/tooltip";
 import { SongListComponent } from './controllers/lyrics/song-list/song-list.component';
 import { SongComponent } from './controllers/lyrics/song/song.component';
 import { DirectoryComponent } from './controllers/directory/directory.component';
+import { CompasDeHierroComponent } from './controllers/directory/compas-de-hierro/compas-de-hierro.component';
+import {ListboxModule} from "primeng/listbox";
 
 @NgModule({
   declarations: [
@@ -27,21 +29,23 @@ import { DirectoryComponent } from './controllers/directory/directory.component'
     HomeComponent,
     SongListComponent,
     SongComponent,
-    DirectoryComponent
+    DirectoryComponent,
+    CompasDeHierroComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ButtonModule,
-        InputTextModule,
-        CardModule,
-        PaginatorModule,
-        ToastModule,
-        BrowserAnimationsModule,
-        TooltipModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ButtonModule,
+    InputTextModule,
+    CardModule,
+    PaginatorModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    TooltipModule,
+    ListboxModule
+  ],
   providers: [
     MessageService
   ],
