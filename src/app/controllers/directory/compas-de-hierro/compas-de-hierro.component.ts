@@ -27,15 +27,15 @@ export class CompasDeHierroComponent {
         ]
       },
       {
-        label: 'Australia',
-        value: 'au',
+        label: 'Austria',
+        value: 'at',
         items: [
-          {label: 'Australia', value: 'el_compa_de_hierro_au'},
+          {label: 'Viena', value: 'el_compa_de_hierro_au'},
         ]
       },
       {
         label: 'Bolivia',
-        value: 'br',
+        value: 'bo',
         items: [
           {label: 'Amazonia', value: 'los_compas_de_hierro_amazonics'},
         ]
@@ -97,14 +97,14 @@ export class CompasDeHierroComponent {
       },
       {
         label: 'Guatemala',
-        value: 'gua',
+        value: 'gt',
         items: [
           {label: 'Guatemala', value: 'compas_de_hierro_guatemala_ofi'},
         ]
       },
       {
         label: 'Honduras',
-        value: 'ho',
+        value: 'hn',
         items: [
           {label: 'honduras', value: 'los_compas_de_honduras'},
           {label: 'quetzaltenango', value: 'compas_de_hierro_quetzaltenango'},
@@ -119,7 +119,7 @@ export class CompasDeHierroComponent {
       },
       {
         label: 'Irlanda',
-        value: 'ir',
+        value: 'ie',
         items: [
           {label: 'Irlanda', value: 'los.compas.de.hierro_irlanda'},
         ]
@@ -174,7 +174,7 @@ export class CompasDeHierroComponent {
       },
       {
         label: 'Portugal',
-        value: 'po',
+        value: 'pt',
         items: [
           {label: 'Lisboa', value: 'los_compas_de_hierro_lisboa'},
         ]
