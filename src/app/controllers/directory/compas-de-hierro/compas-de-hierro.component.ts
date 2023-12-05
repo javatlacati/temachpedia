@@ -21,7 +21,7 @@ export class CompasDeHierroComponent {
         label: 'Argentina',
         value: 'ar',
         items: [
-          {label: 'Argentina', value: 'los_compas_de_argentina', disabled: true},
+          {label: 'Argentina', value: 'los_compas_de_argentina'},
           {label: 'Alberti', value: 'loscompasdehierroalberti'},
         ]
       },
