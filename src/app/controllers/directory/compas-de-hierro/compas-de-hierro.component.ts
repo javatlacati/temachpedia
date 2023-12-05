@@ -15,14 +15,13 @@ export class CompasDeHierroComponent {
   selectedCountry!: Country;
   groupedCities!: SelectItemGroup[];
 
-
   constructor() {
     this.groupedCities = [
       {
         label: 'Argentina',
         value: 'ar',
         items: [
-          {label: 'Argentina', value: 'los_compas_de_argentina'},
+          {label: 'Argentina', value: 'los_compas_de_argentina', disabled: true},
           {label: 'Alberti', value: 'loscompasdehierroalberti'},
         ]
       },
@@ -30,14 +29,14 @@ export class CompasDeHierroComponent {
         label: 'Austria',
         value: 'at',
         items: [
-          {label: 'Viena', value: 'el_compa_de_hierro_au'},
+          {label: 'Viena', value: 'el_compa_de_hierro_au'}, //no especifica lugar de entrenamiento
         ]
       },
       {
         label: 'Bolivia',
         value: 'bo',
         items: [
-          {label: 'Amazonia', value: 'los_compas_de_hierro_amazonics'},
+          {label: 'Cobija', value: 'los_compas_de_hierro_amazonics'},
         ]
       },
       {
@@ -54,7 +53,7 @@ export class CompasDeHierroComponent {
           {label: 'Colombia', value: 'los_parceros_de_hierro_col'},
           {label: 'Armenia', value: 'parceros_de_hierro_armenia'},
           {label: 'Bogotá', value: 'compasdehierrobogota'},
-          {label: 'Medellín', value: 'parceros_de_hierro_medellin'},
+          {label: 'Medellín', value: 'compasdehierromedellin'}, //parceros_de_hierro_medellin
           {label: 'Río Negro', value: 'parcerosdehierro_rionegro'},
           {label: 'Tunja', value: 'los_compas_de_hierro_tunja'},
         ]
@@ -85,6 +84,7 @@ export class CompasDeHierroComponent {
         value: 'es',
         items: [
           {label: 'España', value: 'compas_de_hierro_es'},
+          {label: 'Barcelona', value: 'los_compas_de_hierro_bcn'},
           {label: 'Madrid', value: 'los_compas_de_hierro_madrid'},
         ]
       },
@@ -92,7 +92,7 @@ export class CompasDeHierroComponent {
         label: 'Francia',
         value: 'fr',
         items: [
-          {label: 'Francia', value: 'los_compas_de_hierro_france'},
+          {label: 'Francia', value: 'los_compas_de_hierro_france'}, //no especifica lugar de entrenamiento
         ]
       },
       {
@@ -106,22 +106,22 @@ export class CompasDeHierroComponent {
         label: 'Honduras',
         value: 'hn',
         items: [
-          {label: 'honduras', value: 'los_compas_de_honduras'},
-          {label: 'quetzaltenango', value: 'compas_de_hierro_quetzaltenango'},
+          {label: 'Honduras', value: 'los_compas_de_hierro_honduras'}, //los_compas_de_honduras
+          {label: 'Quetzaltenango', value: 'compas_de_hierroquetzaltenango'},
         ]
       },
       {
         label: 'Italia',
         value: 'it',
         items: [
-          {label: 'Italia', value: 'los_compas_de_hierro_ita'},
+          {label: 'Italia', value: 'los_compas_de_hierro_ita'}, // no especifican lugar de entrenamiento
         ]
       },
       {
         label: 'Irlanda',
         value: 'ie',
         items: [
-          {label: 'Irlanda', value: 'los.compas.de.hierro_irlanda'},
+          {label: 'Dublín', value: 'los.compas.de.hierro_irlanda'},
         ]
       },
       {
@@ -130,25 +130,24 @@ export class CompasDeHierroComponent {
         items: [
           {label: 'Aguascalientes', value: 'los_compas_de_hierro_ags'},
           {label: 'Cancún (Quintana Roo)', value: 'los_compas_de_hierro_cancun'},
-          {label: 'Chiapas', value: 'los_compas_de_hierro_chiapas'},
-          {label: 'Ciudad de México', value: 'los_compas_de_hierro'},
-          {label: 'Ciudad Juárez (Chihuahua)', value: 'compasdehierro_cdjuarez_chi'},
+          {label: 'Chiapas', value: 'los_compas_de_hierro_chiapas'},// aún no hay sede por lo que parece
+          {label: 'Ciudad de México (CDMX)', value: 'los_compas_de_hierro'},
+          {label: 'Ciudad Juárez (Chihuahua)', value: 'compasdehierro_cdjuarez_chi'}, //no especifican sede
           {label: 'Jalisco', value: 'loscompasdehierrojalisco'},
-          {label: 'Jalisco (Guadalajara)', value: 'los_compas_de_hierro_gdl'},
+          {label: 'Guadalajara (Jalisco)', value: 'los_compas_de_hierro_gdl'},
           {label: 'León (Guanajuato)', value: 'los_compas_de_hierro_leon'},
-          {label: 'Baja California', value: 'los_compas_de_hierro_bcn'},
           {label: 'La Paz (Baja California)', value: 'compas_de_hierro_lapaz'},
-          {label: 'Monterrey', value: 'los_compas_del cerro_mty'},
+          {label: 'Monterrey (Nuevo León)', value: 'los_compas_del_cerro'}, //los_compas_del cerro_mty
           {label: 'Morelia (Michoacán)', value: 'los_compas_de_hierro_morelia'},
-          {label: 'Querétaro', value: 'los_compas_de_hierro_qro', disabled: true},
-          {label: 'Pachuca (Hidalgo)', value: 'loscompasdehierropachuca'},
-          {label: 'Puebla', value: 'los_compas_de_hierro_puebla'},
-          {label: 'Puebla (Atlixco)', value: 'loscompas_de_hierro_atlixco'},
-          {label: 'San Lui Potosí', value: 'compas_slp'},
-          {label: 'Tampico', value: 'tribu_alfa_tampico'},
-          {label: 'Tecate (Baja California)', value: 'los_compas_de_hierro_tkt'},
-          {label: 'Toluca (Estado de México)', value: 'los_compas_de_hierro_toluca'},
-          {label: 'Tuxtla Gutiérrez (Chiapas)', value: 'los_compas_de_hierro_tuxtla'},
+          {label: 'Querétaro', value: 'los_compas_de_hierro_qro', disabled: true}, //compasdehierro_qro
+          {label: 'Pachuca (Hidalgo)', value: 'loscompasdehierropachuca', disabled: true},
+          {label: 'Puebla', value: 'los_compas_de_hierro_puebla_'},
+          {label: 'Atlixco (Puebla)', value: 'loscompas_de_hierro_atlixco'}, //no mencionan sede
+          {label: 'San Luis Potosí', value: 'compas_slp'},
+          {label: 'Tampico', value: 'loscompasdehierrotampico'}, //tribu_alfa_tampico / no especifican lugar de reunión
+          {label: 'Tecate (Baja California)', value: 'los_compas_de_hierro_tkt'}, //no pude hallar el lugar que especifican en comentarios
+          {label: 'Toluca (Estado de México)', value: 'compas_de_hierro_toluca_'},
+          {label: 'Tuxtla Gutiérrez (Chiapas)', value: 'los_compas_de_hierro_tuxtla'}, //no especifica lugar de entrenamiento
         ]
       },
       {
@@ -197,12 +196,12 @@ export class CompasDeHierroComponent {
         label: 'USA',
         value: 'us',
         items: [
-          {label: 'USA', value: 'los-compas_de_hierro_usa'},
+          {label: 'USA', value: 'los_compas_de_hierro_usa'},
           {label: 'Los Angeles', value: 'Los Angeles'},
           {label: 'New Jersey (New York)', value: 'los_compas_de_hierro_nj_ny'},
           {label: 'San Francisco', value: 'San Francisco'},
-          {label: 'Denver', value: 'los_compas_de_hierro_denver'},
-          {label: 'Utah', value: 'los_compas_de_hierro_utah'},
+          {label: 'Denver', value: 'los_compas_de_hierro_colorado'}, //los_compas_de_hierro_denver //no entiendo cual es la sede oficial
+          {label: 'Utah', value: 'los_compas_de_hierro_utah'}, //no especifican su sede
         ]
       },
       {
@@ -210,7 +209,7 @@ export class CompasDeHierroComponent {
         value: 've',
         items: [
           {label: 'Venezuela', value: 'los_compas_de_hierro_venezuela'},
-          {label: 'Caracas', value: 'los_compas_de_hierro_caracas'},
+          {label: 'Caracas', value: 'compasdehierro.vnzla.caracas'}, //los_compas_de_hierro_caracas
         ]
       }
     ];
