@@ -14,32 +14,28 @@ import {PaginatorModule} from "primeng/paginator";
 import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { HomeComponent } from './controllers/home/home.component';
+import {HomeComponent} from './controllers/home/home.component';
 import {TooltipModule} from "primeng/tooltip";
-import { SongListComponent } from './controllers/lyrics/song-list/song-list.component';
-import { SongComponent } from './controllers/lyrics/song/song.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     HomeComponent,
-    SongListComponent,
-    SongComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ButtonModule,
-        InputTextModule,
-        CardModule,
-        PaginatorModule,
-        ToastModule,
-        BrowserAnimationsModule,
-        TooltipModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ButtonModule,
+    InputTextModule,
+    CardModule,
+    PaginatorModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    TooltipModule
+  ],
   providers: [
     MessageService
   ],
