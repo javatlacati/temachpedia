@@ -62,6 +62,13 @@ export class CompasDeHierroComponent {
           {label: 'Viena', value: 'el_compa_de_hierro_au'}, //no especifica lugar de entrenamiento
         ]
       },
+        {
+            label: 'Bélgica',
+            value: 'be',
+            items: [
+                {label: 'Bélgica', value: 'los_compas_de_hierro_belgica'},
+            ]
+        },
       {
         label: 'Bolivia',
         value: 'bo',
@@ -94,10 +101,12 @@ export class CompasDeHierroComponent {
           {label: 'Barranquilla', value: 'cdh_baq'}, // parece que aún no tienen sede
           {label: 'Bogotá', value: 'compasdehierrobogota'},
           {label: 'Cali', value: 'loscompasdehierrocali'},
+          {label: 'Manizales', value: 'parceros_de_hierro_manizales'},
           {label: 'Medellín', value: 'compasdehierromedellin'}, //parceros_de_hierro_medellin
           {label: 'Medellín', value: 'compas_de_medellin'}, //parece que aún no tienen sede
           {label: 'Río Negro', value: 'parcerosdehierro_rionegro'},
           {label: 'Pasto', value: 'compas_hierro_pasto'}, // parece que aún no tienen sede
+          {label: 'Pereira', value: 'compas_hierro_pasto'}, // parece que aún no tienen sede
           {label: 'Tunja', value: 'los_compas_de_hierro_tunja'},
         ]
       },
@@ -189,14 +198,17 @@ export class CompasDeHierroComponent {
           {label: 'Guadalajara (Jalisco)', value: 'loscompasdehierrojalisco'},
           {label: 'Guadalajara (Jalisco)', value: 'los_compas_de_hierro_gdl'},
           {label: 'Guadalajara (Jalisco)', value: 'barras_tribugdl_oficial'},
+          {label: 'Irapuato (Guanajuato)', value: 'los_compas_de_hierro_irapuato'},
           {label: 'León (Guanajuato)', value: 'los_compas_de_hierro_leonn'}, //los_compas_de_hierro_leon
           {label: 'Monterrey (Nuevo León)', value: 'los_compas_del_cerro'}, //los_compas_del cerro_mty
           {label: 'Morelia (Michoacán)', value: 'los_compas_de_hierro_morelia'},
           {label: 'Nayarit', value: 'loscompasdehierronayarit'},
           {label: 'Oaxaca', value: 'loscompasdehierro_oaxaca'},
           {label: 'Querétaro', value: 'compas_de_hierro_queretaro'}, //compasdehierro_qro //los_compas_de_hierro_qro
-          {label: 'Pachuca (Hidalgo)', value: 'loscompasdehierropachuca', disabled: true},
+          {label: 'Pachuca (Hidalgo)', value: 'lcdh_hidalgo_oficial'}, //loscompasdehierropachuca
           {label: 'Puebla', value: 'los_compas_de_hierro_puebla_'},
+          {label: 'Puebla', value: 'modo_guerra_puebla'},
+          {label: 'Puerto Peñasco (Sonora)', value: 'los_compas_del_desierto'},
           {label: 'San Luis Potosí', value: 'compas_slp'},
           {label: 'Tamaulipas', value: 'compas_de_hierro_tamaulipas'},
           {label: 'Tampico', value: 'loscompasdehierrotampico'}, //tribu_alfa_tampico / no especifican lugar de reunión
@@ -205,7 +217,8 @@ export class CompasDeHierroComponent {
           {label: 'Tlaxcala', value: 'los_compas_de_hierro_tlaxcala'},
           {label: 'Toluca (Estado de México)', value: 'compas_de_hierro_toluca_'},
           {label: 'Tuxtla Gutiérrez (Chiapas)', value: 'los_compas_de_hierro_tuxtla'}, //no especifica lugar de entrenamiento
-          {label: 'Yucatán', value: 'compas_de_hierro_yucatan'}
+          {label: 'Yucatán', value: 'compas_de_hierro_yucatan'},
+          {label: 'Zacatecas', value: 'los_compas_de_hierro_zacatecas'},
         ]
       },
       {
@@ -263,6 +276,7 @@ export class CompasDeHierroComponent {
         items: [
           {label: 'Dallas (Texas) - USA', value: 'los_compas_de_hierro_usa'},
           {label: 'California (California)', value: 'loscompasdehierrocalifornia'}, // no especifican sede
+          {label: 'Orange County (California)', value: 'compasde_hierro_orangecounty'}, // no especifican sede
           {label: 'Chicago (Illinois)', value: 'compas_de_hierro_chicago_'},
           {label: 'Denver (Colorado)', value: 'los_compas_de_hierro_colorado'}, //los_compas_de_hierro_denver //no entiendo cual es la sede oficial
           {label: 'Houston (Texas)', value: 'los_compas_de_hierro.houston'},
@@ -275,6 +289,7 @@ export class CompasDeHierroComponent {
         value: 've',
         items: [
           {label: 'Venezuela', value: 'los.compas.de.hierro.vnzla'}, //los_compas_de_hierro_venezuela
+          {label: 'Barquisimeto', value: 'compashierro_barquisimeto'},
           {label: 'Caracas', value: 'compasdehierro.vnzla.caracas'}, //los_compas_de_hierro_caracas
           {label: 'Maracay', value: 'los_compas_de_hierro_maracay'},
           {label: 'Puerto Cabello', value: 'compasdehierrovzla_pc'},
@@ -768,7 +783,47 @@ export class CompasDeHierroComponent {
             coords: {lat: 3.4256591, lng: -76.5366609}
           }
         ]
-      }
+      },
+      {
+        cell_name: "parceros_de_hierro_manizales",
+        details: [
+          {
+            label: "Cra. 29 #31a-155",
+            street: "Cra. 29 #31a-155",
+            coords: {lat: 5.064667, lng: -75.51298}
+          }
+        ]
+      },
+      {
+        cell_name: "los_compas_del_desierto",
+        details: [
+          {
+            label: "Unidad Deportiva \"La Milla\"",
+            street: "Rodolfo Campodónico, Adolfo López Mateos 262, Centro, 83556 Puerto Peñasco, Son.",
+            coords: {lat: 31.3267621, lng: -113.5290798}
+          }
+        ]
+      },
+      {
+        cell_name: "lcdh_hidalgo_oficial",
+        details: [
+            {
+                label: "Unidad Deportiva Municipal",
+                street: "36C9+3R Pachuca de Soto, Hidalgo",
+                coords: {lat: 20.0700171, lng: -98.7804265}
+            }
+        ]
+      },
+        {
+            cell_name:"los_compas_de_hierro_zacatecas",
+            details: [
+                {
+                    label: "Parque Arroyo de la Plata",
+                    street: "Lomas del Campestre, 98098 Zacatecas, Zac.",
+                    coords: {lat: 22.7626989, lng: -102.5550033}
+                }
+            ]
+        }
     ];
   }
 
