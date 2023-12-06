@@ -3,6 +3,7 @@
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
 @import "flags";
+@import "leaflet/dist/leaflet.css";
 
 body {
   font-family: var(--font-family);
@@ -13,4 +14,8 @@ body {
 
 .p-card {
   background: #ffffffdb;
+}
+
+.map-container {
+  height: 400px;
 }
