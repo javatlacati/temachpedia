@@ -38,9 +38,8 @@ export class CompasDeHierroComponent {
       })
     ],
     zoom: 16,
-    center: {lat: 19.456492, lng: -99.1636326}
+    center: {lat: 19.456492, lng: -99.1636326} // en caso de no permitir compartir la ubicación el mapa se iniciará en estas coordenadas
   }
-
 
   constructor() {
     this.groupedCities = [
@@ -48,8 +47,11 @@ export class CompasDeHierroComponent {
         label: 'Argentina',
         value: 'ar',
         items: [
-          {label: 'Argentina', value: 'los_compas_del_hierro_arg'}, //los_compas_de_argentina
+          {label: 'Buenos Aires - Argentina', value: 'los_compas_del_hierro_arg'}, //los_compas_de_argentina
           {label: 'Alberti', value: 'loscompasdehierroalberti'},
+          {label: 'Córdoba', value: 'compas_de_hierro_arg.cordoba'},
+          {label: 'Jujuy', value: 'los_compas_de_hierro_jujuy_arg'}, // parece que no tienen sede
+          {label: 'Mar del plata', value: 'los_compas_de_hierro_mdq'},
           {label: 'Salta', value: 'los_compas_de_hierro_salta'},
         ]
       },
@@ -70,6 +72,13 @@ export class CompasDeHierroComponent {
         ]
       },
       {
+        label: 'Canada',
+        value: 'ca',
+        items: [
+          {label: 'Toronto (Ontario)', value: 'compas_dehielo_toronto'},
+        ]
+      },
+      {
         label: 'Chile',
         value: 'cl',
         items: [
@@ -84,6 +93,7 @@ export class CompasDeHierroComponent {
           {label: 'Armenia', value: 'parceros_de_hierro_armenia'},
           {label: 'Barranquilla', value: 'cdh_baq'}, // parece que aún no tienen sede
           {label: 'Bogotá', value: 'compasdehierrobogota'},
+          {label: 'Cali', value: 'loscompasdehierrocali'},
           {label: 'Medellín', value: 'compasdehierromedellin'}, //parceros_de_hierro_medellin
           {label: 'Medellín', value: 'compas_de_medellin'}, //parece que aún no tienen sede
           {label: 'Río Negro', value: 'parcerosdehierro_rionegro'},
@@ -169,12 +179,14 @@ export class CompasDeHierroComponent {
         value: 'mx',
         items: [
           {label: 'Aguascalientes', value: 'los_compas_de_hierro_ags'},
+          {label: 'Agua prieta (Sonora)', value: 'compas_de_hierro_agua_prieta'}, //hay ambigüedad en la ubicación de entrenamiento
+          {label: 'Atlixco (Puebla)', value: 'loscompas_de_hierro_atlixco'}, //no mencionan sede
           {label: 'Cancún (Quintana Roo)', value: 'los_compas_de_hierro_cancun'},
           {label: 'Chiapas', value: 'los_compas_de_hierro_chiapas'},// aún no hay sede por lo que parece
           {label: 'Ciudad de México (CDMX)', value: 'los_compas_de_hierro'},
           {label: 'Ciudad Juárez (Chihuahua)', value: 'compasdehierro_cdjuarez_chi'}, //no especifican sede
           {label: 'Durango', value: 'compas_hierro_durango_mx'}, //aún no tienen sede
-          {label: 'Jalisco', value: 'loscompasdehierrojalisco'},
+          {label: 'Guadalajara (Jalisco)', value: 'loscompasdehierrojalisco'},
           {label: 'Guadalajara (Jalisco)', value: 'los_compas_de_hierro_gdl'},
           {label: 'Guadalajara (Jalisco)', value: 'barras_tribugdl_oficial'},
           {label: 'León (Guanajuato)', value: 'los_compas_de_hierro_leonn'}, //los_compas_de_hierro_leon
@@ -185,13 +197,12 @@ export class CompasDeHierroComponent {
           {label: 'Querétaro', value: 'compas_de_hierro_queretaro'}, //compasdehierro_qro //los_compas_de_hierro_qro
           {label: 'Pachuca (Hidalgo)', value: 'loscompasdehierropachuca', disabled: true},
           {label: 'Puebla', value: 'los_compas_de_hierro_puebla_'},
-          {label: 'Atlixco (Puebla)', value: 'loscompas_de_hierro_atlixco'}, //no mencionan sede
           {label: 'San Luis Potosí', value: 'compas_slp'},
-          {label: 'Agua prieta (Sonora)', value: 'compas_de_hierro_agua_prieta'}, //hay ambigüedad en la ubicación de entrenamiento
           {label: 'Tamaulipas', value: 'compas_de_hierro_tamaulipas'},
           {label: 'Tampico', value: 'loscompasdehierrotampico'}, //tribu_alfa_tampico / no especifican lugar de reunión
           {label: 'Tecate (Baja California)', value: 'los_compas_de_hierro_tkt'}, //no pude hallar el lugar que especifican en comentarios
           {label: 'Tijuana (Baja California)', value: 'Los_compas_de_hierro_tijuana'},
+          {label: 'Tlaxcala', value: 'los_compas_de_hierro_tlaxcala'},
           {label: 'Toluca (Estado de México)', value: 'compas_de_hierro_toluca_'},
           {label: 'Tuxtla Gutiérrez (Chiapas)', value: 'los_compas_de_hierro_tuxtla'}, //no especifica lugar de entrenamiento
           {label: 'Yucatán', value: 'compas_de_hierro_yucatan'}
@@ -265,6 +276,8 @@ export class CompasDeHierroComponent {
         items: [
           {label: 'Venezuela', value: 'los.compas.de.hierro.vnzla'}, //los_compas_de_hierro_venezuela
           {label: 'Caracas', value: 'compasdehierro.vnzla.caracas'}, //los_compas_de_hierro_caracas
+          {label: 'Maracay', value: 'los_compas_de_hierro_maracay'},
+          {label: 'Puerto Cabello', value: 'compasdehierrovzla_pc'},
         ]
       }
     ];
@@ -676,6 +689,85 @@ export class CompasDeHierroComponent {
             coords: {lat: 41.5327832, lng: -88.0234737}
           }
         ]
+      },
+      {
+        cell_name: "los_compas_de_hierro_maracay",
+        details: [
+          {
+            label: "Parque Base Aragua",
+            street: "7C36+RPJ, Maracay 2101, Aragua, Venezuela",
+            coords: {lat: 10.2530953, lng: -67.5918763}
+          }
+        ]
+      }, {
+        cell_name: "compasdehierrovzla_pc",
+        details: [
+          {
+            label: "Boulevard de la Urbanización La Belisa",
+            street: "FXF5+5WX, Puerto Cabello 2050, Carabobo, Venezuela",
+            coords: {lat: 10.472507, lng: -68.0408954}
+          }
+        ]
+      },
+      {
+        cell_name: "compas_de_hierro_arg.cordoba",
+        details: [
+          {
+            label: "Parques de Calistenia en parque Sarmiento",
+            street: "HR9F+5Q Córdoba, Argentina",
+            coords: {lat: -31.4326465, lng: -64.176064}
+          }
+        ]
+      },
+      {
+        cell_name: "los_compas_del_hierro_arg",
+        details: [
+          {
+            label: "GEBA Sede Jorge Newbery",
+            street: "Av. Coronel Marcelino E. Freyre 3860, Buenos Aires, Argentina",
+            coords: {lat: -34.5692086, lng: -58.4218331}
+          }
+        ]
+      },
+      {
+        cell_name: "los_compas_de_hierro_mdq",
+        details: [
+          {
+            label: "Monumento Expedición Atlantis",
+            street: "B7600JWQ, Av. Patricio Peralta Ramos 4200-4298, B7600JWQ Mar del Plata, Provincia de Buenos Aires, Argentina",
+            coords: {lat: -38.0168589, lng: -57.5278966}
+          }
+        ]
+      },
+      {
+        cell_name: "los_compas_de_hierro_tlaxcala",
+        details: [
+          {
+            label: "Gimnasio al aire libre",
+            street: "CRFW+8H Cdad. de Apizaco, Tlaxcala",
+            coords: {lat: 19.4230027, lng: -98.1543953}
+          }
+        ]
+      },
+      {
+        cell_name: "compas_dehielo_toronto",
+        details: [
+          {
+            label: "Riverdale East Bodyweight Exercise Equipment",
+            street: "MJ9V+5V Toronto, Ontario, Canadá",
+            coords: {lat: 43.6679304, lng: -79.3578886}
+          }
+        ]
+      },
+      {
+        cell_name: "loscompasdehierrocali",
+        details: [
+          {
+            label: "Canchas Panamericanas",
+            street: "Cl. 9 #37 - 00, Eucaristico, Cali, Valle del Cauca, Colombia",
+            coords: {lat: 3.4256591, lng: -76.5366609}
+          }
+        ]
       }
     ];
   }
@@ -687,16 +779,17 @@ export class CompasDeHierroComponent {
   }
 
   initMarkers() {
-
     for (let index = 0; index < this.locations.length; index++) {
       const data = this.locations[index];
       for (let j = 0; j < data.details.length; j++) {
-        const marker = this.generateMarker(data.details[j].coords, index);
-        marker.addTo(this.map).bindPopup(`<b>${data.details[j].label}</b><br><br>${data.details[j].street}<br><br><a href="https://www.instagram.com/${data.cell_name}" target="_blank"><span class="pi pi-instagram"></span></a>`);
-        // this.map.panTo(data.position);
+        let cellDetail = data.details[j];
+        const marker = this.generateMarker(cellDetail.coords, index);
+        marker.addTo(this.map).bindPopup(`<b>${cellDetail.label}</b><br><br>${cellDetail.street}<br><br><a href="https://www.instagram.com/${data.cell_name}" target="_blank"><span class="pi pi-instagram"></span></a>`);
         this.markers.push(marker)
       }
     }
+
+    this.map.locate({setView: true, maxZoom: 16});
   }
 
   generateMarker(data: any, index: number) {
@@ -715,6 +808,7 @@ export class CompasDeHierroComponent {
       iconUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png'
     });
+
     this.map = $event;
     this.initMarkers();
   }
