@@ -6,6 +6,7 @@ import {ListboxModule} from "primeng/listbox";
 import {DirectoryComponent} from "./directory.component";
 import {CompasDeHierroComponent} from "./compas-de-hierro/compas-de-hierro.component";
 import {FormsModule} from "@angular/forms";
+import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {FormsModule} from "@angular/forms";
     CardModule,
     ListboxModule,
     FormsModule,
+    LeafletModule,
   ]
 })
 export class DirectoryModule {
