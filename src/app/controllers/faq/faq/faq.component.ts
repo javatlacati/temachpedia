@@ -21,7 +21,12 @@ export class FaqComponent {
                 enunciado: 'Si soy mujer, ¿Puedo ir a los compas de hierro?',
                 respuesta: 'Sí',
                 fuente:"https://www.youtube.com/live/4zvABlShz5w?si=B9gtOrq6JM7ZDXX_&t=860"
-            }
+            },
+            {
+                enunciado: '¿Cuanto cuesta ir a los compas de hierro?',
+                respuesta: 'Nada, es gratis',
+                fuente:"https://www.youtube.com/live/4zvABlShz5w?si=B9gtOrq6JM7ZDXX_&t=860"
+            },
         ]
     }
 }
