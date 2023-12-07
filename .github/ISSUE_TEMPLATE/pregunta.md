@@ -7,6 +7,9 @@ assignees: ''
 
 ---
 
-Hola, quisiera saber si _____________
+otras formas de preguntar lo mismo son:
 
-Gracias
+- uno
+- dos
+
+## contexto adicional
