@@ -11,6 +11,9 @@ export class LyricsService {
       "authors": [
         "White Shit State"
       ],
+      video:{
+        id:"9-7CgecHAq8"
+      },
       "paragraphs": [
         {
           "verses": [
