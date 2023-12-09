@@ -1,0 +1,15 @@
+<p-card header="Preguntas frecuentes">
+    <p-panel *ngFor="let faq of faqs" [header]="faq.enunciado" [toggleable]="true" [collapsed]="true">
+        <div class="grid">
+            <p class="col-6">{{faq.respuesta}}</p>
+            <p-inplace class="col-6">
+                <ng-template pTemplate="display">
+                    <span class="p-text-secondary">Fuente</span>
+                </ng-template>
+                <ng-template pTemplate="content">
+                    <span><a [href]="faq.fuente" target="_blank">Canal de youtube</a></span>
+                </ng-template>
+            </p-inplace>
+        </div>
+    </p-panel>
+</p-card>
