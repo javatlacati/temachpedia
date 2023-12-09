@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {FaqComponent} from './faq/faq.component';
 import {RouterModule} from "@angular/router";
 import {CardModule} from "primeng/card";
+import {InplaceModule} from "primeng/inplace";
+import {PanelModule} from "primeng/panel";
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import {CardModule} from "primeng/card";
             {path: '', component: FaqComponent},
         ]),
         CardModule,
+        InplaceModule,
+        PanelModule,
     ]
 })
 export class FaqModule {
