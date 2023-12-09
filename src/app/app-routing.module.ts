@@ -8,7 +8,11 @@ const routes: Routes = [
     {path: 'search', loadChildren: () => import('./controllers/search/search.module').then(m => m.SearchModule)},
     {path: 'home', component: HomeComponent},
     {path: 'lyrics', loadChildren: () => import('./controllers/lyrics/lyrics.module').then(m => m.LyricsModule)},
-    {path: 'faq', loadChildren: () => import('./controllers/faq/faq.module').then(m => m.FaqModule)},
+    {
+      path: 'faq', loadChildren: () => import('./controllers/faq/faq.module').then(m => m.FaqModule)},
+    {path: 'directory',
+      loadChildren: () => import('./controllers/directory/directory.module').then(m => m.DirectoryModule)
+    },
     {path: '**', redirectTo: '/home'}
 ];
 

@@ -5,7 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
 import {CardModule} from "primeng/card";
 import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -21,10 +20,9 @@ import {TooltipModule} from "primeng/tooltip";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     CardModule,
     BrowserAnimationsModule,
-    TooltipModule
+    TooltipModule,
   ],
   providers: [
     MessageService
