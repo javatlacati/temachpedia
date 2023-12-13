@@ -7,12 +7,15 @@ import {DirectoryComponent} from "./directory.component";
 import {CompasDeHierroComponent} from "./compas-de-hierro/compas-de-hierro.component";
 import {FormsModule} from "@angular/forms";
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
+import { OfficialAccountsComponent } from './official-accounts/official-accounts.component';
+import {ImageModule} from "primeng/image";
 
 
 @NgModule({
   declarations: [
     DirectoryComponent,
-    CompasDeHierroComponent
+    CompasDeHierroComponent,
+    OfficialAccountsComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
     ListboxModule,
     FormsModule,
     LeafletModule,
+    ImageModule,
   ]
 })
 export class DirectoryModule {
