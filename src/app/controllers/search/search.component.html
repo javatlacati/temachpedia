@@ -25,22 +25,29 @@
     </p-card>
   </div>
   <br/>
-  <p>Para buscar puede poner un texto entre comillas si desea buscar una frase o usar <code>-</code> para excluir una
-    palabra. por ejemplo:
+  <p>Para realizar búsquedas más efectivas, le proporcionamos algunas herramientas útiles. Si desea encontrar algo
+    específico, como una frase póngalo entre comillas. También puede usar <code>-</code> para que no salga una
+    palabra. Por ejemplo:
     <br>
-    Si desea buscar información acerca de la mujer del proceso, pero que no tenga exactamente la palabra seas como en
-    la
-    frase "no seas la mujer del proceso" puedes hacer la siguiente consulta
+    Si desea buscar información acerca de la mujer del proceso, pero que <b>NO</b> tenga exactamente la palabra <code>seas</code>
+    como en
+    la frase "no seas la mujer del proceso" puede hacer la siguiente consulta
   </p>
   <pre>"mujer del proceso" -seas</pre>
-  <p>Y obtendrá una respuesta tipo: <i>la famosa <u>mujer del proceso</u> que al final</i></p>
+  <p>Este método buscará la frase exacta "mujer del proceso", pero omitirá los resultados que incluyan la palabra
+    "<code>seas</code>". Como resultado, obtendrá información como: </p>
+  <blockquote><i>la famosa <u>mujer del proceso</u> que al final</i></blockquote>
   <p>
-    Si desea por ejemplo buscar algo acerca de cómo volver del amazon puedes hacer la siguiente consulta:
+    Supongamos que busca información sobre cómo regresar del Amazon:
   </p>
   <pre>"amazon" "volver"</pre>
-  <p>Y obtendrá una respuesta tipo: <i><u>Amazon</u> tienes que <u>volver</u> a romper</i></p>
-  <p>Si no usa comillas obtendrá todas las transcripciones que puedan tener <b>por lo menos una</b> de las palabras que ponga, por ejemplo</p>
+  <p>Con esta consulta, encontrará resultados relacionados tanto con "Amazon" como con "volver". Por ejemplo:</p>
+  <blockquote><i><u>Amazon</u> tienes que <u>volver</u> a romper</i></blockquote>
+  <p>Si prefiere una búsqueda más amplia, sin comillas, se mostrarán resultados que contengan <b>al menos una</b> de las
+    palabras que ingresó. Por ejemplo:</p>
   <pre>estoico estoicismo</pre>
+  <p>Esta búsqueda incluirá información sobre "estoico" o "estoicismo". Así, podrá explorar diversas opciones y
+    encontrar lo que necesita de manera más precisa.</p>
   <div class="grid">
     <div class="col-6">
       <p-card>
