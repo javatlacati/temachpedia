@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "temachpedia:build:production"
+              "buildTarget": "temachpedia:build:production"
             },
             "development": {
-              "browserTarget": "temachpedia:build:development"
+              "buildTarget": "temachpedia:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "temachpedia:build"
+            "buildTarget": "temachpedia:build"
           }
         },
         "test": {
