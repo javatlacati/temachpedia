@@ -52,6 +52,7 @@ export class CompasDeHierroComponent {
           {label: 'Córdoba', value: 'compas_de_hierro_arg.cordoba'},
           {label: 'Jujuy', value: 'los_compas_de_hierro_jujuy_arg'}, // parece que no tienen sede
           {label: 'Mar del plata', value: 'los_compas_de_hierro_mdq'},
+          {label: 'Mendoza', value: 'loscompasdehierro.mza.arg'},
           {label: 'Salta', value: 'los_compas_de_hierro_salta'},
         ]
       },
