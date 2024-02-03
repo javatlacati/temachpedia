@@ -26,7 +26,9 @@ Correr el comando `ng e2e`
 
 ## Logística
 
-Para colaborar usamos la estrategia de branching [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), cada uno en su propio fork del proyecto
+Para colaborar usamos la estrategia de branching [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), cada uno en su propio fork del proyecto.
+
+Para revisar el progreso y la planeación de tareas puede acceder a https://github.com/users/javatlacati/projects/5/views/1
 
 ## Further help
 
