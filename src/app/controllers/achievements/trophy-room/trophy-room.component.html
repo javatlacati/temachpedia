@@ -1,17 +1,48 @@
 <p-card header="Trofeos de caza" subheader="Aquí mostraremos tus cabezas de mamut">
-  <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
-    <ng-template let-product pTemplate="item">
-      <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-        <div class="mb-3">
-          <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" [alt]="product.name" class="w-6 shadow-2" />
+  <div class="card flex align-items-center gap-2 flex-wrap">
+    <p-chip label="Superación personal"></p-chip>
+    <p-chip label="Negocios"></p-chip>
+    <p-chip label="Estudio"></p-chip>
+    <p-chip label="Relaciones"></p-chip>
+    <p-chip label="Cambio físico"></p-chip>
+    <p-chip label="Apple" icon="pi pi-apple"></p-chip>
+    <p-chip label="Facebook" icon="pi pi-facebook"></p-chip>
+    <p-chip label="Google" icon="pi pi-google"></p-chip>
+    <p-chip label="Microsoft" icon="pi pi-microsoft" [removable]="true"></p-chip>
+  </div>
+  <p-carousel
+    [value]="heads"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-head pTemplate="item">
+      <div class="m-2 py-8 px-4 grid grid-cols-2 gap-2 bg-neutral-700 rounded-3xl">
+        <div class="relative">
+          <img
+            src="https://randomuser.me/api/portraits/{{ head.isMale ? 'men' : 'women' }}/{{
+              head.image
+            }}.jpg"
+            [alt]="head.name"
+            class="shadow-md rounded-full"
+          />
         </div>
         <div>
-          <h4 class="mb-1">{{ product.name }}</h4>
-          <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>
-          <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)"></p-tag>
-          <div class="car-buttons mt-5">
-            <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
-            <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
+          <h4 class="mb-1">{{ head.name }}</h4>
+          <div class="grid grid-cols-2">
+            <span class="mr-2 flag flag-mx"></span>
+            <h6 class="mt-0 mb-4">{{ head.price }} años</h6>
+          </div>
+        </div>
+        <div class="col-span-2">
+          <b>{{ head.rating }}:</b>&nbsp;{{ head.description }}
+        </div>
+        <div class="col-span-2 grid grid-cols-2">
+          <!--          <p-tag [value]="head.inventoryStatus" [severity]="getSeverity(head.inventoryStatus)"></p-tag>-->
+          <div><span class="pi pi-calendar"></span> {{ head.inventoryStatus }}</div>
+          <div>
+            <p-button type="button" styleClass="p-button p-button-rounded">Leer más</p-button>
           </div>
         </div>
       </div>
