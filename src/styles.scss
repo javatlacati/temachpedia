@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "primeng/resources/themes/lara-dark-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
@@ -7,7 +10,7 @@
 
 body {
   font-family: var(--font-family);
-  background-image: url('assets/peacuful male warrior.webp');
+  background-image: url("assets/peacuful male warrior.webp");
   background-size: cover;
   color: #abc9fb;
 }
@@ -25,7 +28,6 @@ iframe {
 .map-container {
   height: 400px;
 }
-
 
 .pavatarbig {
   height: 12rem !important;
@@ -50,7 +52,18 @@ iframe {
     //background: radial-gradient(circle at top right, rgb(from #9fa8da69 r g b/50%) 10%, #575c7866 10%, #9fa8da7d) 10%, radial-gradient(circle at top right, var(--maskbg) 40%, #c3c9e83b 20%, #e8eaf65e) 10%;
     //background: radial-gradient(circle at top right, var(--primary-600),var(--primary-700), var(--primary-800)), radial-gradient(circle at top right,var(--primary-200),var(--primary-500),var(--maskbg));
     //background: radial-gradient(circle at top right, rgba(97, 7, 110, 0.2), rgba(209, 37, 67, 0.1803921569), rgb(100 0 255 / 13%)), radial-gradient(circle at top right, rgba(29, 78, 216, 0.2784313725), rgba(165, 25, 192, 0.1803921569), rgba(139, 92, 246, 0.0392156863));
-  background: radial-gradient(circle at top right, #528cd563, #4374af4f, #355b8aa1), radial-gradient(circle at top right, #bbd8fd70, #60a5fa4d, rgb(0 0 0 / 17%));
+    background: radial-gradient(
+        circle at top right,
+        #528cd563,
+        #4374af4f,
+        #355b8aa1
+      ),
+      radial-gradient(
+        circle at top right,
+        #bbd8fd70,
+        #60a5fa4d,
+        rgb(0 0 0 / 17%)
+      );
 
     background-blend-mode: luminosity;
     color: #f9e9fb;
