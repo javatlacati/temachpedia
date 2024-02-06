@@ -6,7 +6,7 @@
           <input type="text" pInputText class="w-full" [(ngModel)]="searchQuery" (keydown.enter)="searchForText()"
                  name="searchText" [minlength]="5" [maxlength]="35" #searchText="ngModel"/>
     </span>
-    <span class="col-12 md:col-1"><p-button [text]="true" label="Buscar" (click)="searchForText()"></p-button></span>
+    <span class="col-12 md:col-1"><p-button [style]="{'color': '#fff'}" [text]="true" label="Buscar" (click)="searchForText()"></p-button></span>
   </div>
   <span class="col">
       <small style="color:red"

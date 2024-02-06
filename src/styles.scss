@@ -1,4 +1,4 @@
-@import "primeng/resources/themes/lara-light-purple/theme.css";
+@import "primeng/resources/themes/lara-dark-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: #1d46ba;
+  color: var(--primary-100);
   text-decoration: unset;
 }
 
@@ -40,13 +40,24 @@ iframe {
 
 @media (min-width: 1250px) {
   .p-card {
-    background: radial-gradient(circle at top right, rgba(97, 7, 110, 0.2), rgba(209, 37, 67, 0.1803921569), rgb(100 0 255 / 13%)), radial-gradient(circle at top right, rgba(29, 78, 216, 0.2784313725), rgba(165, 25, 192, 0.1803921569), rgba(139, 92, 246, 0.0392156863));
-    background-blend-mode: color-burn;
+    $color1: rgb(from var(--primary-color) r g b / 50%);
+    //--new-color: rgb(from var(--primary-color) r g b / 50%);
+    //--transparency: 20%;
+    //--color-with-transparency: color-mix(in srgb, $color1 var(--transparency, 100%), transparent);
+    //background: radial-gradient(circle at top right, $color1 10%, var(--primary-800) 10%, var(--primary-500)) 10%, radial-gradient(circle at top right,var(--maskbg) 40%, var(--primary-300) 20%, var(--primary-100)) 10%;
+    //background: radial-gradient(circle at top right, $color1 10%, var(--primary-800) 10%, var(--primary-500)) 10%, radial-gradient(circle at top right,var(--maskbg) 40%, var(--primary-300) 20%, var(--primary-100)) 10%;
+    //ideal:
+    //background: radial-gradient(circle at top right, rgb(from #9fa8da69 r g b/50%) 10%, #575c7866 10%, #9fa8da7d) 10%, radial-gradient(circle at top right, var(--maskbg) 40%, #c3c9e83b 20%, #e8eaf65e) 10%;
+    //background: radial-gradient(circle at top right, var(--primary-600),var(--primary-700), var(--primary-800)), radial-gradient(circle at top right,var(--primary-200),var(--primary-500),var(--maskbg));
+    //background: radial-gradient(circle at top right, rgba(97, 7, 110, 0.2), rgba(209, 37, 67, 0.1803921569), rgb(100 0 255 / 13%)), radial-gradient(circle at top right, rgba(29, 78, 216, 0.2784313725), rgba(165, 25, 192, 0.1803921569), rgba(139, 92, 246, 0.0392156863));
+  background: radial-gradient(circle at top right, #528cd563, #4374af4f, #355b8aa1), radial-gradient(circle at top right, #bbd8fd70, #60a5fa4d, rgb(0 0 0 / 17%));
+
+    background-blend-mode: luminosity;
     color: #f9e9fb;
 
     .p-card-subtitle {
-      color: #b162c2;
-      text-shadow: 2px 1px #1f1f1f;
+      color: var(--primary-color-text);
+      text-shadow: 2px 1px var(--maskbg);
     }
   }
 }
