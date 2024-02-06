@@ -2,7 +2,7 @@
 name: Pregunta
 about: Escribe el tema de la pregunta
 title: ''
-labels: question
+labels: pregunta
 assignees: ''
 
 ---
