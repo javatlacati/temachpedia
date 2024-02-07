@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { type SelectItemGroup } from 'primeng/api';
+import {MenuItem, SelectItemGroup} from 'primeng/api';
 import * as Leaflet from 'leaflet';
+import {ContextMenu} from "primeng/contextmenu";
 
 interface Country {
   name: string;
@@ -28,9 +29,7 @@ export class CompasDeHierroComponent {
   groupedCities!: SelectItemGroup[];
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];
-
-  private readonly locations!: CellLocation[];
-
+  redes: MenuItem[] = [{label: "ig"}, {label: "fb"}]
   options = {
     layers: [
       Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -40,6 +39,7 @@ export class CompasDeHierroComponent {
     zoom: 16,
     center: { lat: 19.456492, lng: -99.1636326 }, // en caso de no permitir compartir la ubicación el mapa se iniciará en estas coordenadas
   };
+  private readonly locations!: CellLocation[];
 
   constructor() {
     this.groupedCities = [
@@ -865,5 +865,18 @@ export class CompasDeHierroComponent {
 
     this.map = $event;
     this.initMarkers();
+  }
+
+  showMenu(menu: ContextMenu, $event: MouseEvent) {
+
+    $event.preventDefault();
+    console.log(this.selectedCountry)
+    //console.log(JSON.stringify(group))
+    //menu.hide();
+    setTimeout(() => {
+      //this.items[1].label = 'Edit ' + item.label;
+      menu.toggle($event);
+    }, 1);
+    // this.abreIgCompas({name: group.label, value: group.value})
   }
 }
