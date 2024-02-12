@@ -1,27 +1,45 @@
 # Temachpedia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
+Este es un proyecto opensource para la comunidad del Temach. El sitio actualmente está desplegado en http://www.temachpedia.com el cual es nuestro ambiente productivo
 
-## Development server
+## Cómo correr
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para lanzar un servidor en su ambiente local corra el comando `ng serve`, esto iniciará un servidor de desarrollo.
+Navegue a `http://localhost:4200/` para ver el sitio en acción.
 
-## Code scaffolding
+### Notas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente.
+* el microservicio de búsqueda de transcripciones es una aplicación aparte y por lo tanto no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
 
-## Build
+## Build de producción
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Ejecute el comando `ng build` para crear el build de producción. Todo se generará en la carpeta `dist/`.
 
-## Running unit tests
+## Correr unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecute las pruebas unitarias con el comando `ng test`
 
-## Running end-to-end tests
+## Correr pruebas end-to-end
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Correr el comando `ng e2e`
+
+## Logística
+
+Para colaborar usamos la estrategia de branching [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), cada uno en su propio fork del proyecto.
+
+Para revisar el progreso y la planeación de tareas puede acceder a https://github.com/users/javatlacati/projects/5/views/1
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the  page.
+
+## que puedo aprender para manipular el proyecto de forma más efectiva
+
+* [Angular CLI](https://angular.io/cli)
+* [Karma](https://karma-runner.github.io)
+* git
+* npm
+* Typescript
+* PrimeNg
+* PrimeFlex
