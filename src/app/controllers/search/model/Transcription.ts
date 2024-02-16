@@ -1,9 +1,9 @@
 export interface Transcription {
-  video_title: string,
-  transcript: Array<Transcript>
+  video_title: string;
+  transcript: Transcript[];
 }
 
 export interface Transcript {
-  url: string,
-  text: string
+  url: string;
+  text: string;
 }

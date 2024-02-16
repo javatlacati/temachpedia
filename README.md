@@ -9,8 +9,8 @@ Navegue a `http://localhost:4200/` para ver el sitio en acción.
 
 ### Notas
 
-* Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente.
-* el microservicio de búsqueda de transcripciones es una aplicación aparte y por lo tanto no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
+- Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente.
+- el microservicio de búsqueda de transcripciones es una aplicación aparte y por lo tanto no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
 
 ## Build de producción
 
@@ -32,14 +32,14 @@ Para revisar el progreso y la planeación de tareas puede acceder a https://gith
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the  page.
+To get more help on the Angular CLI use `ng help` or go check out the page.
 
 ## que puedo aprender para manipular el proyecto de forma más efectiva
 
-* [Angular CLI](https://angular.io/cli)
-* [Karma](https://karma-runner.github.io)
-* git
-* npm
-* Typescript
-* PrimeNg
-* PrimeFlex
+- [Angular CLI](https://angular.io/cli)
+- [Karma](https://karma-runner.github.io)
+- git
+- npm
+- Typescript
+- PrimeNg
+- PrimeFlex

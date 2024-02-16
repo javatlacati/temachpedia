@@ -1,30 +1,29 @@
-import {Component, Inject, OnInit, Renderer2, SecurityContext} from '@angular/core';
-import {Transcription} from "./model/Transcription";
-import {PaginatorState} from "primeng/paginator";
-import {TranscriptService} from "./services/transcript.service";
-import {MessageService} from "primeng/api";
-import {DOCUMENT} from "@angular/common";
-import {DomSanitizer} from "@angular/platform-browser";
+import { Component, Inject, type OnInit, type Renderer2, SecurityContext } from '@angular/core';
+import { type Transcription } from './model/Transcription';
+import { type PaginatorState } from 'primeng/paginator';
+import { type TranscriptService } from './services/transcript.service';
+import { type MessageService } from 'primeng/api';
+import { DOCUMENT } from '@angular/common';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-
   searchQuery: string = '';
   matches: Transcription[] | undefined = undefined;
 
-  //paginator
+  // paginator
   first: number = 0;
 
   constructor(
-    private transcriptionService: TranscriptService,
-    private messageService: MessageService,
+    private readonly transcriptionService: TranscriptService,
+    private readonly messageService: MessageService,
     // private domSanitizer: DomSanitizer,
-    private _renderer2: Renderer2,
-    @Inject(DOCUMENT) private _document: Document
+    private readonly _renderer2: Renderer2,
+    @Inject(DOCUMENT) private readonly _document: Document,
   ) {
     // this.unsafeHtml = `<script type="text/javascript" src="https://pl20984679.toprevenuegate.com/42/e9/b3/42e9b3f8db3b4afa68e15db1ea955b2e.js"></script>`;
     // this.trustedHtml = this.domSanitizer.sanitize(SecurityContext.SCRIPT, this.domSanitizer.bypassSecurityTrustScript(this.unsafeHtml));
@@ -41,31 +40,29 @@ export class SearchComponent implements OnInit {
 
   searchForText() {
     if (this.searchQuery.length > 4) {
-        this.transcriptionService.getTransriptForWord(this.searchQuery).subscribe(value => {
-            // console.log(JSON.stringify(value));
-            this.matches = value;
-            if (this.matches.length > 0) {
-              this.first = 0;
-            } else {
-              this.messageService.add({
-                severity: 'info',
-                summary: 'Sin resultados',
-                detail: 'No se encontraron resultados'
-              });
-            }
-          }
-        );
+      this.transcriptionService.getTransriptForWord(this.searchQuery).subscribe((value) => {
+        // console.log(JSON.stringify(value));
+        this.matches = value;
+        if (this.matches.length > 0) {
+          this.first = 0;
+        } else {
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Sin resultados',
+            detail: 'No se encontraron resultados',
+          });
+        }
+      });
     } else {
       this.messageService.add({
         severity: 'warn',
         summary: 'Sin consulta',
-        detail: 'Por favor especifique un término de búsqueda con al menos 5 letras'
+        detail: 'Por favor especifique un término de búsqueda con al menos 5 letras',
       });
     }
   }
 
   onPageChange($event: PaginatorState) {
-    this.first = $event.first || 0;
+    this.first = $event.first ?? 0;
   }
-
 }

@@ -1,59 +1,94 @@
 <p-card>
   <p-toast></p-toast>
   <div class="grid">
-      <span class="p-input-icon-left col-12 md:col-11">
-          <i class="pi pi-search"></i>
-          <input type="text" pInputText class="w-full" [(ngModel)]="searchQuery" (keydown.enter)="searchForText()"
-                 name="searchText" [minlength]="5" [maxlength]="35" #searchText="ngModel"/>
+    <span class="p-input-icon-left col-12 md:col-11">
+      <i class="pi pi-search"></i>
+      <input
+        type="text"
+        pInputText
+        class="w-full"
+        [(ngModel)]="searchQuery"
+        (keydown.enter)="searchForText()"
+        name="searchText"
+        [minlength]="5"
+        [maxlength]="35"
+        #searchText="ngModel"
+      />
     </span>
-    <span class="col-12 md:col-1"><p-button [style]="{'color': '#fff'}" [text]="true" label="Buscar" (click)="searchForText()"></p-button></span>
+    <span class="col-12 md:col-1"
+      ><p-button
+        [style]="{ color: '#fff' }"
+        [text]="true"
+        label="Buscar"
+        (click)="searchForText()"
+      ></p-button
+    ></span>
   </div>
   <span class="col">
-      <small style="color:red"
-             *ngIf="searchText.invalid && searchQuery.length !=0">Agregue m&aacute;s letras mi compa</small>
-    </span>
+    <small style="color: red" *ngIf="searchText.invalid && searchQuery.length != 0"
+      >Agregue m&aacute;s letras mi compa</small
+    >
+  </span>
 
   <div class="flex flex-column card-container" *ngIf="matches && matches.length">
-    <p-paginator [first]="first" [rows]="1" [totalRecords]="matches.length" (onPageChange)="onPageChange($event)"
-                 [showJumpToPageDropdown]="false" [showPageLinks]="false"
-                 [showCurrentPageReport]="true"></p-paginator>
-    <p-card header="{{matches[first].video_title}}">
+    <p-paginator
+      [first]="first"
+      [rows]="1"
+      [totalRecords]="matches.length"
+      (onPageChange)="onPageChange($event)"
+      [showJumpToPageDropdown]="false"
+      [showPageLinks]="false"
+      [showCurrentPageReport]="true"
+    ></p-paginator>
+    <p-card header="{{ matches[first].video_title }}">
       <div *ngFor="let transcript of matches[first].transcript">
-        {{transcript.text}}
+        {{ transcript.text }}
         <a [href]="transcript.url" target="_blank">Abrir</a>
       </div>
     </p-card>
   </div>
-  <br/>
-  <p>Para realizar búsquedas más efectivas, le proporcionamos algunas herramientas útiles. Si desea encontrar algo
-    específico, como una frase póngalo entre comillas. También puede usar <code>-</code> para que no salga una
-    palabra. Por ejemplo:
-    <br>
-    Si desea buscar información acerca de la mujer del proceso, pero que <b>NO</b> tenga exactamente la palabra <code>seas</code>
-    como en
-    la frase "no seas la mujer del proceso" puede hacer la siguiente consulta
+  <br />
+  <p>
+    Para realizar búsquedas más efectivas, le proporcionamos algunas herramientas útiles. Si desea
+    encontrar algo específico, como una frase póngalo entre comillas. También puede usar
+    <code>-</code> para que no salga una palabra. Por ejemplo:
+    <br />
+    Si desea buscar información acerca de la mujer del proceso, pero que <b>NO</b> tenga exactamente
+    la palabra <code>seas</code>
+    como en la frase "no seas la mujer del proceso" puede hacer la siguiente consulta
   </p>
   <pre>"mujer del proceso" -seas</pre>
-  <p>Este método buscará la frase exacta "mujer del proceso", pero omitirá los resultados que incluyan la palabra
-    "<code>seas</code>". Como resultado, obtendrá información como: </p>
-  <blockquote><i>la famosa <u>mujer del proceso</u> que al final</i></blockquote>
   <p>
-    Supongamos que busca información sobre cómo regresar del Amazon:
+    Este método buscará la frase exacta "mujer del proceso", pero omitirá los resultados que
+    incluyan la palabra "<code>seas</code>". Como resultado, obtendrá información como:
   </p>
+  <blockquote>
+    <i>la famosa <u>mujer del proceso</u> que al final</i>
+  </blockquote>
+  <p>Supongamos que busca información sobre cómo regresar del Amazon:</p>
   <pre>"amazon" "volver"</pre>
-  <p>Con esta consulta, encontrará resultados relacionados tanto con "Amazon" como con "volver". Por ejemplo:</p>
-  <blockquote><i><u>Amazon</u> tienes que <u>volver</u> a romper</i></blockquote>
-  <p>Si prefiere una búsqueda más amplia, sin comillas, se mostrarán resultados que contengan <b>al menos una</b> de las
-    palabras que ingresó. Por ejemplo:</p>
+  <p>
+    Con esta consulta, encontrará resultados relacionados tanto con "Amazon" como con "volver". Por
+    ejemplo:
+  </p>
+  <blockquote>
+    <i><u>Amazon</u> tienes que <u>volver</u> a romper</i>
+  </blockquote>
+  <p>
+    Si prefiere una búsqueda más amplia, sin comillas, se mostrarán resultados que contengan
+    <b>al menos una</b> de las palabras que ingresó. Por ejemplo:
+  </p>
   <pre>estoico estoicismo</pre>
-  <p>Esta búsqueda incluirá información sobre "estoico" o "estoicismo". Así, podrá explorar diversas opciones y
-    encontrar lo que necesita de manera más precisa.</p>
+  <p>
+    Esta búsqueda incluirá información sobre "estoico" o "estoicismo". Así, podrá explorar diversas
+    opciones y encontrar lo que necesita de manera más precisa.
+  </p>
   <div class="grid">
     <div class="col-6">
       <p-card>
         <ins
           class="adsbygoogle"
-          style="display:block; text-align:center;"
+          style="display: block; text-align: center"
           data-ad-client="ca-pub-4207300711287771"
           data-ad-slot="3223642428"
           data-ad-format="auto"
@@ -66,7 +101,7 @@
       <p-card>
         <ins
           class="adsbygoogle"
-          style="display:block; text-align:center;"
+          style="display: block; text-align: center"
           data-ad-client="ca-pub-4207300711287771"
           data-ad-slot="2790406837"
           data-ad-format="auto"
@@ -77,12 +112,12 @@
     </div>
   </div>
 </p-card>
-<br>
-<br>
+<br />
+<br />
 <div>
   <ins
     class="adsbygoogle"
-    style="display:block; text-align:center;"
+    style="display: block; text-align: center"
     data-ad-client="ca-pub-4207300711287771"
     data-ad-slot="3686639812"
     data-ad-format="auto"

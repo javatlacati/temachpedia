@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { type ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CompasDeHierroComponent } from './compas-de-hierro.component';
 
@@ -8,7 +8,7 @@ describe('CompasDeHierroComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CompasDeHierroComponent]
+      declarations: [CompasDeHierroComponent],
     });
     fixture = TestBed.createComponent(CompasDeHierroComponent);
     component = fixture.componentInstance;

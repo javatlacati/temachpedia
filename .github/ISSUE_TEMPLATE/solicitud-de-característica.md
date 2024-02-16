@@ -4,7 +4,6 @@ about: Sugiere una nueva idea para este proyecto
 title: ''
 labels: mejora
 assignees: ''
-
 ---
 
 **¿Su sugerencia está relacionada con un problema? Por favor describa.**

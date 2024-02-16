@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { type ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OfficialAccountsComponent } from './official-accounts.component';
 
@@ -8,7 +8,7 @@ describe('OfficialAccountsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OfficialAccountsComponent]
+      declarations: [OfficialAccountsComponent],
     });
     fixture = TestBed.createComponent(OfficialAccountsComponent);
     component = fixture.componentInstance;
