@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { type Lyric } from '../model/Lyric';
-import { type LyricsService } from '../services/lyrics.service';
+import { LyricsService } from '../services/lyrics.service';
 
 @Component({
   selector: 'app-song-list',

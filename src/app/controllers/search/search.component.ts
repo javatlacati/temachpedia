@@ -1,10 +1,9 @@
-import { Component, Inject, type OnInit, type Renderer2, SecurityContext } from '@angular/core';
+import { Component, Inject, type OnInit, Renderer2 } from '@angular/core';
 import { type Transcription } from './model/Transcription';
 import { type PaginatorState } from 'primeng/paginator';
-import { type TranscriptService } from './services/transcript.service';
-import { type MessageService } from 'primeng/api';
+import { TranscriptService } from './services/transcript.service';
+import { MessageService } from 'primeng/api';
 import { DOCUMENT } from '@angular/common';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-search',
