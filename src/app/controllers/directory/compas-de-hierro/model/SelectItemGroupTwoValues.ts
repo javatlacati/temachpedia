@@ -1,7 +1,6 @@
-import {SelectItemGroup} from "primeng/api";
-import {SelectItemTwoValues} from "./SelectItemTwoValues";
+import { type SelectItemGroup } from 'primeng/api';
+import { type SelectItemTwoValues } from './SelectItemTwoValues';
 
 export interface SelectItemGroupTwoValues extends SelectItemGroup {
-  value1?: any;
   items: SelectItemTwoValues[];
 }

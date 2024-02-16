@@ -1,12 +1,12 @@
-import {LatLngExpression} from "leaflet";
+import { type LatLngExpression } from 'leaflet';
 
-interface CellDetails {
+export interface CellDetails {
   street: string;
   label: string;
-  coords: LatLngExpression//{ lng: number; lat: number }
+  coords: LatLngExpression; // { lng: number; lat: number }
 }
 
 export interface CellLocation {
   cell_name: string;
-  details: CellDetails[]
+  details: CellDetails[];
 }

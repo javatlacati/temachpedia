@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { type MenuItem } from 'primeng/api';
 import * as Leaflet from 'leaflet';
-import {ContextMenu} from "primeng/contextmenu";
-import {SelectItemGroupTwoValues} from "./model/SelectItemGroupTwoValues";
-import {City} from "./model/city";
-import {CellLocation} from "./model/CellLocation";
-import {SedeslcdhService} from "./services/sedeslcdh.service";
-import {LatLngExpression} from "leaflet";
+import { type ContextMenu } from 'primeng/contextmenu';
+import { type SelectItemGroupTwoValues } from './model/SelectItemGroupTwoValues';
+import { type City } from './model/city';
+import { type CellDetails, type CellLocation } from './model/CellLocation';
+import { SedeslcdhService } from './services/sedeslcdh.service';
+import { type LatLngExpression } from 'leaflet';
 
 @Component({
   selector: 'app-compas-de-hierro',
@@ -19,10 +19,21 @@ export class CompasDeHierroComponent {
   private readonly locations!: CellLocation[];
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];
-  redes: MenuItem[] = [{label: "ig", command: () => this.abreIgCompas()}, {
-    label: "fb",
-    command: () => this.abreFbCompas()
-  }]
+  redes: MenuItem[] = [
+    {
+      label: 'ig',
+      command: () => {
+        this.abreIgCompas();
+      },
+    },
+    {
+      label: 'fb',
+      command: () => {
+        this.abreFbCompas();
+      },
+    },
+  ];
+
   options = {
     layers: [
       Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -33,8 +44,7 @@ export class CompasDeHierroComponent {
     center: { lat: 19.456492, lng: -99.1636326 }, // en caso de no permitir compartir la ubicación el mapa se iniciará en estas coordenadas
   };
 
-
-  constructor(private sedesService: SedeslcdhService) {
+  constructor(private readonly sedesService: SedeslcdhService) {
     this.locations = sedesService.locations;
     this.groupedCities = sedesService.groupedCities;
   }
@@ -45,16 +55,30 @@ export class CompasDeHierroComponent {
       for (let j = 0; j < data.details.length; j++) {
         const cellDetail = data.details[j];
         const marker = this.generateMarker(cellDetail.coords, index);
-        marker
-          .addTo(this.map)
-          .bindPopup(
-            `<b>${cellDetail.label}</b><br><br>${cellDetail.street}<br><br><a href="https://www.instagram.com/${data.cell_name}" target="_blank"><span class="pi pi-instagram"></span></a>`,
-          );
+        const content = this.generateMarkerContent(data, cellDetail);
+        marker.addTo(this.map).bindPopup(content);
         this.markers.push(marker);
       }
     }
 
     this.map.locate({ setView: true, maxZoom: 16 });
+  }
+
+  private generateMarkerContent(data: CellLocation, cellDetail: CellDetails) {
+    let fb;
+    for (const group of this.groupedCities) {
+      for (const item of group.items) {
+        if (item.value === data.cell_name) {
+          fb = item.value1;
+          break;
+        }
+      }
+    }
+    let content = `<b>${cellDetail.label}</b><br><br>${cellDetail.street}<br><br><a href="https://www.instagram.com/${data.cell_name}" target="_blank"><span class="pi pi-instagram"></span></a>`;
+    if (fb) {
+      content += `&nbsp;<a href="https://www.facebook.com/${fb}" target="_blank"><span class="pi pi-facebook"></span></a>`;
+    }
+    return content;
   }
 
   generateMarker(data: LatLngExpression, index?: number) {
@@ -81,9 +105,9 @@ export class CompasDeHierroComponent {
   showMenu(menu: ContextMenu, $event: MouseEvent) {
     $event.preventDefault();
     if (this.selectedCity) {
-      console.log(this.selectedCity)
+      console.log(this.selectedCity);
       setTimeout(() => {
-        //this.items[1].label = 'Edit ' + item.label;
+        // this.items[1].label = 'Edit ' + item.label;
         menu.toggle($event);
       }, 1);
     }
@@ -95,11 +119,13 @@ export class CompasDeHierroComponent {
    * The first location associated with the LCDH cell is considered as the main and therefore shown.
    */
   muestraUbicacion() {
-    let latlng = this.locations.find((cellLocation) => cellLocation.cell_name === this.selectedCity.value)?.details[0].coords;
+    const latlng = this.locations.find(
+      (cellLocation) => cellLocation.cell_name === this.selectedCity.value,
+    )?.details[0].coords;
     if (latlng) {
       this.map.panTo(latlng);
     } else {
-      console.warn("La célula de los compas de hierro no tiene sede aún")
+      console.warn('La célula de los compas de hierro no tiene sede aún');
     }
   }
 

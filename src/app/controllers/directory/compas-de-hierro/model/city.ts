@@ -1,11 +1,11 @@
 export interface City {
-  name: string,
+  name: string;
   /**
    * instagram account
    */
-  value: string,
+  value: string;
   /**
    * facebook account
    */
-  value1?: string
+  value1?: string;
 }

@@ -20,11 +20,11 @@
         [filter]="true"
         optionLabel="label"
         [optionDisabled]="'disabled'"
-                 [listStyle]="{ 'max-height': '250px' }"
-                 [(ngModel)]="selectedCity"
-                 (contextmenu)="showMenu(menu, $event)"
-                 (onChange)="muestraUbicacion()">
-
+        [listStyle]="{ 'max-height': '250px' }"
+        [(ngModel)]="selectedCity"
+        (contextmenu)="showMenu(menu, $event)"
+        (onChange)="muestraUbicacion()"
+      >
         <ng-template let-group pTemplate="group">
           <div class="flex align-items-center">
             <img
