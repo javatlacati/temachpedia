@@ -1,14 +1,14 @@
 import {
   type AfterViewInit,
-  type ChangeDetectorRef,
+  ChangeDetectorRef,
   Component,
   type ElementRef,
   type OnDestroy,
   ViewChild,
 } from '@angular/core';
-import { type LyricsService } from '../services/lyrics.service';
-import { type Lyric } from '../model/Lyric';
-import { type ActivatedRoute } from '@angular/router';
+import { LyricsService } from '../services/lyrics.service';
+import { Lyric } from '../model/Lyric';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-song',

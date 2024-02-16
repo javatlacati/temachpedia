@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponent } from './search.component';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { PaginatorModule } from 'primeng/paginator';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
+import { SearchComponent } from './search.component';
+import { TranscriptService } from './services/transcript.service';
 
 @NgModule({
   declarations: [SearchComponent],
@@ -18,6 +20,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     ToastModule,
     InputTextModule,
+    HttpClientModule,
   ],
+  providers: [TranscriptService],
 })
 export class SearchModule {}

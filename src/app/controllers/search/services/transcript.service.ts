@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { type HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { type Observable } from 'rxjs';
 import { type Transcription } from '../model/Transcription';
 

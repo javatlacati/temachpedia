@@ -20,5 +20,6 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': OFF,
     '@typescript-eslint/strict-boolean-expressions': 'warn',
     '@typescript-eslint/no-useless-constructor': 'warn',
+    '@typescript-eslint/consistent-type-imports': OFF,
   },
 };
