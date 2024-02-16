@@ -1,42 +1,52 @@
-<p-card header="Compas de Hierro"
-        subheader="Los compas de hierro es una comunidad liderada por varones cuyos valores son la fortaleza y la hermandad.">
+<p-card
+  header="Compas de Hierro"
+  subheader="Los compas de hierro es una comunidad liderada por varones cuyos valores son la fortaleza y la hermandad."
+>
   <blockquote>
-    Necesitamos gente de nuestra edad para convivir, necesitamos convivir con gente de nuestra edad para motivarnos,
-    para impulsarnos para exigirnos. Necesitamos ayudar a la comunidad, necesitamos recibir, y necesitamos darle.<br>
-    Gente más joven que yo que necesita que le enseñe, que necesita que la guíe con lo que yo sé hacer, y si no la puedo
-    ayudar entonces la canalizo, si yo no puedo resolver el problema lo canalizo porque sé con quién dentro de la
-    comunidad, para eso son los compas de hierro. Mi sueño es poder generar una comunidad que se sostenga a sí misma -
-    El Temach
+    Necesitamos gente de nuestra edad para convivir, necesitamos convivir con gente de nuestra edad
+    para motivarnos, para impulsarnos para exigirnos. Necesitamos ayudar a la comunidad, necesitamos
+    recibir, y necesitamos darle.<br />
+    Gente más joven que yo que necesita que le enseñe, que necesita que la guíe con lo que yo sé
+    hacer, y si no la puedo ayudar entonces la canalizo, si yo no puedo resolver el problema lo
+    canalizo porque sé con quién dentro de la comunidad, para eso son los compas de hierro. Mi sueño
+    es poder generar una comunidad que se sostenga a sí misma - El Temach
   </blockquote>
-  <br>
+  <br />
   <p-card header="Cuentas oficiales">
     <div class="card flex justify-content-center">
-      <p-listbox [options]="groupedCities"
-                 [group]="true"
-                 [filter]="true"
-                 optionLabel="label"
-                 [(ngModel)]="selectedCountry"
-                 [optionDisabled]="'disabled'"
-                 [listStyle]="{ 'max-height': '250px' }"
-                 (onChange)="abreIgCompas(selectedCountry)">
+      <p-listbox
+        [options]="groupedCities"
+        [group]="true"
+        [filter]="true"
+        optionLabel="label"
+        [(ngModel)]="selectedCountry"
+        [optionDisabled]="'disabled'"
+        [listStyle]="{ 'max-height': '250px' }"
+        (onChange)="abreIgCompas(selectedCountry)"
+      >
         <ng-template let-group pTemplate="group">
           <div class="flex align-items-center">
-            <img [alt]="'flag for '+group.label" src="/assets/flag_placeholder.png"
-                 [class]="'mr-2 flag flag-' + group.value" style="width: 20px"/>
+            <img
+              [alt]="'flag for ' + group.label"
+              src="/assets/flag_placeholder.png"
+              [class]="'mr-2 flag flag-' + group.value"
+              style="width: 20px"
+            />
             <span>{{ group.label }}</span>
           </div>
         </ng-template>
       </p-listbox>
     </div>
   </p-card>
-  <br>
-  <br>
+  <br />
+  <br />
   <p-card header="Sedes de entrenamiento">
-    <div class="map-container"
-         leaflet
-         [leafletOptions]="options"
-         (leafletMapReady)="onMapReady($event)"
-         (leafletClick)="mapClicked($event)">
-    </div>
+    <div
+      class="map-container"
+      leaflet
+      [leafletOptions]="options"
+      (leafletMapReady)="onMapReady($event)"
+      (leafletClick)="mapClicked($event)"
+    ></div>
   </p-card>
 </p-card>

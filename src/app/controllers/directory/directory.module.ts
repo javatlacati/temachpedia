@@ -1,33 +1,25 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from "@angular/router";
-import {CardModule} from "primeng/card";
-import {ListboxModule} from "primeng/listbox";
-import {DirectoryComponent} from "./directory.component";
-import {CompasDeHierroComponent} from "./compas-de-hierro/compas-de-hierro.component";
-import {FormsModule} from "@angular/forms";
-import {LeafletModule} from "@asymmetrik/ngx-leaflet";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { CardModule } from 'primeng/card';
+import { ListboxModule } from 'primeng/listbox';
+import { DirectoryComponent } from './directory.component';
+import { CompasDeHierroComponent } from './compas-de-hierro/compas-de-hierro.component';
+import { FormsModule } from '@angular/forms';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { OfficialAccountsComponent } from './official-accounts/official-accounts.component';
-import {ImageModule} from "primeng/image";
-
+import { ImageModule } from 'primeng/image';
 
 @NgModule({
-  declarations: [
-    DirectoryComponent,
-    CompasDeHierroComponent,
-    OfficialAccountsComponent
-  ],
+  declarations: [DirectoryComponent, CompasDeHierroComponent, OfficialAccountsComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([
-      {path: '', component: DirectoryComponent},
-    ]),
+    RouterModule.forChild([{ path: '', component: DirectoryComponent }]),
     CardModule,
     ListboxModule,
     FormsModule,
     LeafletModule,
     ImageModule,
-  ]
+  ],
 })
-export class DirectoryModule {
-}
+export class DirectoryModule {}

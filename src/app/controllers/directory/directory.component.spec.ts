@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { type ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DirectoryComponent } from './directory.component';
 
@@ -8,7 +8,7 @@ describe('DirectoryComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DirectoryComponent]
+      declarations: [DirectoryComponent],
     });
     fixture = TestBed.createComponent(DirectoryComponent);
     component = fixture.componentInstance;

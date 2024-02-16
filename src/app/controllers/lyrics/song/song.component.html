@@ -1,32 +1,32 @@
 <p-card [header]="song?.title">
-    {{song?.authors?.join(', ')}}
-    <br>
-    <br>
-    <div #demoYouTubePlayer id="demoYouTubePlayer" class="demo-youtube-player">
-            <youtube-player
-                    [videoId]="song?.video?.id"
-                    suggestedQuality="highres"
-                    [height]="250"
-                    style="width:100%"
-                    [startSeconds]="song?.video?.start||0">
-            </youtube-player>
-    </div>
-    <br>
-    <div *ngFor="let paragraph of song?.paragraphs">
-        <div *ngFor="let verse of paragraph.verses; let i = index">
+  {{ song?.authors?.join(', ') }}
+  <br />
+  <br />
+  <div #demoYouTubePlayer id="demoYouTubePlayer" class="demo-youtube-player">
+    <youtube-player
+      [videoId]="song?.video?.id"
+      suggestedQuality="highres"
+      [height]="250"
+      style="width: 100%"
+      [startSeconds]="song?.video?.start || 0"
+    >
+    </youtube-player>
+  </div>
+  <br />
+  <div *ngFor="let paragraph of song?.paragraphs">
+    <div *ngFor="let verse of paragraph.verses; let i = index">
       <span *ngIf="paragraph.chords && paragraph.chords[i]; else nochords">
-
         <p>
           <span *ngFor="let line of paragraph.chords[i].lines">
-          {{'&nbsp;'.repeat(line.spacesBefore)}} {{line.chordName}}
-        </span>
+            {{ '&nbsp;'.repeat(line.spacesBefore) }} {{ line.chordName }}
+          </span>
         </p>
-        <p>{{verse}}</p>
+        <p>{{ verse }}</p>
       </span>
-            <ng-template #nochords>
-                <p>{{verse}}</p>
-            </ng-template>
-        </div>
-        <br>
+      <ng-template #nochords>
+        <p>{{ verse }}</p>
+      </ng-template>
     </div>
+    <br />
+  </div>
 </p-card>
