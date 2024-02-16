@@ -27,9 +27,7 @@ export class SongComponent implements AfterViewInit, OnDestroy {
     private readonly _changeDetectorRef: ChangeDetectorRef,
   ) {
     const title = this.route.snapshot.paramMap.get('title');
-    if (title) {
-      this.song = lyricsService.getSongBytitle(title);
-    }
+    this.song = lyricsService.getSongBytitle(title ?? '');
   }
 
   ngAfterViewInit(): void {
