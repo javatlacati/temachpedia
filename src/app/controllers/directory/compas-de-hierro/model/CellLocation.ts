@@ -1,7 +1,9 @@
+import {LatLngExpression} from "leaflet";
+
 interface CellDetails {
   street: string;
   label: string;
-  coords: { lng: number; lat: number }
+  coords: LatLngExpression//{ lng: number; lat: number }
 }
 
 export interface CellLocation {

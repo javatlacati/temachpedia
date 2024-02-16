@@ -3,9 +3,10 @@ import {MenuItem} from 'primeng/api';
 import * as Leaflet from 'leaflet';
 import {ContextMenu} from "primeng/contextmenu";
 import {SelectItemGroupTwoValues} from "./model/SelectItemGroupTwoValues";
-import {Country} from "./model/country";
+import {City} from "./model/city";
 import {CellLocation} from "./model/CellLocation";
 import {SedeslcdhService} from "./services/sedeslcdh.service";
+import {LatLngExpression} from "leaflet";
 
 @Component({
   selector: 'app-compas-de-hierro',
@@ -13,7 +14,7 @@ import {SedeslcdhService} from "./services/sedeslcdh.service";
   styleUrls: ['./compas-de-hierro.component.scss'],
 })
 export class CompasDeHierroComponent {
-  selectedCountry!: Country;
+  selectedCity!: City;
   groupedCities!: SelectItemGroupTwoValues[];
   private readonly locations!: CellLocation[];
   map!: Leaflet.Map;
@@ -38,12 +39,6 @@ export class CompasDeHierroComponent {
     this.groupedCities = sedesService.groupedCities;
   }
 
-  abreIgCompas() {
-    console.log(this.selectedCountry);
-    const url = `https://www.instagram.com/${this.selectedCountry.value}`;
-    window.open(url, '_blank');
-  }
-
   initMarkers() {
     for (let index = 0; index < this.locations.length; index++) {
       const data = this.locations[index];
@@ -62,8 +57,8 @@ export class CompasDeHierroComponent {
     this.map.locate({ setView: true, maxZoom: 16 });
   }
 
-  generateMarker(data: any, index: number) {
-    return Leaflet.marker(data, { draggable: data.draggable });
+  generateMarker(data: LatLngExpression, index?: number) {
+    return Leaflet.marker(data, { draggable: true });
     // .on('click', (event) => this.markerClicked(event, index))
     // .on('dragend', (event) => this.markerDragEnd(event, index));
   }
@@ -85,21 +80,38 @@ export class CompasDeHierroComponent {
 
   showMenu(menu: ContextMenu, $event: MouseEvent) {
     $event.preventDefault();
-    if (this.selectedCountry) {
-      console.log(this.selectedCountry)
-      //console.log(JSON.stringify(group))
-      //menu.hide();
+    if (this.selectedCity) {
+      console.log(this.selectedCity)
       setTimeout(() => {
         //this.items[1].label = 'Edit ' + item.label;
         menu.toggle($event);
       }, 1);
-      // this.abreIgCompas({name: group.label, value: group.value})
     }
   }
 
+  /**
+   * Shows the location of the selected city.
+   * The instagram account of the LCDH cell is considered as the cell name.
+   * The first location associated with the LCDH cell is considered as the main and therefore shown.
+   */
+  muestraUbicacion() {
+    let latlng = this.locations.find((cellLocation) => cellLocation.cell_name === this.selectedCity.value)?.details[0].coords;
+    if (latlng) {
+      this.map.panTo(latlng);
+    } else {
+      console.warn("La célula de los compas de hierro no tiene sede aún")
+    }
+  }
+
+  abreIgCompas() {
+    console.log(this.selectedCity);
+    const url = `https://www.instagram.com/${this.selectedCity.value}`;
+    window.open(url, '_blank');
+  }
+
   private abreFbCompas() {
-    if (this.selectedCountry.value1) {
-      const url = `https://www.facebook.com/${this.selectedCountry.value1}`;
+    if (this.selectedCity.value1) {
+      const url = `https://www.facebook.com/${this.selectedCity.value1}`;
       window.open(url, '_blank');
     }
   }
