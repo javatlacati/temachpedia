@@ -93,7 +93,7 @@ export class SedeslcdhService {
       {
         label: 'Costa Rica',
         value: 'cr',
-        items: [{ label: 'Costa Rica', value: 'los_compas_de_hierro_cr' }],
+        items: [{ label: 'Costa Rica', value: 'los_compas_de_hierro_costarica' }],
       },
       {
         label: 'Dinamarca',
@@ -389,7 +389,7 @@ export class SedeslcdhService {
         ],
       },
       {
-        cell_name: 'los_compas_de_hierro_cr',
+        cell_name: 'los_compas_de_hierro_costarica',
         details: [
           {
             label: 'Parque Finsa, Sabana Sur',
