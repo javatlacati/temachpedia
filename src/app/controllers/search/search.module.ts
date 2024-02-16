@@ -8,7 +8,6 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { SearchComponent } from './search.component';
-import { TranscriptService } from './services/transcript.service';
 
 @NgModule({
   declarations: [SearchComponent],
@@ -22,6 +21,6 @@ import { TranscriptService } from './services/transcript.service';
     InputTextModule,
     HttpClientModule,
   ],
-  providers: [TranscriptService],
+  providers: [],
 })
 export class SearchModule {}
