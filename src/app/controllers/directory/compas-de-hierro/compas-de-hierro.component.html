@@ -19,10 +19,11 @@
         [group]="true"
         [filter]="true"
         optionLabel="label"
-        [(ngModel)]="selectedCountry"
         [optionDisabled]="'disabled'"
         [listStyle]="{ 'max-height': '250px' }"
-        (onChange)="abreIgCompas(selectedCountry)"
+        [(ngModel)]="selectedCity"
+        (contextmenu)="showMenu(menu, $event)"
+        (onChange)="muestraUbicacion()"
       >
         <ng-template let-group pTemplate="group">
           <div class="flex align-items-center">
@@ -39,6 +40,7 @@
     </div>
   </p-card>
   <br />
+  <p-contextMenu #menu [model]="redes"></p-contextMenu>
   <br />
   <p-card header="Sedes de entrenamiento">
     <div

@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { OfficialAccountsComponent } from './official-accounts/official-accounts.component';
 import { ImageModule } from 'primeng/image';
+import { ContextMenuModule } from 'primeng/contextmenu';
 
 @NgModule({
   declarations: [DirectoryComponent, CompasDeHierroComponent, OfficialAccountsComponent],
@@ -20,6 +21,7 @@ import { ImageModule } from 'primeng/image';
     FormsModule,
     LeafletModule,
     ImageModule,
+    ContextMenuModule,
   ],
 })
 export class DirectoryModule {}
