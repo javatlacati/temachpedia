@@ -1,6 +1,6 @@
 <div align="center">
 <h1> Temachpedia </h1>
-<img src="https://styles.redditmedia.com/t5_66pajk/styles/communityIcon_ibogqhlpi8s81.png" />
+<img alt="logo del temach" src="https://styles.redditmedia.com/t5_66pajk/styles/communityIcon_ibogqhlpi8s81.png" />
 </div>
 
 <div align="center">
@@ -25,6 +25,9 @@
 ![Angular Badge](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white&style=flat)
 ![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
 ![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=flat)
+![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=badge&logo=Node.js&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=badge&logo=SASS&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-black?style=badge&logo=git)
 
 </div>
 
@@ -48,7 +51,7 @@ ng serve
 4. Abre en [**http://localhost:4200/**](http://localhost:4200//) para comenzar a desarrollar. 🚀
 
 > [!NOTE]
-> Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente. el microservicio de búsqueda de transcripciones es una aplicación aparte y por lo tanto no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
+> Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente. El microservicio de búsqueda de transcripciones es una aplicación aparte y, por lo tanto, no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
 
 
 ## Logística
@@ -67,6 +70,6 @@ Para revisar el progreso y la planeación de tareas puede acceder a https://gith
 - PrimeFlex
 
 ## 🤝 Contribuidores
-<a href="https://github.com/javatlacati/temachpedia/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=javatlacati/temachpedia" />
-</a>
+[![Contribuidores](https://contrib.rocks/image?repo=javatlacati/temachpedia)](https://github.com/javatlacati/temachpedia/graphs/contributors)
+
+
