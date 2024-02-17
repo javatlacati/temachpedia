@@ -47,7 +47,7 @@ ng serve
 ```
 4. Abre en [**http://localhost:4200/**](http://localhost:4200//) para comenzar a desarrollar. 🚀
 
-> [!NOTA]
+> [!NOTE]
 > Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente. el microservicio de búsqueda de transcripciones es una aplicación aparte y por lo tanto no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
 
 
