@@ -1,6 +1,12 @@
 # Temachpedia
 
-Este es un proyecto opensource para la comunidad del Temach. El sitio actualmente está desplegado en http://www.temachpedia.com el cual es nuestro ambiente productivo
+![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=badge&logo=Node.js&logoColor=white)
+![Angular](https://img.shields.io/badge/-Angular-DD0031?style=badge&logo=angular)
+![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=badge&logo=typescript&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=badge&logo=SASS&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-black?style=badge&logo=git)
+
+Este es un proyecto opensource para la comunidad del Temach. El sitio actualmente está desplegado en http://www.temachpedia.com el cual es nuestro ambiente productivo.
 
 ## Cómo correr
 
