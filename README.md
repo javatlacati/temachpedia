@@ -5,6 +5,7 @@
 ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=badge&logo=typescript&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=badge&logo=SASS&logoColor=white)
 ![Git](https://img.shields.io/badge/-Git-black?style=badge&logo=git)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=badge&logo=tailwind-css&logoColor=white)
 
 Este es un proyecto opensource para la comunidad del Temach. El sitio actualmente está desplegado en http://www.temachpedia.com el cual es nuestro ambiente productivo.
 
