@@ -1,45 +1,75 @@
-# Temachpedia
+<div align="center">
+<h1> Temachpedia </h1>
+<img alt="logo del temach" src="https://styles.redditmedia.com/t5_66pajk/styles/communityIcon_ibogqhlpi8s81.png" />
+</div>
 
-Este es un proyecto opensource para la comunidad del Temach. El sitio actualmente está desplegado en http://www.temachpedia.com el cual es nuestro ambiente productivo
+<div align="center">
+    <a href="http://www.temachpedia.com/" target="_blank">
+        Demo
+    </a>
+    <span>&nbsp;✦&nbsp;</span>
+    <a href="#-getting-started">
+       Como comenzar
+    </a>
+    <span>&nbsp;✦&nbsp;</span>
+    <a href="#-commands">
+        Cotribuir
+    </a>
+    <span>&nbsp;✦&nbsp;</span>
+    <a href="#-license">
+        License
+    </a>
+</div>
+<div align="center">
 
-## Cómo correr
+![Angular Badge](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=flat)
+![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=badge&logo=Node.js&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=badge&logo=SASS&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-black?style=badge&logo=git)
 
-Para lanzar un servidor en su ambiente local corra el comando `ng serve`, esto iniciará un servidor de desarrollo.
-Navegue a `http://localhost:4200/` para ver el sitio en acción.
+</div>
 
-### Notas
 
-- Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente.
-- el microservicio de búsqueda de transcripciones es una aplicación aparte y por lo tanto no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
+##  🚀 Como comenzar
 
-## Build de producción
+1. [Fork](https://github.com/javatlacati/temachpedia.git) has un fork de este repositorio.
 
-Ejecute el comando `ng build` para crear el build de producción. Todo se generará en la carpeta `dist/`.
+2. Instala las dependencias
 
-## Correr unit tests
+- Usamos [npm](https://npmjs.com) para manejar las dependecias.
 
-Ejecute las pruebas unitarias con el comando `ng test`
+```bash
+npm install
+```
+3. Has tu primer  ng server:
 
-## Correr pruebas end-to-end
+```bash
+ng serve
+```
+4. Abre en [**http://localhost:4200/**](http://localhost:4200//) para comenzar a desarrollar. 🚀
 
-Correr el comando `ng e2e`
+> [!NOTE]
+> Al correr `ng serve` se habilita el hotreload, por lo que el portal automáticamente se recargará si se hacen cambios en los archivos fuente. El microservicio de búsqueda de transcripciones es una aplicación aparte y, por lo tanto, no se incluye, si desea colaborar en ese proyecto contacte al compa rus.
+
 
 ## Logística
 
 Para colaborar usamos la estrategia de branching [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), cada uno en su propio fork del proyecto.
-
 Para revisar el progreso y la planeación de tareas puede acceder a https://github.com/users/javatlacati/projects/5/views/1
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the page.
-
-## que puedo aprender para manipular el proyecto de forma más efectiva
-
+> [!TIP]
+> Si deseas contribuir al proyecto puedes aprender las siguientes tecnologias
 - [Angular CLI](https://angular.io/cli)
 - [Karma](https://karma-runner.github.io)
-- git
+- Git & GitHub
 - npm
 - Typescript
 - PrimeNg
 - PrimeFlex
+
+## 🤝 Contribuidores
+[![Contribuidores](https://contrib.rocks/image?repo=javatlacati/temachpedia)](https://github.com/javatlacati/temachpedia/graphs/contributors)
+
+
