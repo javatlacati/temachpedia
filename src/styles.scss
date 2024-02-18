@@ -1,12 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import 'primeng/resources/themes/lara-dark-blue/theme.css';
 @import 'primeng/resources/primeng.css';
 @import 'primeflex/primeflex.css';
 @import 'primeicons/primeicons.css';
 @import 'flags';
 @import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   font-family: var(--font-family);
