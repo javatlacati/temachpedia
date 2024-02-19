@@ -67,7 +67,7 @@ Para revisar el progreso y la planeación de tareas puede acceder a https://gith
 - npm
 - Typescript
 - PrimeNg
-- PrimeFlex
+- Tailwind
 
 ## 🤝 Contribuidores
 [![Contribuidores](https://contrib.rocks/image?repo=javatlacati/temachpedia)](https://github.com/javatlacati/temachpedia/graphs/contributors)
