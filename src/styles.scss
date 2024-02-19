@@ -56,6 +56,11 @@ iframe {
   object-fit: cover !important;
 }
 
+.youtube-player-placeholder {
+  width: 100% !important;
+  height: 390px;
+}
+
 @media (min-width: 1250px) {
   .p-card {
     $color1: rgb(from var(--primary-color) r g b / 50%);
