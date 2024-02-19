@@ -14,7 +14,7 @@ import { type LatLngExpression } from 'leaflet';
   styleUrls: ['./compas-de-hierro.component.scss'],
 })
 export class CompasDeHierroComponent {
-  selectedCity!: City;
+  selectedCity: City | null = null;
   groupedCities!: SelectItemGroupTwoValues[];
   private readonly locations!: CellLocation[];
   map!: Leaflet.Map;
@@ -75,7 +75,7 @@ export class CompasDeHierroComponent {
       }
     }
     let content = `<b>${cellDetail.label}</b><br><br>${cellDetail.street}<br><br><a href="https://www.instagram.com/${data.cell_name}" target="_blank"><span class="pi pi-instagram"></span></a>`;
-    if (fb) {
+    if (fb != null) {
       content += `&nbsp;<a href="https://www.facebook.com/${fb}" target="_blank"><span class="pi pi-facebook"></span></a>`;
     }
     return content;
@@ -104,10 +104,9 @@ export class CompasDeHierroComponent {
 
   showMenu(menu: ContextMenu, $event: MouseEvent) {
     $event.preventDefault();
-    if (this.selectedCity) {
+    if (this.selectedCity != null) {
       console.log(this.selectedCity);
       setTimeout(() => {
-        // this.items[1].label = 'Edit ' + item.label;
         menu.toggle($event);
       }, 1);
     }
@@ -120,9 +119,9 @@ export class CompasDeHierroComponent {
    */
   muestraUbicacion() {
     const latlng = this.locations.find(
-      (cellLocation) => cellLocation.cell_name === this.selectedCity.value,
+      (cellLocation) => cellLocation.cell_name === this.selectedCity?.value,
     )?.details[0].coords;
-    if (latlng) {
+    if (latlng != null) {
       this.map.panTo(latlng);
     } else {
       console.warn('La célula de los compas de hierro no tiene sede aún');
@@ -131,13 +130,13 @@ export class CompasDeHierroComponent {
 
   abreIgCompas() {
     console.log(this.selectedCity);
-    const url = `https://www.instagram.com/${this.selectedCity.value}`;
+    const url = `https://www.instagram.com/${this.selectedCity?.value}`;
     window.open(url, '_blank');
   }
 
   private abreFbCompas() {
-    if (this.selectedCity.value1) {
-      const url = `https://www.facebook.com/${this.selectedCity.value1}`;
+    if (this.selectedCity?.value1 != null) {
+      const url = `https://www.facebook.com/${this.selectedCity?.value1}`;
       window.open(url, '_blank');
     }
   }
