@@ -7,6 +7,17 @@
 @import 'flags';
 @import 'leaflet/dist/leaflet.css';
 
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
 body {
   font-family: var(--font-family);
   background-image: url('assets/peacuful male warrior.webp');
