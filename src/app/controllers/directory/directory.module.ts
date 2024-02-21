@@ -11,6 +11,7 @@ import { OfficialAccountsComponent } from './official-accounts/official-accounts
 import { ImageModule } from 'primeng/image';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { ToastModule } from 'primeng/toast';
+import { MusicPlatformsComponent } from './music-platforms/music-platforms.component';
 
 @NgModule({
   declarations: [DirectoryComponent, CompasDeHierroComponent, OfficialAccountsComponent],
@@ -24,6 +25,7 @@ import { ToastModule } from 'primeng/toast';
     ImageModule,
     ContextMenuModule,
     ToastModule,
+    MusicPlatformsComponent,
   ],
 })
 export class DirectoryModule {}
