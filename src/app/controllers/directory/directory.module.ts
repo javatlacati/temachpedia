@@ -10,6 +10,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { OfficialAccountsComponent } from './official-accounts/official-accounts.component';
 import { ImageModule } from 'primeng/image';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { MusicPlatformsComponent } from './music-platforms/music-platforms.component';
 
 @NgModule({
   declarations: [DirectoryComponent, CompasDeHierroComponent, OfficialAccountsComponent],
@@ -22,6 +23,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
     LeafletModule,
     ImageModule,
     ContextMenuModule,
+    MusicPlatformsComponent,
   ],
 })
 export class DirectoryModule {}
