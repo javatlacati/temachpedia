@@ -773,8 +773,6 @@ export class LyricsService {
     },
   ];
 
-  constructor() {}
-
   get lyrics(): Lyric[] {
     return this._lyrics;
   }

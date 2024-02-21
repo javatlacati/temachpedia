@@ -1,8 +1,14 @@
 <p-card header="Preguntas frecuentes">
-  <p-panel *ngFor="let faq of faqs" [header]="faq.enunciado" [toggleable]="true" [collapsed]="true">
-    <div class="grid">
-      <p class="col-6">{{ faq.respuesta }}</p>
-      <p-inplace class="col-6">
+  <p-panel
+    class="p-0.5"
+    *ngFor="let faq of faqs"
+    [header]="faq.enunciado"
+    [toggleable]="true"
+    [collapsed]="true"
+  >
+    <div class="grid grid-cols-2 gap-1.5">
+      <p>{{ faq.respuesta }}</p>
+      <p-inplace>
         <ng-template pTemplate="display">
           <span class="p-text-secondary">Fuente</span>
         </ng-template>

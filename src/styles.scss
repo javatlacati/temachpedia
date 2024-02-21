@@ -1,15 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import 'primeng/resources/themes/lara-dark-blue/theme.css';
 @import 'primeng/resources/primeng.css';
-@import 'primeflex/primeflex.css';
 @import 'primeicons/primeicons.css';
 @import 'flags';
 @import 'leaflet/dist/leaflet.css';
+
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
 
 body {
   font-family: var(--font-family);
   background-image: url('assets/peacuful male warrior.webp');
   background-size: cover;
   color: #abc9fb;
+  margin: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 a {

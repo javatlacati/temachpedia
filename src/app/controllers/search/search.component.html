@@ -1,7 +1,7 @@
 <p-card>
   <p-toast></p-toast>
-  <div class="grid">
-    <span class="p-input-icon-left col-12 md:col-11">
+  <div class="grid grid-cols-1 md:grid-cols-12">
+    <span class="p-input-icon-left md:col-span-11 md:pr-2">
       <i class="pi pi-search"></i>
       <input
         type="text"
@@ -15,7 +15,7 @@
         #searchText="ngModel"
       />
     </span>
-    <span class="col-12 md:col-1"
+    <span
       ><p-button
         [style]="{ color: '#fff' }"
         [text]="true"
@@ -30,7 +30,7 @@
     >
   </span>
 
-  <div class="flex flex-column card-container" *ngIf="matches && matches.length">
+  <div class="flex flex-col card-container" *ngIf="matches && matches.length">
     <p-paginator
       [first]="first"
       [rows]="1"
@@ -83,33 +83,29 @@
     Esta búsqueda incluirá información sobre "estoico" o "estoicismo". Así, podrá explorar diversas
     opciones y encontrar lo que necesita de manera más precisa.
   </p>
-  <div class="grid">
-    <div class="col-6">
-      <p-card>
-        <ins
-          class="adsbygoogle"
-          style="display: block; text-align: center"
-          data-ad-client="ca-pub-4207300711287771"
-          data-ad-slot="3223642428"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        >
-        </ins>
-      </p-card>
-    </div>
-    <div class="col-6">
-      <p-card>
-        <ins
-          class="adsbygoogle"
-          style="display: block; text-align: center"
-          data-ad-client="ca-pub-4207300711287771"
-          data-ad-slot="2790406837"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        >
-        </ins>
-      </p-card>
-    </div>
+  <div class="grid grid-cols-2 gap-1.5">
+    <p-card>
+      <ins
+        class="adsbygoogle"
+        style="display: block; text-align: center"
+        data-ad-client="ca-pub-4207300711287771"
+        data-ad-slot="3223642428"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      >
+      </ins>
+    </p-card>
+    <p-card>
+      <ins
+        class="adsbygoogle"
+        style="display: block; text-align: center"
+        data-ad-client="ca-pub-4207300711287771"
+        data-ad-slot="2790406837"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      >
+      </ins>
+    </p-card>
   </div>
 </p-card>
 <br />
