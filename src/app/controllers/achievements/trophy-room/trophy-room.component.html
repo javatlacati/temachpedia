@@ -1,0 +1,47 @@
+<p-card header="Trofeos de caza" subheader="Aquí mostraremos tus cabezas de mamut">
+  <div class="card flex align-items-center gap-2 flex-wrap">
+    <p-chip
+      *ngFor="let category of categories"
+      [label]="category"
+      icon="pi pi-user"
+      [removable]="true"
+    ></p-chip>
+  </div>
+  <p-carousel
+    [value]="heads"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-head pTemplate="item">
+      <div class="m-2 py-8 px-4 grid grid-cols-2 gap-2 bg-neutral-700 rounded-3xl">
+        <div class="relative">
+          <img
+            src="https://randomuser.me/api/portraits/{{ head.isMale ? 'men' : 'women' }}/{{
+              head.image
+            }}.jpg"
+            [alt]="head.name"
+            class="shadow-md rounded-full"
+          />
+        </div>
+        <div>
+          <h4 class="mb-1">{{ head.name }}</h4>
+          <div class="grid grid-cols-2">
+            <span class="mr-2 flag flag-{{ head.country }}"></span>
+            <h6 class="mt-0 mb-4">{{ head.age }} años</h6>
+          </div>
+        </div>
+        <div class="col-span-2">
+          <b>{{ head.title }}:</b>&nbsp;{{ head.description }}
+        </div>
+        <div class="col-span-2 grid grid-cols-2">
+          <div><span class="pi pi-calendar"></span> {{ head.publishDate }}</div>
+          <div>
+            <p-button severity="info">Leer más</p-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</p-card>

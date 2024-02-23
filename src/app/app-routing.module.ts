@@ -25,6 +25,13 @@ const routes: Routes = [
     loadChildren: async () =>
       await import('./controllers/directory/directory.module').then((m) => m.DirectoryModule),
   },
+  {
+    path: 'achievements',
+    loadChildren: async () =>
+      await import('./controllers/achievements/achievements.module').then(
+        (m) => m.AchievementsModule,
+      ),
+  },
   { path: '**', redirectTo: '/home' },
 ];
 
