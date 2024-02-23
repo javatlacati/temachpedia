@@ -7,6 +7,14 @@ import { Component, Renderer2 } from '@angular/core';
 })
 export class TrophyRoomComponent {
   layout: 'grid' | 'list' = 'list';
+  categories: string[] = [
+    'Superación personal',
+    'Negocios',
+    'Estudio',
+    'Relaciones',
+    'Cambio físico',
+  ];
+
   heads: any = [];
   responsiveOptions: any;
 
@@ -14,54 +22,54 @@ export class TrophyRoomComponent {
     this.heads = [
       {
         id: '1000',
-        code: 'f230fh0g3',
+        country: 've',
         name: 'Alejandro Rodríguez',
-        description: 'asdas',
+        title: 'Trazos de Resiliencia',
+        description: 'La Historia de Marco Silva desde Florencia',
         image: 80,
-        price: 34,
-        category: 'Accessories',
+        age: 26,
+        category: 'Superación personal',
         quantity: 24,
-        inventoryStatus: 'INSTOCK',
-        rating: 5,
+        publishDate: new Date('12/19/2023'),
         isMale: true,
       },
       {
         id: '1001',
-        code: 'nvklal433',
-        name: 'Black Watch',
-        description: 'Product Description',
+        country: 'us',
+        name: 'Eliah González',
+        description: 'La Melodía de Javier Morales un recién graduado de Juilliard',
         image: 81,
-        price: 72,
-        category: 'Accessories',
+        age: 22,
+        category: 'Estudio',
         quantity: 61,
-        inventoryStatus: 'OUTOFSTOCK',
-        rating: 4,
+        publishDate: new Date('12/19/2023'),
+        title: 'Caminos Resonantes',
         isMale: true,
       },
       {
         id: '1002',
-        code: 'zz21cz3c1',
-        name: 'Blue Band',
-        description: 'Product Description',
+        country: 'mx',
+        name: 'Francisco Sarabia',
+        title: 'Decimotercera empresa',
+        description: '¿Cómo pasé de depresión a tener 13 empresas? Aquí te lo cuento',
         image: 12,
-        price: 79,
-        category: 'Fitness',
+        age: 31,
+        category: 'Negocios',
         quantity: 2,
-        inventoryStatus: 'LOWSTOCK',
-        rating: 3,
+        publishDate: new Date('12/19/2023'),
         isMale: true,
       },
       {
         id: '1006',
-        code: 'zz21cz3c1',
-        name: 'Blue Band',
-        description: 'Product Description',
+        country: 'co',
+        name: 'Lavue Nota',
+        title: 'Boda',
+        description: 'Primera boda de pareja de temacheros. El temach asistió a la boda.',
         image: 22,
-        price: 79,
-        category: 'Fitness',
+        age: 29,
+        category: 'Relaciones',
         quantity: 2,
-        inventoryStatus: 'LOWSTOCK',
-        rating: 3,
+        publishDate: new Date('12/19/2023'),
         isMale: false,
       },
     ];
@@ -85,17 +93,5 @@ export class TrophyRoomComponent {
     ];
 
     renderer.setStyle(document.body, 'background-image', "url('/assets/cavern room.webp')");
-  }
-
-  getSeverity(status: string): string {
-    switch (status) {
-      case 'INSTOCK':
-        return 'success';
-      case 'LOWSTOCK':
-        return 'warning';
-      case 'OUTOFSTOCK':
-        return 'danger';
-    }
-    return 'success';
   }
 }
