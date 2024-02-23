@@ -1,0 +1,4 @@
+::ng-deep youtube-player > *,
+::ng-deep youtube-player iframe {
+  min-width: 100% !important;
+}
