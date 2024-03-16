@@ -157,10 +157,18 @@ export class SedeslcdhService {
         label: 'México',
         value: 'mx',
         items: [
-          { label: 'Aguascalientes', value: 'los_compas_de_hierro_ags' },
+          {
+            label: 'Aguascalientes',
+            value: 'los_compas_de_hierro_ags',
+            value1: 'Loscompasdehierroaguascalientes',
+          },
           { label: 'Agua prieta (Sonora)', value: 'compas_de_hierro_agua_prieta' }, // hay ambigüedad en la ubicación de entrenamiento
           { label: 'Atlixco (Puebla)', value: 'loscompas_de_hierro_atlixco' }, // no mencionan sede
-          { label: 'Cancún (Quintana Roo)', value: 'los_compas_de_hierro_cancun' },
+          {
+            label: 'Cancún (Quintana Roo)',
+            value: 'los_compas_de_hierro_cancun',
+            value1: 'profile.php?id=100092573765968',
+          },
           { label: 'Chiapas', value: 'los_compas_de_hierro_chiapas' }, // aún no hay sede por lo que parece
           {
             label: 'Ciudad de México (CDMX)',
@@ -170,12 +178,20 @@ export class SedeslcdhService {
           { label: 'Ciudad Juárez (Chihuahua)', value: 'compasdehierro_cdjuarez_chi' }, // no especifican sede
           { label: 'Durango', value: 'compas_hierro_durango_mx' }, // aún no tienen sede
           { label: 'Guadalajara (Jalisco)', value: 'loscompasdehierrojalisco' },
-          { label: 'Guadalajara (Jalisco)', value: 'los_compas_de_hierro_gdl' },
+          {
+            label: 'Guadalajara (Jalisco)',
+            value: 'los_compas_de_hierro_gdl',
+            value1: 'profile.php?id=61557266551592',
+          },
           { label: 'Guadalajara (Jalisco)', value: 'barras_tribugdl_oficial' },
           { label: 'Irapuato (Guanajuato)', value: 'los_compas_de_hierro_irapuato' },
           { label: 'León (Guanajuato)', value: 'los_compas_de_hierro_leonn' }, // los_compas_de_hierro_leon
           { label: 'Monterrey (Nuevo León)', value: 'los_compas_del_cerro' }, // los_compas_del cerro_mty
-          { label: 'Morelia (Michoacán)', value: 'los_compas_de_hierro_morelia' },
+          {
+            label: 'Morelia (Michoacán)',
+            value: 'los_compas_de_hierro_morelia',
+            value1: 'profile.php?id=61550607760712',
+          },
           { label: 'Nayarit', value: 'loscompasdehierronayarit' },
           { label: 'Oaxaca', value: 'loscompasdehierro_oaxaca' },
           { label: 'Querétaro', value: 'compas_de_hierro_queretaro' }, // compasdehierro_qro //los_compas_de_hierro_qro
@@ -185,12 +201,20 @@ export class SedeslcdhService {
           { label: 'Puerto Peñasco (Sonora)', value: 'los_compas_del_desierto' },
           { label: 'San Luis Potosí', value: 'compas_slp' },
           { label: 'Tamaulipas', value: 'compas_de_hierro_tamaulipas' },
-          { label: 'Tampico', value: 'loscompasdehierrotampico' }, // tribu_alfa_tampico / no especifican lugar de reunión
+          { label: 'Tampico (Tamaulipas)', value: 'loscompasdehierrotampico' }, // tribu_alfa_tampico / no especifican lugar de reunión
           { label: 'Tecate (Baja California)', value: 'los_compas_de_hierro_tkt' }, // no pude hallar el lugar que especifican en comentarios
-          { label: 'Tijuana (Baja California)', value: 'Los_compas_de_hierro_tijuana' },
+          {
+            label: 'Tijuana (Baja California)',
+            value: 'Los_compas_de_hierro_tijuana',
+            value1: 'loscompasdehierrotijuana',
+          },
           { label: 'Tlaxcala', value: 'los_compas_de_hierro_tlaxcala' },
           { label: 'Toluca (Estado de México)', value: 'compas_de_hierro_toluca_' },
-          { label: 'Tuxtla Gutiérrez (Chiapas)', value: 'los_compas_de_hierro_tuxtla' }, // no especifica lugar de entrenamiento
+          {
+            label: 'Tuxtla Gutiérrez (Chiapas)',
+            value: 'los_compas_de_hierro_tuxtla',
+            value1: 'profile.php?id=61553570339494',
+          }, // no especifica lugar de entrenamiento
           { label: 'Yucatán', value: 'compas_de_hierro_yucatan' },
           { label: 'Zacatecas', value: 'los_compas_de_hierro_zacatecas' },
         ],
