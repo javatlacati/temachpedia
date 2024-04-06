@@ -12,13 +12,13 @@
     es poder generar una comunidad que se sostenga a sí misma - El Temach
   </blockquote>
   <br />
-  <p-card header="Cuentas oficiales">
+  <p-card header="Cuentas oficiales" subheader="Las cuentas verificadas aparecen con el símbolo ✓">
     <div class="card flex justify-content-center">
       <p-listbox
         [options]="groupedCities"
         [group]="true"
         [filter]="true"
-        optionLabel="label"
+        optionLabel="customOptionLabel"
         [optionDisabled]="'disabled'"
         [listStyle]="{ 'max-height': '250px' }"
         [(ngModel)]="selectedCity"

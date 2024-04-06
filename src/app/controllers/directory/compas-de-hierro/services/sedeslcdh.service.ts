@@ -1,290 +1,708 @@
 import { Injectable } from '@angular/core';
-import { type SelectItemGroupTwoValues } from '../model/SelectItemGroupTwoValues';
+import { type SelectItemGroupThreeValues } from '../model/SelectItemGroupThreeValues';
 import { type CellLocation } from '../model/CellLocation';
+import { SelectItemThreeValuesImpl } from '../model/SelectItemThreeValues';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SedeslcdhService {
-  get locations(): CellLocation[] {
-    return this._locations;
-  }
-
-  set locations(value: CellLocation[]) {
-    this._locations = value;
-  }
-
-  get groupedCities(): SelectItemGroupTwoValues[] {
-    return this._groupedCities;
-  }
-
-  set groupedCities(value: SelectItemGroupTwoValues[]) {
-    this._groupedCities = value;
-  }
-
-  private _groupedCities!: SelectItemGroupTwoValues[];
-
-  private _locations!: CellLocation[];
-
   constructor() {
     this._groupedCities = [
       {
         label: 'Argentina',
         value: 'ar',
         items: [
-          { label: 'Buenos Aires - Argentina', value: 'los_compas_del_hierro_arg' }, // los_compas_de_argentina
-          { label: 'Alberti', value: 'loscompasdehierroalberti' },
-          { label: 'Córdoba', value: 'compas_de_hierro_arg.cordoba' },
-          { label: 'Jujuy', value: 'los_compas_de_hierro_jujuy_arg' }, // parece que no tienen sede
-          { label: 'Mar del plata', value: 'los_compas_de_hierro_mdq' },
-          { label: 'Mendoza', value: 'loscompasdehierro.mza.arg' },
-          { label: 'Salta', value: 'los_compas_de_hierro_salta' },
+          new SelectItemThreeValuesImpl({
+            label: 'Buenos Aires - Argentina',
+            value: 'los_compas_del_hierro_arg',
+            value2: false,
+          }), // los_compas_de_argentina
+          new SelectItemThreeValuesImpl({
+            label: 'Alberti',
+            value: 'loscompasdehierroalberti',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Córdoba',
+            value: 'compas_de_hierro_arg.cordoba',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Jujuy',
+            value: 'los_compas_de_hierro_jujuy_arg',
+            value2: false,
+          }), // parece que no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Mar del plata',
+            value: 'los_compas_de_hierro_mdq',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Mendoza',
+            value: 'loscompasdehierro.mza.arg',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Salta',
+            value: 'los_compas_de_hierro_salta',
+            value2: false,
+          }),
         ],
       },
       {
         label: 'Austria',
         value: 'at',
         items: [
-          { label: 'Viena', value: 'el_compa_de_hierro_au' }, // no especifica lugar de entrenamiento
+          new SelectItemThreeValuesImpl({
+            label: 'Viena',
+            value: 'el_compa_de_hierro_au',
+            value2: false,
+          }), // no especifica lugar de entrenamiento
         ],
       },
       {
         label: 'Bélgica',
         value: 'be',
-        items: [{ label: 'Bélgica', value: 'los_compas_de_hierro_belgica' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Bélgica',
+            value: 'los_compas_de_hierro_belgica',
+            value2: false,
+          }),
+        ],
       },
       {
         label: 'Bolivia',
         value: 'bo',
         items: [
-          { label: 'Cobija', value: 'los_compas_de_hierro_amazonics' },
-          { label: 'La Paz', value: 'compas_de_hierro_lapaz' },
-          { label: 'Tarija', value: 'compas_de_hierro_tja' }, // parece que no tienen aún sede
+          new SelectItemThreeValuesImpl({
+            label: 'Cobija',
+            value: 'los_compas_de_hierro_amazonics',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Cochabamba',
+            value: 'compas.de.hierro.cochabamba1',
+            value1: 'profile.php?id=61554942335736',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'La Paz',
+            value: 'compas_de_hierro_lapaz',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'La Paz',
+            value: 'compas.de.hierro.lapaz',
+            value1: 'profile.php?id=61552237851069',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Tarija',
+            value: 'compas_de_hierro_tja',
+            value2: false,
+          }), // parece que no tienen aún sede
         ],
       },
       {
         label: 'Canada',
         value: 'ca',
-        items: [{ label: 'Toronto (Ontario)', value: 'compas_dehielo_toronto' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Toronto (Ontario)',
+            value: 'compas_dehielo_toronto',
+            value2: false,
+          }),
+        ],
       },
       {
         label: 'Chile',
         value: 'cl',
-        items: [{ label: 'Santiago', value: 'compas.de.hierro.chile.oficial' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Santiago',
+            value: 'compas.de.hierro.chile.oficial',
+            value2: true,
+          }),
+        ],
       },
       {
         label: 'Colombia',
         value: 'co',
         items: [
-          { label: 'Colombia', value: 'los_parceros_de_hierro_col' },
-          { label: 'Armenia', value: 'parceros_de_hierro_armenia' },
-          { label: 'Barranquilla', value: 'cdh_baq' }, // parece que aún no tienen sede
-          { label: 'Bogotá', value: 'compasdehierrobogota' },
-          { label: 'Cali', value: 'loscompasdehierrocali' },
-          { label: 'Manizales', value: 'parceros_de_hierro_manizales' },
-          { label: 'Medellín', value: 'compasdehierromedellin' }, // parceros_de_hierro_medellin
-          { label: 'Medellín', value: 'compas_de_medellin' }, // parece que aún no tienen sede
-          { label: 'Río Negro', value: 'parcerosdehierro_rionegro' },
-          { label: 'Pasto', value: 'compas_hierro_pasto' }, // parece que aún no tienen sede
-          { label: 'Pereira', value: 'compas_hierro_pasto' }, // parece que aún no tienen sede
-          { label: 'Tunja', value: 'los_compas_de_hierro_tunja' },
+          new SelectItemThreeValuesImpl({
+            label: 'Colombia',
+            value: 'los_parceros_de_hierro_col',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Armenia',
+            value: 'parceros_de_hierro_armenia',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({ label: 'Barranquilla', value: 'cdh_baq', value2: false }), // parece que aún no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Bogotá',
+            value: 'compasdehierrobogota',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Bogotá',
+            value: 'estoicos_de_hierro_bogota',
+            value1: 'groups/318263317295828',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Cali',
+            value: 'loscompasdehierrocali',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Manizales',
+            value: 'parceros_de_hierro_manizales',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Medellín',
+            value: 'compasdehierromedellin',
+            value2: true,
+          }), // parceros_de_hierro_medellin
+          new SelectItemThreeValuesImpl({
+            label: 'Medellín',
+            value: 'compas_de_medellin',
+            value2: false,
+          }), // parece que aún no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Ocaña',
+            value: 'parceros_de_hierro_ocana',
+            value1: 'profile.php?id=100094286907714',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Río Negro',
+            value: 'parcerosdehierro_rionegro',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Pasto',
+            value: 'compas_hierro_pasto',
+            value2: false,
+          }), // parece que aún no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Pereira',
+            value: 'compas_hierro_pasto',
+            value2: false,
+          }), // parece que aún no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Tunja',
+            value: 'los_compas_de_hierro_tunja',
+            value2: true,
+          }),
         ],
       },
       {
         label: 'Costa Rica',
         value: 'cr',
-        items: [{ label: 'Costa Rica', value: 'los_compas_de_hierro_costarica' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Costa Rica',
+            value: 'los_compas_de_hierro_costarica',
+            value2: true,
+          }),
+        ],
       },
       {
         label: 'Dinamarca',
         value: 'dk',
         items: [
-          { label: 'Copenhagen', value: 'los_compas_de_hierro_dk' }, // sin sede
+          new SelectItemThreeValuesImpl({
+            label: 'Copenhagen',
+            value: 'los_compas_de_hierro_dk',
+            value2: false,
+          }), // sin sede
         ],
       },
       {
         label: 'Ecuador',
         value: 'ec',
-        items: [{ label: 'Ecuador', value: 'compas_de_hierro_ecuador' }],
+        items: [
+          new SelectItemThreeValuesImpl({ label: 'Cuenca', value: 'cdhcuenca', value2: true }),
+          new SelectItemThreeValuesImpl({
+            label: 'Ecuador',
+            value: 'compas_de_hierro_ecuador',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Guayaquil',
+            value: 'compasdehierroguayaquil',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Ibarra',
+            value: 'cdh.ibarra.ecuador',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Quevedo',
+            value: 'compas_de_hierro_qvdo_ecu',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({ label: 'Quito', value: 'lcdh.quitonorte', value2: true }),
+          new SelectItemThreeValuesImpl({ label: 'Quito', value: 'cdh_quitosur', value2: true }),
+          new SelectItemThreeValuesImpl({
+            label: 'Puyo',
+            value: 'compasdehierropuyo',
+            value2: true,
+          }),
+        ],
       },
       {
         label: 'El Salvador',
         value: 'sv',
-        items: [{ label: 'El Salvador', value: 'los_compas_de_hierro_sv' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'El Salvador',
+            value: 'los_compas_de_hierro_sv',
+            value1: 'los.compas.de.hierro.sv',
+            value2: true,
+          }),
+        ],
       },
       {
         label: 'España',
         value: 'es',
         items: [
-          { label: 'España', value: 'compas_de_hierro_es' },
-          { label: 'Barcelona', value: 'los_compas_de_hierro_bcn' },
-          { label: 'Madrid', value: 'los_compas_de_hierro_madrid' },
+          new SelectItemThreeValuesImpl({
+            label: 'España',
+            value: 'compas_de_hierro_es',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Barcelona',
+            value: 'los_compas_de_hierro_bcn',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Madrid',
+            value: 'los_compas_de_hierro_madrid',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Murcia',
+            value: 'los_compas_de_hierro_cartagena',
+            value2: true,
+          }),
         ],
       },
       {
         label: 'Francia',
         value: 'fr',
         items: [
-          { label: 'Francia', value: 'los_compas_de_hierro_france' }, // no especifica lugar de entrenamiento
+          new SelectItemThreeValuesImpl({
+            label: 'Francia',
+            value: 'los_compas_de_hierro_france',
+            value2: false,
+          }), // no especifica lugar de entrenamiento
         ],
       },
       {
         label: 'Guatemala',
         value: 'gt',
-        items: [{ label: 'Guatemala', value: 'compas_de_hierro_guatemala_ofi' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Guatemala',
+            value: 'compas_de_hierro_guatemala_ofi',
+            value1: 'profile.php?id=100092460303718',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Quetzaltenango',
+            value: 'compas_de_hierroquetzaltenango',
+            value1: 'profile.php?id=100092460303718',
+            value2: true,
+          }),
+        ],
       },
       {
         label: 'Honduras',
         value: 'hn',
         items: [
-          { label: 'Honduras', value: 'los_compas_de_hierro_honduras' }, // los_compas_de_honduras
-          { label: 'Quetzaltenango', value: 'compas_de_hierroquetzaltenango' },
+          new SelectItemThreeValuesImpl({
+            label: 'Honduras',
+            value: 'los_compas_de_hierro_honduras',
+            value2: true,
+          }), // los_compas_de_honduras
+          new SelectItemThreeValuesImpl({
+            label: 'Roatán',
+            value: 'los_compas_de_hierro_hn_roatan',
+            value2: true,
+          }),
         ],
       },
       {
         label: 'Italia',
         value: 'it',
         items: [
-          { label: 'Italia', value: 'los_compas_de_hierro_ita' }, // no especifican lugar de entrenamiento
+          new SelectItemThreeValuesImpl({
+            label: 'Italia',
+            value: 'los_compas_de_hierro_ita',
+            value2: true,
+          }), // no especifican lugar de entrenamiento
         ],
       },
       {
         label: 'Irlanda',
         value: 'ie',
-        items: [{ label: 'Dublín', value: 'los.compas.de.hierro_irlanda' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Dublín',
+            value: 'los.compas.de.hierro_irlanda',
+            value2: false,
+          }),
+        ],
       },
       {
         label: 'México',
         value: 'mx',
         items: [
-          {
+          new SelectItemThreeValuesImpl({
             label: 'Aguascalientes',
             value: 'los_compas_de_hierro_ags',
             value1: 'Loscompasdehierroaguascalientes',
-          },
-          { label: 'Agua prieta (Sonora)', value: 'compas_de_hierro_agua_prieta' }, // hay ambigüedad en la ubicación de entrenamiento
-          { label: 'Atlixco (Puebla)', value: 'loscompas_de_hierro_atlixco' }, // no mencionan sede
-          {
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Agua prieta (Sonora)',
+            value: 'compas_de_hierro_agua_prieta',
+            value2: false,
+          }), // hay ambigüedad en la ubicación de entrenamiento
+          new SelectItemThreeValuesImpl({
+            label: 'Atlixco (Puebla)',
+            value: 'loscompas_de_hierro_atlixco',
+            value2: false,
+          }), // no mencionan sede
+          new SelectItemThreeValuesImpl({
             label: 'Cancún (Quintana Roo)',
             value: 'los_compas_de_hierro_cancun',
             value1: 'profile.php?id=100092573765968',
-          },
-          { label: 'Chiapas', value: 'los_compas_de_hierro_chiapas' }, // aún no hay sede por lo que parece
-          {
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Chiapas',
+            value: 'los_compas_de_hierro_chiapas',
+            value2: false,
+          }), // aún no hay sede por lo que parece
+          new SelectItemThreeValuesImpl({
             label: 'Ciudad de México (CDMX)',
             value: 'los_compas_de_hierro',
             value1: 'loscompasdehierro',
-          },
-          { label: 'Ciudad Juárez (Chihuahua)', value: 'compasdehierro_cdjuarez_chi' }, // no especifican sede
-          { label: 'Durango', value: 'compas_hierro_durango_mx' }, // aún no tienen sede
-          { label: 'Guadalajara (Jalisco)', value: 'loscompasdehierrojalisco' },
-          {
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Chihuahua',
+            value: 'los_compas_de_hierro_chihuahua',
+            value2: true,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
+            label: 'Ciudad Juárez (Chihuahua)',
+            value: 'compasdehierro_cdjuarez_chi',
+            value2: true,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
+            label: 'Durango',
+            value: 'compas_hierro_durango_mx',
+            value2: false,
+          }), // aún no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Guadalajara (Jalisco)',
+            value: 'loscompasdehierrojalisco',
+            value2: true,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
             label: 'Guadalajara (Jalisco)',
             value: 'los_compas_de_hierro_gdl',
             value1: 'profile.php?id=61557266551592',
-          },
-          { label: 'Guadalajara (Jalisco)', value: 'barras_tribugdl_oficial' },
-          { label: 'Irapuato (Guanajuato)', value: 'los_compas_de_hierro_irapuato' },
-          { label: 'León (Guanajuato)', value: 'los_compas_de_hierro_leonn' }, // los_compas_de_hierro_leon
-          { label: 'Monterrey (Nuevo León)', value: 'los_compas_del_cerro' }, // los_compas_del cerro_mty
-          {
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Guadalajara (Jalisco)',
+            value: 'barras_tribugdl_oficial',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Irapuato (Guanajuato)',
+            value: 'los_compas_de_hierro_irapuato',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'León (Guanajuato)',
+            value: 'los_compas_de_hierro_leonn',
+            value2: true,
+          }), // los_compas_de_hierro_leon
+          new SelectItemThreeValuesImpl({
+            label: 'Monterrey (Nuevo León)',
+            value: 'los_compas_del_cerro',
+            value1: 'profile.php?id=100090523121637',
+            value2: true,
+          }), // los_compas_del cerro_mty
+          new SelectItemThreeValuesImpl({
             label: 'Morelia (Michoacán)',
             value: 'los_compas_de_hierro_morelia',
             value1: 'profile.php?id=61550607760712',
-          },
-          { label: 'Nayarit', value: 'loscompasdehierronayarit' },
-          { label: 'Oaxaca', value: 'loscompasdehierro_oaxaca' },
-          { label: 'Querétaro', value: 'compas_de_hierro_queretaro' }, // compasdehierro_qro //los_compas_de_hierro_qro
-          { label: 'Pachuca (Hidalgo)', value: 'lcdh_hidalgo_oficial' }, // loscompasdehierropachuca
-          { label: 'Puebla', value: 'los_compas_de_hierro_puebla_' },
-          { label: 'Puebla', value: 'modo_guerra_puebla' },
-          { label: 'Puerto Peñasco (Sonora)', value: 'los_compas_del_desierto' },
-          { label: 'San Luis Potosí', value: 'compas_slp' },
-          { label: 'Tamaulipas', value: 'compas_de_hierro_tamaulipas' },
-          { label: 'Tampico (Tamaulipas)', value: 'loscompasdehierrotampico' }, // tribu_alfa_tampico / no especifican lugar de reunión
-          { label: 'Tecate (Baja California)', value: 'los_compas_de_hierro_tkt' }, // no pude hallar el lugar que especifican en comentarios
-          {
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Nayarit',
+            value: 'loscompasdehierronayarit',
+            value2: true,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
+            label: 'Oaxaca',
+            value: 'loscompasdehierro_oaxaca',
+            value2: true,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
+            label: 'Querétaro',
+            value: 'compas_de_hierro_queretaro',
+            value2: true,
+          }), // compasdehierro_qro //los_compas_de_hierro_qro
+          new SelectItemThreeValuesImpl({
+            label: 'Pachuca (Hidalgo)',
+            value: 'lcdh_hidalgo_oficial',
+            value2: true,
+          }), // loscompasdehierropachuca
+          new SelectItemThreeValuesImpl({
+            label: 'Puebla',
+            value: 'los_compas_de_hierro_puebla_',
+            value2: true,
+          }), // los_compas_de_hierro_puebl
+          new SelectItemThreeValuesImpl({
+            label: 'Puebla',
+            value: 'modo_guerra_puebla',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Puerto Peñasco (Sonora)',
+            value: 'los_compas_del_desierto',
+            value2: true,
+          }), // los_compas_del_desierto
+          new SelectItemThreeValuesImpl({
+            label: 'San Luis Potosí',
+            value: 'compas_slp',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Tamaulipas',
+            value: 'compas_de_hierro_tamaulipas',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Tampico (Tamaulipas)',
+            value: 'loscompasdehierrotampico',
+            value2: true,
+          }), // tribu_alfa_tampico / no especifican lugar de reunión
+          new SelectItemThreeValuesImpl({
+            label: 'Tecate (Baja California)',
+            value: 'los_compas_de_hierro_tkt',
+            value2: false,
+          }), // no pude hallar el lugar que especifican en comentarios
+          new SelectItemThreeValuesImpl({
             label: 'Tijuana (Baja California)',
             value: 'Los_compas_de_hierro_tijuana',
             value1: 'loscompasdehierrotijuana',
-          },
-          { label: 'Tlaxcala', value: 'los_compas_de_hierro_tlaxcala' },
-          { label: 'Toluca (Estado de México)', value: 'compas_de_hierro_toluca_' },
-          {
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Tlaxcala',
+            value: 'los_compas_de_hierro_tlaxcala',
+            value1: 'profile.php?id=100090918352127',
+            value2: true,
+          }), // los_compas_de_hierro_tlaxcal
+          new SelectItemThreeValuesImpl({
+            label: 'Toluca (Estado de México)',
+            value: 'compas_de_hierro_toluca_',
+            value1: 'profile.php?id=61557714384078',
+            value2: true,
+          }), // los_compas_de_hierro_toluca
+          new SelectItemThreeValuesImpl({
+            label: 'Torreón',
+            value: 'los_laguneros_de_hierro',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
             label: 'Tuxtla Gutiérrez (Chiapas)',
             value: 'los_compas_de_hierro_tuxtla',
             value1: 'profile.php?id=61553570339494',
-          }, // no especifica lugar de entrenamiento
-          { label: 'Yucatán', value: 'compas_de_hierro_yucatan' },
-          { label: 'Zacatecas', value: 'los_compas_de_hierro_zacatecas' },
+            value2: true,
+          }), // no especifica lugar de entrenamiento
+          new SelectItemThreeValuesImpl({
+            label: 'Yucatán',
+            value: 'compas_de_hierro_yucatan',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Zacatecas',
+            value: 'los_compas_de_hierro_zacatecas',
+            value2: false,
+          }),
         ],
       },
       {
         label: 'Panamá',
         value: 'pa',
-        items: [{ label: 'Panamá', value: 'compasdehierropanama' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Panamá',
+            value: 'compasdehierropanama',
+            value2: false,
+          }),
+        ],
       },
       {
         label: 'Paraguay',
         value: 'py',
-        items: [{ label: 'Paraguay', value: 'loscompasdehierropy' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Paraguay',
+            value: 'loscompasdehierropy',
+            value1: 'profile.php?id=61555469100778',
+            value2: true,
+          }),
+        ],
       },
       {
         label: 'Perú',
         value: 'pe',
         items: [
-          { label: 'Perú', value: 'los_compasdehierro_peru' }, // los_causas_del_modo_guerra
+          new SelectItemThreeValuesImpl({
+            label: 'Perú',
+            value: 'los_compasdehierro_peru',
+            value2: false,
+          }), // los_causas_del_modo_guerra
         ],
       },
       {
         label: 'Puerto Rico',
         value: 'pr',
         items: [
-          { label: 'Puerto Rico', value: 'los_compas_de_hierro_pr' }, // parece que aún no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Puerto Rico',
+            value: 'los_compas_de_hierro_pr',
+            value2: false,
+          }), // parece que aún no tienen sede
         ],
       },
       {
         label: 'Portugal',
         value: 'pt',
-        items: [{ label: 'Lisboa', value: 'los_compas_de_hierro_lisboa' }],
+        items: [
+          new SelectItemThreeValuesImpl({
+            label: 'Lisboa',
+            value: 'los_compas_de_hierro_lisboa',
+            value2: false,
+          }),
+        ],
       },
       {
         label: 'República Dominicana',
         value: 'do',
         items: [
-          { label: 'República Dominicana', value: 'compasdehierro_rd' }, // los_compas_de_hierro_do // parece que aún no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'República Dominicana',
+            value: 'compasdehierro_rd',
+            value2: false,
+          }), // los_compas_de_hierro_do // parece que aún no tienen sede
         ],
       },
       {
         label: 'Uruguay',
         value: 'uy',
         items: [
-          { label: 'Uruguay', value: 'locompasdehierro.uruguay' }, // los_compas_de_hierro_uruguay // no tienen sede
+          new SelectItemThreeValuesImpl({
+            label: 'Uruguay',
+            value: 'locompasdehierro.uruguay',
+            value2: false,
+          }), // los_compas_de_hierro_uruguay // no tienen sede
         ],
       },
       {
         label: 'USA',
         value: 'us',
         items: [
-          { label: 'Dallas (Texas) - USA', value: 'los_compas_de_hierro_usa' },
-          { label: 'California (California)', value: 'loscompasdehierrocalifornia' }, // no especifican sede
-          { label: 'Orange County (California)', value: 'compasde_hierro_orangecounty' }, // no especifican sede
-          { label: 'Chicago (Illinois)', value: 'compas_de_hierro_chicago_' },
-          { label: 'Denver (Colorado)', value: 'los_compas_de_hierro_colorado' }, // los_compas_de_hierro_denver //no entiendo cual es la sede oficial
-          { label: 'Houston (Texas)', value: 'los_compas_de_hierro.houston' },
-          { label: 'New Jersey (New York)', value: 'los_compas_de_hierro_nj_ny' },
-          { label: 'Utah', value: 'los_compas_de_hierro_utah' }, // no especifican su sede
+          new SelectItemThreeValuesImpl({
+            label: 'Dallas (Texas) - USA',
+            value: 'los_compas_de_hierro_usa',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'California (California)',
+            value: 'loscompasdehierrocalifornia',
+            value1: 'loscompas664',
+            value2: true,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
+            label: 'Orange County (California)',
+            value: 'compasde_hierro_orangecounty',
+            value2: false,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
+            label: 'Chicago (Illinois)',
+            value: 'compas_de_hierro_chicago_',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Denver (Colorado)',
+            value: 'los_compas_de_hierro_colorado',
+            value1: 'profile.php?id=100095203422192',
+            value2: true,
+          }), // los_compas_de_hierro_denver //no entiendo cual es la sede oficial
+          new SelectItemThreeValuesImpl({
+            label: 'Houston (Texas)',
+            value: 'los_compas_de_hierro.houston',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'New Jersey (New York)',
+            value: 'los_compas_de_hierro_nj_ny',
+            value2: true,
+          }), // los_compas_de_hierro_nj
+          new SelectItemThreeValuesImpl({
+            label: 'Utah',
+            value: 'los_compas_de_hierro_utah',
+            value2: false,
+          }), // no especifican su sede
         ],
       },
       {
         label: 'Venezuela',
         value: 've',
         items: [
-          { label: 'Venezuela', value: 'los.compas.de.hierro.vnzla' }, // los_compas_de_hierro_venezuela
-          { label: 'Barquisimeto', value: 'compashierro_barquisimeto' },
-          { label: 'Caracas', value: 'compasdehierro.vnzla.caracas' }, // los_compas_de_hierro_caracas
-          { label: 'Maracay', value: 'los_compas_de_hierro_maracay' },
-          { label: 'Puerto Cabello', value: 'compasdehierrovzla_pc' },
+          new SelectItemThreeValuesImpl({
+            label: 'Venezuela',
+            value: 'los.compas.de.hierro.vnzla',
+            value2: false,
+          }), // los_compas_de_hierro_venezuela
+          new SelectItemThreeValuesImpl({
+            label: 'Barquisimeto',
+            value: 'compashierro_barquisimeto',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Caracas',
+            value: 'compasdehierro.vnzla.caracas',
+            value2: true,
+          }), // los_compas_de_hierro_caracas
+          new SelectItemThreeValuesImpl({
+            label: 'Maracay',
+            value: 'los_compas_de_hierro_maracay',
+            value2: false,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Puerto Cabello',
+            value: 'compasdehierrovzla_pc',
+            value2: false,
+          }),
         ],
       },
     ];
@@ -833,5 +1251,25 @@ export class SedeslcdhService {
         ],
       },
     ];
+  }
+
+  private _groupedCities!: SelectItemGroupThreeValues[];
+
+  get groupedCities(): SelectItemGroupThreeValues[] {
+    return this._groupedCities;
+  }
+
+  set groupedCities(value: SelectItemGroupThreeValues[]) {
+    this._groupedCities = value;
+  }
+
+  private _locations!: CellLocation[];
+
+  get locations(): CellLocation[] {
+    return this._locations;
+  }
+
+  set locations(value: CellLocation[]) {
+    this._locations = value;
   }
 }

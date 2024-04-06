@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { type MenuItem } from 'primeng/api';
 import * as Leaflet from 'leaflet';
 import { type ContextMenu } from 'primeng/contextmenu';
-import { type SelectItemGroupTwoValues } from './model/SelectItemGroupTwoValues';
+import { type SelectItemGroupThreeValues } from './model/SelectItemGroupThreeValues';
 import { type City } from './model/city';
 import { type CellDetails, type CellLocation } from './model/CellLocation';
 import { SedeslcdhService } from './services/sedeslcdh.service';
@@ -15,7 +15,7 @@ import { type LatLngExpression } from 'leaflet';
 })
 export class CompasDeHierroComponent {
   selectedCity: City | null = null;
-  groupedCities!: SelectItemGroupTwoValues[];
+  groupedCities!: SelectItemGroupThreeValues[];
   private readonly locations!: CellLocation[];
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];

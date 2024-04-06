@@ -8,4 +8,6 @@ export interface City {
    * facebook account
    */
   value1?: string;
+  /** indicates if this is an official account */
+  value2?: boolean;
 }
