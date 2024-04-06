@@ -23,7 +23,7 @@
     "@angular/youtube-player": "^17.3.3",
     "@asymmetrik/ngx-leaflet": "^17.0.0",
     "leaflet": "^1.9.4",
-    "primeicons": "^6.0.1",
+    "primeicons": "^7.0.0",
     "primeng": "^17.3.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
