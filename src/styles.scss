@@ -61,6 +61,12 @@ iframe {
   height: 390px;
 }
 
+//.p-toast .p-toast-message.p-toast-message-info {
+.p-toast-message-content {
+  background: var(--maskbg) !important;
+  color: darkgray !important;
+}
+
 @media (min-width: 1250px) {
   .p-card {
     $color1: rgb(from var(--primary-color) r g b / 50%);
