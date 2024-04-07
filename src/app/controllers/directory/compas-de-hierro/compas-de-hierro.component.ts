@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { type MenuItem } from 'primeng/api';
+import { type MenuItem, MessageService } from 'primeng/api';
 import * as Leaflet from 'leaflet';
 import { type ContextMenu } from 'primeng/contextmenu';
-import { type SelectItemGroupTwoValues } from './model/SelectItemGroupTwoValues';
+import { type SelectItemGroupThreeValues } from './model/SelectItemGroupThreeValues';
 import { type City } from './model/city';
 import { type CellDetails, type CellLocation } from './model/CellLocation';
 import { SedeslcdhService } from './services/sedeslcdh.service';
@@ -15,8 +15,7 @@ import { type LatLngExpression } from 'leaflet';
 })
 export class CompasDeHierroComponent {
   selectedCity: City | null = null;
-  groupedCities!: SelectItemGroupTwoValues[];
-  private readonly locations!: CellLocation[];
+  groupedCities!: SelectItemGroupThreeValues[];
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];
   redes: MenuItem[] = [
@@ -44,7 +43,12 @@ export class CompasDeHierroComponent {
     center: { lat: 19.456492, lng: -99.1636326 }, // en caso de no permitir compartir la ubicación el mapa se iniciará en estas coordenadas
   };
 
-  constructor(private readonly sedesService: SedeslcdhService) {
+  private readonly locations!: CellLocation[];
+
+  constructor(
+    private readonly sedesService: SedeslcdhService,
+    private readonly messageService: MessageService,
+  ) {
     this.locations = sedesService.locations;
     this.groupedCities = sedesService.groupedCities;
   }
@@ -62,23 +66,6 @@ export class CompasDeHierroComponent {
     }
 
     this.map.locate({ setView: true, maxZoom: 16 });
-  }
-
-  private generateMarkerContent(data: CellLocation, cellDetail: CellDetails) {
-    let fb;
-    for (const group of this.groupedCities) {
-      for (const item of group.items) {
-        if (item.value === data.cell_name) {
-          fb = item.value1;
-          break;
-        }
-      }
-    }
-    let content = `<b>${cellDetail.label}</b><br><br>${cellDetail.street}<br><br><a href="https://www.instagram.com/${data.cell_name}" target="_blank"><span class="pi pi-instagram"></span></a>`;
-    if (fb != null) {
-      content += `&nbsp;<a href="https://www.facebook.com/${fb}" target="_blank"><span class="pi pi-facebook"></span></a>`;
-    }
-    return content;
   }
 
   generateMarker(data: LatLngExpression, index?: number) {
@@ -134,10 +121,33 @@ export class CompasDeHierroComponent {
     window.open(url, '_blank');
   }
 
+  private generateMarkerContent(data: CellLocation, cellDetail: CellDetails) {
+    let fb;
+    for (const group of this.groupedCities) {
+      for (const item of group.items) {
+        if (item.value === data.cell_name) {
+          fb = item.value1;
+          break;
+        }
+      }
+    }
+    let content = `<b>${cellDetail.label}</b><br><br>${cellDetail.street}<br><br><a href="https://www.instagram.com/${data.cell_name}" target="_blank"><span class="pi pi-instagram"></span></a>`;
+    if (fb != null) {
+      content += `&nbsp;<a href="https://www.facebook.com/${fb}" target="_blank"><span class="pi pi-facebook"></span></a>`;
+    }
+    return content;
+  }
+
   private abreFbCompas() {
     if (this.selectedCity?.value1 != null) {
       const url = `https://www.facebook.com/${this.selectedCity?.value1}`;
       window.open(url, '_blank');
+    } else {
+      this.messageService.add({
+        severity: 'info',
+        summary: 'Información',
+        detail: 'La cuenta seleccionada no tiene ninguna cuenta conocida de facebook de momento',
+      });
     }
   }
 }

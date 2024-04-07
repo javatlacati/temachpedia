@@ -2,6 +2,7 @@
   header="Compas de Hierro"
   subheader="Los compas de hierro es una comunidad liderada por varones cuyos valores son la fortaleza y la hermandad."
 >
+  <p-toast></p-toast>
   <blockquote>
     Necesitamos gente de nuestra edad para convivir, necesitamos convivir con gente de nuestra edad
     para motivarnos, para impulsarnos para exigirnos. Necesitamos ayudar a la comunidad, necesitamos
@@ -12,13 +13,13 @@
     es poder generar una comunidad que se sostenga a sí misma - El Temach
   </blockquote>
   <br />
-  <p-card header="Cuentas oficiales">
+  <p-card header="Cuentas oficiales" subheader="Las cuentas verificadas aparecen con el símbolo ✓">
     <div class="card flex justify-content-center">
       <p-listbox
         [options]="groupedCities"
         [group]="true"
         [filter]="true"
-        optionLabel="label"
+        optionLabel="customOptionLabel"
         [optionDisabled]="'disabled'"
         [listStyle]="{ 'max-height': '250px' }"
         [(ngModel)]="selectedCity"
