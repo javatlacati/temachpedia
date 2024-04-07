@@ -25,14 +25,24 @@ export class SedeslcdhService {
           }),
           new SelectItemThreeValuesImpl({
             label: 'Córdoba',
-            value: 'compas_de_hierro_arg.cordoba',
+            value: 'compas_de_hierro_cordoba',
             value2: true,
+          }), // compas_de_hierro_arg.cordoba
+          new SelectItemThreeValuesImpl({
+            label: 'Córdoba',
+            value: 'loscompasdehierro.cordoba',
+            value2: false,
           }),
           new SelectItemThreeValuesImpl({
-            label: 'Jujuy',
-            value: 'los_compas_de_hierro_jujuy_arg',
+            label: 'Córdoba',
+            value: 'compas.de.hierro',
             value2: false,
-          }), // parece que no tienen sede
+          }),
+          // new SelectItemThreeValuesImpl({
+          //   label: 'Jujuy',
+          //   value: 'los_compas_de_hierro_jujuy_arg',
+          //   value2: false,
+          // }), // parece que no tienen sede y la cuenta desapareció
           new SelectItemThreeValuesImpl({
             label: 'Mar del plata',
             value: 'los_compas_de_hierro_mdq',
@@ -248,13 +258,21 @@ export class SedeslcdhService {
             value: 'compas_de_hierro_qvdo_ecu',
             value2: true,
           }),
-          new SelectItemThreeValuesImpl({ label: 'Quito', value: 'lcdh.quitonorte', value2: true }),
-          new SelectItemThreeValuesImpl({ label: 'Quito', value: 'cdh_quitosur', value2: true }),
+          new SelectItemThreeValuesImpl({
+            label: 'Quito norte',
+            value: 'lcdh.quitonorte',
+            value2: true,
+          }),
+          new SelectItemThreeValuesImpl({
+            label: 'Quito sur',
+            value: 'cdh_quitosur',
+            value2: true,
+          }),
           new SelectItemThreeValuesImpl({
             label: 'Puyo',
             value: 'compasdehierropuyo',
             value2: true,
-          }),
+          }), // no tienen sede aún
         ],
       },
       {
@@ -292,7 +310,7 @@ export class SedeslcdhService {
             label: 'Murcia',
             value: 'los_compas_de_hierro_cartagena',
             value2: true,
-          }),
+          }), // aún no tienen sede registrada
         ],
       },
       {
@@ -394,16 +412,16 @@ export class SedeslcdhService {
             value2: false,
           }), // aún no hay sede por lo que parece
           new SelectItemThreeValuesImpl({
+            label: 'Chihuahua',
+            value: 'los_compas_de_hierro_chihuahua',
+            value2: true,
+          }), // no especifican sede
+          new SelectItemThreeValuesImpl({
             label: 'Ciudad de México (CDMX)',
             value: 'los_compas_de_hierro',
             value1: 'loscompasdehierro',
             value2: true,
           }),
-          new SelectItemThreeValuesImpl({
-            label: 'Chihuahua',
-            value: 'los_compas_de_hierro_chihuahua',
-            value2: true,
-          }), // no especifican sede
           new SelectItemThreeValuesImpl({
             label: 'Ciudad Juárez (Chihuahua)',
             value: 'compasdehierro_cdjuarez_chi',
@@ -526,7 +544,7 @@ export class SedeslcdhService {
             value2: true,
           }), // los_compas_de_hierro_toluca
           new SelectItemThreeValuesImpl({
-            label: 'Torreón',
+            label: 'Torreón (Coahuila)',
             value: 'los_laguneros_de_hierro',
             value2: true,
           }),
@@ -759,12 +777,32 @@ export class SedeslcdhService {
         ],
       },
       {
+        cell_name: 'los_compas_de_hierro_hn_roatan',
+        details: [
+          {
+            label: 'Estadio Julio Galindo',
+            street: 'Roatán, Islas de la Bahía, Honduras',
+            coords: { lat: 16.3154707, lng: -86.5549687 },
+          },
+        ],
+      },
+      {
         cell_name: 'compas_slp',
         details: [
           {
             label: 'Parque Tangamanga 1',
             street: 'Av. la Troje, Parque Tangamanga I, 78294 San Luis Potosí, S.L.P.',
             coords: { lat: 22.127485, lng: -101.0074534 },
+          },
+        ],
+      },
+      {
+        cell_name: 'los_laguneros_de_hierro',
+        details: [
+          {
+            label: 'Bosque Venustiano Carranza',
+            street: 'Calle C. Juan Pablos col, centro Bosque, 27000 Torreón, Coah.',
+            coords: { lat: 25.541072, lng: -103.4352835 },
           },
         ],
       },
@@ -822,6 +860,71 @@ export class SedeslcdhService {
       },
       {
         cell_name: 'compas_de_hierro_ecuador',
+        details: [
+          {
+            label: 'Fundeporte',
+            street: 'PC8W+H85, Quito 170146, Ecuador',
+            coords: { lat: -0.2840863, lng: -78.5534297 },
+          },
+        ],
+      },
+      {
+        cell_name: 'cdhcuenca',
+        details: [
+          {
+            label: 'Parque de la Madre',
+            street: '3XWW+5JX, Federico Malo, Cuenca 010107, Ecuador',
+            coords: { lat: -2.904257, lng: -79.0047067 },
+          },
+        ],
+      },
+      {
+        cell_name: 'compasdehierroguayaquil',
+        details: [
+          {
+            label: 'Parque Vernaza',
+            street: '1º Cj. 14A NE 5, Guayaquil 090513, Ecuador',
+            coords: { lat: -2.1541396, lng: -79.8944546 },
+          },
+          {
+            label: 'Parque Lineal',
+            street: '70 900, Guayaquil 090615, Ecuador',
+            coords: { lat: -2.1838947, lng: -79.9011006 },
+          },
+        ],
+      },
+      {
+        cell_name: 'cdh.ibarra.ecuador',
+        details: [
+          {
+            label: 'Redondel de "La Madre"',
+            street: 'Av. Mariano Acosta 2018, Ibarra, Ecuador',
+            coords: { lat: 0.347118, lng: -78.1349463 },
+          },
+        ],
+      },
+      {
+        cell_name: 'compas_de_hierro_qvdo_ecu',
+        details: [
+          {
+            label: 'Parque de la Familia',
+            street: 'XG4C+F63, Quevedo, Ecuador',
+            coords: { lat: -1.0440648, lng: -79.4813325 },
+          },
+        ],
+      },
+      {
+        cell_name: 'lcdh.quitonorte',
+        details: [
+          {
+            label: 'Parque La Carolina',
+            street: 'Parque, Quito 170506, Ecuador',
+            coords: { lat: -0.1828671, lng: -78.4860203 },
+          },
+        ],
+      },
+      {
+        cell_name: 'cdh_quitosur',
         details: [
           {
             label: 'Fundeporte',
@@ -932,6 +1035,16 @@ export class SedeslcdhService {
         ],
       },
       {
+        cell_name: 'los_compas_de_hierro_colorado',
+        details: [
+          {
+            label: '5336 DTC Blvd',
+            street: '5336 DTC Blvd, Greenwood Village, CO 80111, EE. UU.',
+            coords: { lat: 39.6171996, lng: -104.89099 },
+          },
+        ],
+      },
+      {
         cell_name: 'compas_de_hierroquetzaltenango',
         details: [
           {
@@ -958,6 +1071,26 @@ export class SedeslcdhService {
             label: 'Parque Piñata',
             street: 'Av 9 de Febrero, Cobija, Bolivia',
             coords: { lat: -11.0301392, lng: -68.7650612 },
+          },
+        ],
+      },
+      {
+        cell_name: 'compas.de.hierro.cochabamba1',
+        details: [
+          {
+            label: 'Parque La Torre',
+            street: 'JV53+FVF, Av. Heroínas, Cochabamba, Bolivia',
+            coords: { lat: -17.3910618, lng: -66.1454071 },
+          },
+        ],
+      },
+      {
+        cell_name: 'compas.de.hierro.lapaz',
+        details: [
+          {
+            label: 'Plaza España',
+            street: 'FVPC+7J2, Victor Sanjinez, La Paz, Bolivia',
+            coords: { lat: -16.514216, lng: -68.1273186 },
           },
         ],
       },
@@ -999,6 +1132,11 @@ export class SedeslcdhService {
             street: 'Bosque de Chapultepec II Secc, Miguel Hidalgo, 11100 Ciudad de México, CDMX',
             coords: { lat: 19.4145354, lng: -99.2031567 },
           },
+          {
+            label: 'Barras del Bosque de San Juan de Aragón',
+            street: 'de San Juan de Aragón, Gustavo A Madero, 07920 Ciudad de México, CDMX',
+            coords: { lat: 19.4591167, lng: -99.0780185 },
+          },
         ],
       },
       {
@@ -1020,6 +1158,16 @@ export class SedeslcdhService {
             street:
               'Gustavo Adolfo Bécquer, Parque los Alcanfores Secc Nte, 76156 Santiago de Querétaro, Qro.',
             coords: { lat: 20.6022462, lng: -100.4046944 },
+          },
+        ],
+      },
+      {
+        cell_name: 'los_compas_de_hierro_chihuahua',
+        details: [
+          {
+            label: 'Ciudad Deportiva',
+            street: 'Calle Pascual Orozco 2750, Magisterial Universidad, 31200 Chihuahua, Chih.',
+            coords: { lat: 28.6600849, lng: -106.0867026 },
           },
         ],
       },
@@ -1149,7 +1297,7 @@ export class SedeslcdhService {
         ],
       },
       {
-        cell_name: 'compas_de_hierro_arg.cordoba',
+        cell_name: 'compas_de_hierro_cordoba',
         details: [
           {
             label: 'Parques de Calistenia en parque Sarmiento',
@@ -1206,6 +1354,26 @@ export class SedeslcdhService {
             label: 'Canchas Panamericanas',
             street: 'Cl. 9 #37 - 00, Eucaristico, Cali, Valle del Cauca, Colombia',
             coords: { lat: 3.4256591, lng: -76.5366609 },
+          },
+        ],
+      },
+      {
+        cell_name: 'estoicos_de_hierro_bogota',
+        details: [
+          {
+            label: 'Parque Urbanización Salitre',
+            street: 'Cl. 43 #66b-2, Bogotá, Colombia',
+            coords: { lat: 4.6500293, lng: -74.1813909 },
+          },
+        ],
+      },
+      {
+        cell_name: 'parceros_de_hierro_ocana',
+        details: [
+          {
+            label: 'Puente del hospital EQC',
+            street: '70, Ocaña, Norte de Santander, Colombia',
+            coords: { lat: 8.2542292, lng: -73.3592781 },
           },
         ],
       },
