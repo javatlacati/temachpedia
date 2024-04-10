@@ -4,7 +4,13 @@ import { RouterModule, type Routes } from '@angular/router';
 import { HomeComponent } from './controllers/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'users',
+    loadChildren: async () =>
+      await import('./controllers/auth/auth.module').then((m) => m.AuthModule),
+  },
+  { path: '', redirectTo: '/users/signin', pathMatch: 'full' },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'search',
     loadChildren: async () =>
@@ -32,7 +38,7 @@ const routes: Routes = [
         (m) => m.AchievementsModule,
       ),
   },
-  { path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '/users/signin' },
 ];
 
 @NgModule({

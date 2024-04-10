@@ -1,0 +1,81 @@
+<p>
+  Este es un sitio para la comunidad del Temach<sup>&copy;</sup> enfocado al estudio y superación
+  personal
+</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+  <div class="pf-col-6">
+    <p-card header="Login">
+      <hr />
+      <p-button icon="pi pi-facebook" [rounded]="true"></p-button>
+      <p-button icon="pi pi-google" [rounded]="true"></p-button>
+      <hr />
+
+      <form #signinForm="ngForm" (keydown.enter)="!signinForm.form.invalid && login()">
+        <div class="pf-col-12">
+          <div class="flex flex-col gap-2,">
+            <label for="email">Correo electrónico</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              pInputText
+              [(ngModel)]="email"
+              required
+              pTooltip="signin"
+            />
+          </div>
+        </div>
+        <div class="pf-col-12">
+          <div class="flex flex-col gap-2,">
+            <div class="pf-grid">
+              <label class="pf-col" for="pwd">Contraseña</label>
+              <p-button
+                class="pf-col"
+                label=" &nbsp;olvidé mi contraseña"
+                [link]="true"
+                (click)="goToPage('users/forgot')"
+              ></p-button>
+            </div>
+            <p-password
+              class="w-full"
+              id="pwd"
+              name="pwd"
+              [(ngModel)]="pwd"
+              [toggleMask]="true"
+              required
+            ></p-password>
+            <p-checkbox
+              class="pf-col-12"
+              name="remember"
+              label="Recordarme"
+              [binary]="true"
+              [(ngModel)]="remember"
+            ></p-checkbox>
+          </div>
+        </div>
+        <p-button
+          label="Iniciar sesión"
+          [disabled]="signinForm.form.invalid"
+          (click)="login()"
+        ></p-button>
+      </form>
+
+      <hr />
+      <br />
+      <div class="pf-col-12">
+        Nuevo
+        <p-button
+          label="signin here"
+          [link]="true"
+          [style]="{ 'line-height': '0px' }"
+          (click)="goToPage('users/signup')"
+        ></p-button>
+        Registrar
+      </div>
+    </p-card>
+  </div>
+
+  <div class="pf-col-6">
+    <p-image width="100%" src="/assets/el temach.webp"></p-image>
+  </div>
+</div>
