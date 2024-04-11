@@ -1,74 +1,23 @@
-<p-card header="Música Alfa">
-  <ul class="grid grid-cols-2">
-    <li class="font-bold p-2">
-      Spotify
-      <ul>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/3Vk13C8zxcHqAqcTZhluj9">Temach</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/7xxj65R3e17WXuZTU67HxR"
-            >White Shit State</a
-          >
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/2h9ZwNdMZcqHKqJisyf1LT">Ruga Kisin</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/55sUDNma3qznDILZgydRHT">Elburguer</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/6DxT9fbm7M0sDGWrPoAzfw">MC Monel</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/6zLfG2qJyi6YbHwsadOXHx">Gacoh</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/02DvUfztcmjLdCFRysedNb"
-            >Muro de Cráneos</a
-          >
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/7g8zxRXsQUdvHRanDbcH18">Mau Gree</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/0yqmgxiFONOUT7zc4wwP1y">Frodiboy</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://open.spotify.com/intl-es/artist/5onAhDbB92khYFxqCzZFSF">MC FD</a>
-        </li>
-      </ul>
-    </li>
-    <li class="font-bold">
-      <span class="pi pi-amazon"></span> Amazon music
-      <ul>
-        <li class="font-normal">
-          <a href="https://music.amazon.com.mx/artists/B09DQ618F3/el-temach">Temach</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://music.amazon.com.mx/artists/B07W3WGK7R/white-shit-state"
-            >White Shit State</a
-          >
-        </li>
-        <li class="font-normal">
-          <a href="https://music.amazon.com.mx/artists/B09XKW23RY/ruga-kisin">Ruga Kisin</a>
-        </li>
-      </ul>
-    </li>
-    <li class="font-bold">
-      <span class="pi pi-youtube"></span> Youtube
-      <ul>
-        <li class="font-normal">
-          <a href="https://music.youtube.com/channel/UCahshm4tJT0c9rJzb7eCKWA">Temach</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://music.youtube.com/channel/UCENkMpmeDiY-dnXDnopeimA">White Shit State</a>
-        </li>
-        <li class="font-normal">
-          <a href="https://music.youtube.com/channel/UCEzlsxrAMoRsvkNGPBO0CBg">Ruga Kisin</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</p-card>
+<nav>
+  <p-card
+    header="Artistas Alfa"
+    subheader="La música de muchos de estos artistas ha llegado a los en vivo del Temach"
+  >
+    <ul class="grid grid-cols-2">
+      <li *ngFor="let platform of musicPlatforms" class="font-bold p-2">
+        <span [ngClass]="platform.icon"></span> {{ platform.name }}
+        <ul>
+          <li *ngFor="let artist of platform.artists" class="font-normal">
+            <a
+              href="{{ artist.url }}"
+              target="_blank"
+              attr.aria-label="Listen to {{ artist.name }} on {{ platform.name }}"
+              >{{ artist.name }}</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </p-card>
+</nav>
 <br />
