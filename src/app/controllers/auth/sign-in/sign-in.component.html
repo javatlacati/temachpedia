@@ -1,0 +1,80 @@
+<p>
+  Este es un sitio para la comunidad del Temach<sup>&copy;</sup> enfocado al estudio y superación
+  personal
+</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+  <div class="col">
+    <p-card header="Iniciar sesión">
+      <hr />
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-1.5 justify-items-center">
+        <span></span>
+        <p-button icon="pi pi-facebook" [rounded]="true" (click)="login()"></p-button>
+        <p-button icon="pi pi-google" [rounded]="true" (click)="login()"></p-button>
+      </div>
+
+      <hr />
+
+      <form #signinForm="ngForm" (keydown.enter)="!signinForm.form.invalid && login()">
+        <div class="flex flex-col gap-2,">
+          <label for="email" class="pb-3">Correo electrónico</label>
+          <input
+            id="email"
+            name="email"
+            type="text"
+            pInputText
+            [(ngModel)]="email"
+            required
+            pTooltip="signin"
+          />
+        </div>
+        <div class="grid grid-cols-1">
+          <div class="grid md:grid-cols-2 justify-items-stretch">
+            <label for="pwd" class="pt-2">Contraseña</label>
+            <p-button
+              class="text-right"
+              label="olvidé mi contraseña"
+              [link]="true"
+              (click)="goToPage('users/forgot')"
+            ></p-button>
+          </div>
+          <p-password
+            id="pwd"
+            styleClass="w-full"
+            name="pwd"
+            [(ngModel)]="pwd"
+            [toggleMask]="true"
+            required
+          ></p-password>
+          <p-checkbox
+            class="pb-3 pt-3"
+            name="remember"
+            label="Recordarme"
+            [binary]="true"
+            [(ngModel)]="remember"
+          ></p-checkbox>
+        </div>
+        <p-button
+          label="Iniciar sesión"
+          [disabled]="signinForm.form.invalid"
+          (click)="login()"
+        ></p-button>
+      </form>
+
+      <hr />
+      <br />
+      <div class="pf-col-12">
+        Registrar
+        <p-button
+          label="Nuevo Usuario"
+          [link]="true"
+          [style]="{ 'line-height': '0px' }"
+          (click)="goToPage('users/signup')"
+        ></p-button>
+      </div>
+    </p-card>
+  </div>
+
+  <div class="pf-col-6">
+    <p-image width="100%" src="/assets/el temach.webp"></p-image>
+  </div>
+</div>
