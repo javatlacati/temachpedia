@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationService } from '../../shared/services/navigation.service';
+import { info } from 'autoprefixer';
 
 @Component({
   selector: 'app-sign-in',
@@ -23,4 +24,6 @@ export class SignInComponent {
     await this.navigationService.goToPage('home');
     return true;
   }
+
+  protected readonly info = info;
 }

@@ -1,22 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import 'primeng/resources/themes/lara-dark-blue/theme.css';
+//@tailwind base;
+//@tailwind components;
+//@tailwind utilities;
+
+//@layer tw-base, primeng, tw-components, tw-utilities, tw-variants;
+@layer primeng, tw-components, tw-utilities, tw-variants;
+
 @import 'primeng/resources/primeng.css';
+@import 'primeng/resources/themes/lara-dark-blue/theme.css';
 @import 'primeicons/primeicons.css';
 @import 'flags';
 @import 'leaflet/dist/leaflet.css';
+@import 'tailwindcss/components.css' layer(tw-components);
+@import 'tailwindcss/utilities.css' layer(tw-utilities);
+@import 'tailwindcss/variants.css' layer(tw-variants);
+//@import "tailwindcss/base.css" layer(tw-base);
 
-@layer tailwind-base, primeng, tailwind-utilities;
+//@layer tw-base {
+//  * {
+//    @apply transition-all duration-300 ease-in-out;
+//  }
+//}
 
-@layer tailwind-base {
-  @tailwind base;
+@layer tw-components {
+  // tailwind component classes here
 }
 
-@layer tailwind-utilities {
-  @tailwind components;
-  @tailwind utilities;
+@layer tw-utilities {
+  // tailwind utitlity classes here
 }
+
+//@layer tailwind-base, primeng, tailwind-utilities;
+
+//@layer tailwind-base {
+//  @tailwind base;
+//}
+//
+//@layer tailwind-utilities {
+//  @tailwind components;
+//  @tailwind utilities;
+//}
 
 body {
   font-family: var(--font-family);
@@ -62,9 +84,13 @@ iframe {
 }
 
 //.p-toast .p-toast-message.p-toast-message-info {
-.p-toast-message-content {
-  background: var(--maskbg) !important;
-  color: darkgray !important;
+//.p-toast-message-content {
+//  background: var(--maskbg) !important;
+//  color: darkgray !important;
+//}
+
+.p-password-input {
+  width: 100% !important;
 }
 
 @media (min-width: 1250px) {
