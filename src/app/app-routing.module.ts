@@ -38,6 +38,11 @@ const routes: Routes = [
         (m) => m.AchievementsModule,
       ),
   },
+  {
+    path: 'library',
+    loadChildren: async () =>
+      await import('./controllers/library/library.module').then((m) => m.LibraryModule),
+  },
   { path: '**', redirectTo: '/users/signin' },
 ];
 
