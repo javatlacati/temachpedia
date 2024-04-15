@@ -18,7 +18,9 @@ const routes: Routes = [
   },
   { path: 'home', component: HomeComponent },
   {
-    path: 'community', loadChildren: () => import('./quiz/quiz.module').then(module => module.QuizModule),
+    path: 'quiz',
+    loadChildren: async () =>
+      await import('./controllers/quiz/quiz.module').then((module) => module.QuizModule),
   },
   {
     path: 'lyrics',
