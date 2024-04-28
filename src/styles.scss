@@ -5,8 +5,9 @@
 //@layer tw-base, primeng, tw-components, tw-utilities, tw-variants;
 @layer primeng, tw-components, tw-utilities, tw-variants;
 
-@import 'primeng/resources/primeng.css';
-@import 'primeng/resources/themes/lara-dark-blue/theme.css';
+@import 'primeng/resources/themes/aura-dark-blue/theme.css' layer(primeng);
+@import 'primeng/resources/primeng.min.css' layer(primeng);
+//@import 'primeng/resources/themes/arya-purple/theme.css' layer(primeng);
 @import 'primeicons/primeicons.css';
 @import 'flags';
 @import 'leaflet/dist/leaflet.css';
@@ -112,7 +113,7 @@ iframe {
     color: #f9e9fb;
 
     .p-card-subtitle {
-      color: var(--primary-color-text);
+      color: var(--text-color-secondary);
       text-shadow: 2px 1px var(--maskbg);
     }
   }
