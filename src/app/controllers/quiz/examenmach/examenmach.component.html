@@ -1,0 +1,42 @@
+<p-card header="{{ item?.surveyTemplateId }}">
+  <form (ngSubmit)="guardarEncuesta(forma)" #forma="ngForm">
+    <div *ngFor="let section of item?.sections; let sectionIndex = index">
+      <h2>{{ section.name }}</h2>
+      <div *ngFor="let question of section.questions; let questionIndex = index">
+        <div [ngSwitch]="question.type">
+          <div *ngSwitchCase="'OPEN'">
+            <label [for]="section.sectionId + '_' + question.questionId" class="pb-3">{{
+              question.statement
+            }}</label>
+            <input
+              [id]="section.sectionId + '_' + question.questionId"
+              [name]="section.sectionId + '_' + question.questionId"
+              type="text"
+              pInputText
+              [(ngModel)]="userResponses[sectionIndex][questionIndex]"
+              required
+              pTooltip="ingrese su respuesta como texto"
+            />
+          </div>
+          <div *ngSwitchCase="'MULTIPLE_OPTION'">
+            {{ question.statement }}
+            <p-dropdown
+              [options]="getOptions(question)"
+              [(ngModel)]="userResponses[sectionIndex][questionIndex]"
+              name="question_{{ sectionIndex }}"
+              [showClear]="true"
+            ></p-dropdown>
+          </div>
+          <div *ngSwitchCase="'DATE'">
+            {{ question.statement }}
+            <p-calendar
+              [(ngModel)]="userResponses[sectionIndex][questionIndex]"
+              dateFormat="dd/M"
+            ></p-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <h2>Resultados</h2>
+</p-card>

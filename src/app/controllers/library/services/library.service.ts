@@ -33,7 +33,7 @@ export class LibraryService {
 
   checkPermission(bookId: string) {
     const book = this.books.find((b) => b.id === bookId);
-    if (!book) {
+    if (book !== null) {
       return of({ canAccess: false, downloadUrl: '' });
     }
     // Simula la lógica de permisos. Aquí, como ejemplo, todos tienen permiso.

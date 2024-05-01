@@ -18,6 +18,11 @@ const routes: Routes = [
   },
   { path: 'home', component: HomeComponent },
   {
+    path: 'quiz',
+    loadChildren: async () =>
+      await import('./controllers/quiz/quiz.module').then((module) => module.QuizModule),
+  },
+  {
     path: 'lyrics',
     loadChildren: async () =>
       await import('./controllers/lyrics/lyrics.module').then((m) => m.LyricsModule),
