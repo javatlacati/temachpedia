@@ -12,6 +12,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    extraFileExtensions: ['.html'],
   },
   rules: {
     // add here rules that you don't want see on the repo
@@ -21,5 +22,7 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'warn',
     '@typescript-eslint/no-useless-constructor': 'warn',
     '@typescript-eslint/consistent-type-imports': OFF,
+    'linebreak-style': ['error', 'windows'],
   },
+  plugins: ['html'],
 };
