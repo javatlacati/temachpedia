@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { Book } from '../model/Book';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LibraryService {
-  books: any[] = [
+  books: Book[] = [
     {
       id: '1',
       title: 'Cuestión de Vida',
@@ -15,7 +16,7 @@ export class LibraryService {
     },
   ];
 
-  searchBooksByTitle(title: string) {
+  searchBooksByTitle(title: string): Observable<Book[]> {
     const lowerCaseTitle = title.toLowerCase();
     const filteredBooks = this.books.filter((book) =>
       book.title.toLowerCase().includes(lowerCaseTitle),
@@ -23,7 +24,7 @@ export class LibraryService {
     return of(filteredBooks);
   }
 
-  searchBooksByAuthor(author: string) {
+  searchBooksByAuthor(author: string): Observable<Book[]> {
     const lowerCaseAuthor = author.toLowerCase();
     const filteredBooks = this.books.filter((book) =>
       book.authors.some((a: string) => a.toLowerCase().includes(lowerCaseAuthor)),
@@ -33,14 +34,15 @@ export class LibraryService {
 
   checkPermission(bookId: string) {
     const book = this.books.find((b) => b.id === bookId);
-    if (book !== null) {
+    if (book === undefined) {
       return of({ canAccess: false, downloadUrl: '' });
+    } else {
+      // Simula la lógica de permisos. Aquí, como ejemplo, todos tienen permiso.
+      return of({ canAccess: true, downloadUrl: book.downloadUrl });
     }
-    // Simula la lógica de permisos. Aquí, como ejemplo, todos tienen permiso.
-    return of({ canAccess: true, downloadUrl: book.downloadUrl });
   }
 
-  requestBook(bookId: string) {
+  requestBook(bookId: string): Observable<number> {
     // Simula el envío de una solicitud para acceder a un libro.
     console.log(`Solicitud enviada para el libro con ID: ${bookId}`);
     return of(0);

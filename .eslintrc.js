@@ -24,5 +24,5 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': OFF,
     'linebreak-style': ['error', 'windows'],
   },
-  plugins: ['html'],
+  plugins: ['html', 'eslint-plugin-html'],
 };
