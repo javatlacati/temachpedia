@@ -89,7 +89,7 @@ export class SedeslcdhService {
           new SelectItemThreeValuesImpl({
             label: 'Cobija',
             value: 'los_compas_de_hierro_amazonics',
-            value2: true,
+            value2: false,
           }),
           new SelectItemThreeValuesImpl({
             label: 'Cochabamba',
