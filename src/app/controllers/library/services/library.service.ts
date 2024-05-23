@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Book } from '../model/Book';
+import { Author, Book } from '../model/Book';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ export class LibraryService {
     {
       id: '1',
       title: 'Cuestión de Vida',
-      authors: ['White Shit State', 'Ruga Kisin'],
+      authors: [{ name: 'White Shit State' }, { name: 'Ruga Kisin' }],
       downloadUrl:
         'https://diarioistmo.blob.core.windows.net.optimalcdn.com/docs/2023/12/14/puco1214_01_1702559543048.pdf',
     },
@@ -27,7 +27,7 @@ export class LibraryService {
   searchBooksByAuthor(author: string): Observable<Book[]> {
     const lowerCaseAuthor = author.toLowerCase();
     const filteredBooks = this.books.filter((book) =>
-      book.authors.some((a: string) => a.toLowerCase().includes(lowerCaseAuthor)),
+      book.authors.some((a: Author) => a.name.toLowerCase().includes(lowerCaseAuthor)),
     );
     return of(filteredBooks);
   }
