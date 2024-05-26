@@ -12,10 +12,9 @@ import { environment } from 'src/environments/environment';
 export class SedeslcdhService {
   private readonly _groupedCities: Observable<SelectItemGroupThreeValues[]>;
   private readonly _locations: Observable<CellLocation[]>;
-
   constructor(private readonly httpClient: HttpClient) {
     this._groupedCities = this.httpClient
-      .get<SelectItemGroupThreeValues[]>(`${environment.dataApi}/grouped_cities`)
+      .get<SelectItemGroupThreeValues[]>('http://localhost/api/grouped_cities')
       .pipe(
         map((groups) =>
           groups.map((group) => ({
