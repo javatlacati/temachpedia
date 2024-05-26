@@ -15,7 +15,7 @@ import { type LatLngExpression } from 'leaflet';
 })
 export class CompasDeHierroComponent {
   selectedCity: City | null = null;
-  groupedCities!: SelectItemGroupThreeValues[];
+  groupedCities: SelectItemGroupThreeValues[] = [];
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];
   redes: MenuItem[] = [
@@ -50,7 +50,7 @@ export class CompasDeHierroComponent {
     private readonly messageService: MessageService,
   ) {
     this.locations = sedesService.locations;
-    this.groupedCities = sedesService.groupedCities;
+    sedesService._groupedCities.subscribe((value) => (this.groupedCities = value));
   }
 
   initMarkers() {
