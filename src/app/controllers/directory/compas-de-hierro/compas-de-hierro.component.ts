@@ -17,6 +17,7 @@ import { type LatLngExpression } from 'leaflet';
 export class CompasDeHierroComponent {
   selectedCity: City | null = null;
   groupedCities: SelectItemGroupThreeValues[] = [];
+  locations: CellLocation[] = [];
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];
   redes: MenuItem[] = [
@@ -44,22 +45,19 @@ export class CompasDeHierroComponent {
     center: { lat: 19.456492, lng: -99.1636326 }, // en caso de no permitir compartir la ubicación el mapa se iniciará en estas coordenadas
   };
 
-  private readonly locations!: CellLocation[];
-
   constructor(
     private readonly sedesService: SedeslcdhService,
     private readonly messageService: MessageService,
   ) {
-    this.locations = sedesService.locations;
-    sedesService._groupedCities.subscribe((value) => (this.groupedCities = value));
+    sedesService.getLocations().subscribe((value) => (this.locations = value));
   }
 
   initMarkers() {
     for (let index = 0; index < this.locations.length; index++) {
       const data = this.locations[index];
-      for (let j = 0; j < data.details.length; j++) {
-        const cellDetail = data.details[j];
-        const marker = this.generateMarker(cellDetail.coords, index);
+      for (let j = 0; j < data.cell_details.length; j++) {
+        const cellDetail = data.cell_details[j];
+        const marker = this.generateMarker(cellDetail.lat_lng_expression, index);
         const content = this.generateMarkerContent(data, cellDetail);
         marker.addTo(this.map).bindPopup(content);
         this.markers.push(marker);
@@ -87,7 +85,10 @@ export class CompasDeHierroComponent {
     });
 
     this.map = $event;
-    this.initMarkers();
+    this.sedesService.getGroupedCities().subscribe((value) => {
+      this.groupedCities = value;
+      this.initMarkers();
+    });
   }
 
   showMenu(menu: ContextMenu, $event: MouseEvent) {
@@ -108,7 +109,7 @@ export class CompasDeHierroComponent {
   muestraUbicacion() {
     const latlng = this.locations.find(
       (cellLocation) => cellLocation.cell_name === this.selectedCity?.value,
-    )?.details[0].coords;
+    )?.cell_details[0].lat_lng_expression;
     if (latlng != null) {
       this.map.panTo(latlng);
     } else {
