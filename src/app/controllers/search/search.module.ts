@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { PaginatorModule } from 'primeng/paginator';
@@ -19,8 +19,7 @@ import { SearchComponent } from './search.component';
     ButtonModule,
     ToastModule,
     InputTextModule,
-    HttpClientModule,
   ],
-  providers: [],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class SearchModule {}
