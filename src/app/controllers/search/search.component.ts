@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
 
   searchForText() {
     if (this.searchQuery.length > 4) {
-      this.transcriptionService.getTransriptForWord(this.searchQuery).subscribe((value) => {
+      this.transcriptionService.getTranscriptForWord(this.searchQuery).subscribe((value) => {
         // console.log(JSON.stringify(value));
         this.matches = value;
         if (this.matches.length > 0) {
