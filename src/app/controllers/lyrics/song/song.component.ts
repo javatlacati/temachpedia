@@ -14,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-song',
   templateUrl: './song.component.html',
   styleUrls: ['./song.component.scss'],
+  standalone: false,
 })
 export class SongComponent implements AfterViewInit, OnDestroy {
   song: Lyric | undefined;

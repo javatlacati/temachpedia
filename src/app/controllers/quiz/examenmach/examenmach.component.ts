@@ -12,6 +12,7 @@ import { SurveyService } from '../services/survey.service';
   selector: 'app-examenmach',
   templateUrl: './examenmach.component.html',
   styleUrls: ['./examenmach.component.scss'],
+  standalone: false,
 })
 export class ExamenmachComponent implements OnInit {
   item: SurveyTemplate | null = null;

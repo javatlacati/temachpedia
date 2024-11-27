@@ -4,7 +4,6 @@ import { NgClass, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-music-platforms',
-  standalone: true,
   imports: [CardModule, NgClass, NgFor],
   templateUrl: './music-platforms.component.html',
   styleUrl: './music-platforms.component.scss',

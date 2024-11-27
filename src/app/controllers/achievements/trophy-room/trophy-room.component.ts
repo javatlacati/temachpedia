@@ -4,6 +4,7 @@ import { Component, Renderer2 } from '@angular/core';
   selector: 'app-trophy-room',
   templateUrl: './trophy-room.component.html',
   styleUrls: ['./trophy-room.component.scss'],
+  standalone: false,
 })
 export class TrophyRoomComponent {
   layout: 'grid' | 'list' = 'list';

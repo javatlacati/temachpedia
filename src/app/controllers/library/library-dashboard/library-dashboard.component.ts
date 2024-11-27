@@ -5,6 +5,7 @@ import { LibraryService } from '../services/library.service';
   selector: 'app-library-dashboard',
   templateUrl: './library-dashboard.component.html',
   styleUrl: './library-dashboard.component.scss',
+  standalone: false,
 })
 export class LibraryDashboardComponent {
   books: any[] = []; // Para almacenar los libros obtenidos

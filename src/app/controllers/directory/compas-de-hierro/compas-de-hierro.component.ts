@@ -12,6 +12,7 @@ import { type LatLngExpression } from 'leaflet';
   selector: 'app-compas-de-hierro',
   templateUrl: './compas-de-hierro.component.html',
   styleUrls: ['./compas-de-hierro.component.scss'],
+  standalone: false,
 })
 export class CompasDeHierroComponent {
   selectedCity: City | null = null;

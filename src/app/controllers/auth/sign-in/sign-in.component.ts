@@ -8,6 +8,7 @@ import { info } from 'autoprefixer';
   // imports: [],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
+  standalone: false,
 })
 export class SignInComponent {
   email: any;

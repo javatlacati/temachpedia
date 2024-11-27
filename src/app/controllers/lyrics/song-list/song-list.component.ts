@@ -6,6 +6,7 @@ import { LyricsService } from '../services/lyrics.service';
   selector: 'app-song-list',
   templateUrl: './song-list.component.html',
   styleUrls: ['./song-list.component.scss'],
+  standalone: false,
 })
 export class SongListComponent {
   lyrics: Lyric[] = [];
