@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Author, Book } from '../model/Book';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class LibraryService {
   books: Book[] = [];
 
   constructor(http: HttpClient) {
-    http.get<Book[]>('http://localhost/api/books').subscribe((books) => {
+    http.get<Book[]>(`${environment.dataApi}/books`).subscribe((books) => {
       this.books = books;
     });
   }

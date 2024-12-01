@@ -4,6 +4,7 @@ import { type CellLocation } from '../model/CellLocation';
 import { SelectItemThreeValuesImpl } from '../model/SelectItemThreeValues';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +12,10 @@ import { map, Observable } from 'rxjs';
 export class SedeslcdhService {
   private readonly _groupedCities: Observable<SelectItemGroupThreeValues[]>;
   private readonly _locations: Observable<CellLocation[]>;
+
   constructor(private readonly httpClient: HttpClient) {
     this._groupedCities = this.httpClient
-      .get<SelectItemGroupThreeValues[]>('http://localhost/api/grouped_cities')
+      .get<SelectItemGroupThreeValues[]>(`${environment.dataApi}/grouped_cities`)
       .pipe(
         map((groups) =>
           groups.map((group) => ({
@@ -31,7 +33,7 @@ export class SedeslcdhService {
         ),
       );
 
-    this._locations = this.httpClient.get<CellLocation[]>('http://localhost/api/cell_locations');
+    this._locations = this.httpClient.get<CellLocation[]>(`${environment.dataApi}/cell_locations`);
   }
 
   public getGroupedCities(): Observable<SelectItemGroupThreeValues[]> {
