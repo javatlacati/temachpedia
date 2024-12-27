@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Author, Book } from '../model/Book';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LibraryService {
-  books: Book[] = [
-    {
-      id: '1',
-      title: 'Cuestión de Vida',
-      authors: [{ name: 'White Shit State' }, { name: 'Ruga Kisin' }],
-      downloadUrl:
-        'https://diarioistmo.blob.core.windows.net.optimalcdn.com/docs/2023/12/14/puco1214_01_1702559543048.pdf',
-    },
-  ];
+  books: Book[] = [];
+
+  constructor(http: HttpClient) {
+    http.get<Book[]>(`${environment.dataApi}/books`).subscribe((books) => {
+      this.books = books;
+    });
+  }
 
   searchBooksByTitle(title: string): Observable<Book[]> {
     const lowerCaseTitle = title.toLowerCase();

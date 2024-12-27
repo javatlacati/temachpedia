@@ -54,7 +54,9 @@
       <ng-template pTemplate="body" let-book>
         <tr>
           <td>{{ book.title }}</td>
-          <td>{{ book.authors }}</td>
+          <td>
+            <span *ngFor="let author of book.authors">{{ author.name }}&nbsp;</span>
+          </td>
           <td>
             <button
               pButton
