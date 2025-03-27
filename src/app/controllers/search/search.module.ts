@@ -8,9 +8,9 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { SearchComponent } from './search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [SearchComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: SearchComponent }]),
@@ -19,6 +19,8 @@ import { SearchComponent } from './search.component';
     ButtonModule,
     ToastModule,
     InputTextModule,
+    FormsModule,
+    SearchComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
 })

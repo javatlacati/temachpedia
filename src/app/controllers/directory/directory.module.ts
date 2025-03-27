@@ -6,7 +6,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { DirectoryComponent } from './directory.component';
 import { CompasDeHierroComponent } from './compas-de-hierro/compas-de-hierro.component';
 import { FormsModule } from '@angular/forms';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import { OfficialAccountsComponent } from './official-accounts/official-accounts.component';
 import { ImageModule } from 'primeng/image';
 import { ContextMenuModule } from 'primeng/contextmenu';
@@ -14,7 +14,6 @@ import { ToastModule } from 'primeng/toast';
 import { MusicPlatformsComponent } from './music-platforms/music-platforms.component';
 
 @NgModule({
-  declarations: [DirectoryComponent, CompasDeHierroComponent, OfficialAccountsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: DirectoryComponent }]),
@@ -26,6 +25,9 @@ import { MusicPlatformsComponent } from './music-platforms/music-platforms.compo
     ContextMenuModule,
     ToastModule,
     MusicPlatformsComponent,
+    DirectoryComponent,
+    CompasDeHierroComponent,
+    OfficialAccountsComponent,
   ],
 })
 export class DirectoryModule {}

@@ -10,7 +10,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
-  declarations: [ExamenmachComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
@@ -25,6 +24,7 @@ import { CalendarModule } from 'primeng/calendar';
     TooltipModule,
     DropdownModule,
     CalendarModule,
+    ExamenmachComponent,
   ],
 })
 export class QuizModule {}

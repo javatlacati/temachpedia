@@ -10,7 +10,6 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 @NgModule({
-  declarations: [LibraryDashboardComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: LibraryDashboardComponent }]),
@@ -20,6 +19,7 @@ import { CardModule } from 'primeng/card';
     FormsModule,
     ButtonModule,
     CardModule,
+    LibraryDashboardComponent,
   ],
 })
 export class LibraryModule {}

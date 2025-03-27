@@ -14,6 +14,7 @@
               type="text"
               pInputText
               [(ngModel)]="userResponses[sectionIndex][questionIndex]"
+              [ngModelOptions]="{ standalone: true }"
               required
               pTooltip="ingrese su respuesta como texto"
             />
@@ -23,6 +24,7 @@
             <p-dropdown
               [options]="getOptions(question)"
               [(ngModel)]="userResponses[sectionIndex][questionIndex]"
+              [ngModelOptions]="{ standalone: true }"
               name="question_{{ sectionIndex }}"
               [showClear]="true"
             ></p-dropdown>
@@ -31,6 +33,7 @@
             {{ question.statement }}
             <p-calendar
               [(ngModel)]="userResponses[sectionIndex][questionIndex]"
+              [ngModelOptions]="{ standalone: true }"
               dateFormat="dd/M"
             ></p-calendar>
           </div>

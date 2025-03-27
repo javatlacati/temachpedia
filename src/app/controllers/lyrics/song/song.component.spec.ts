@@ -1,6 +1,7 @@
 import { type ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SongComponent } from './song.component';
+import { provideRouter } from '@angular/router';
 
 describe('SongComponent', () => {
   let component: SongComponent;
@@ -8,7 +9,8 @@ describe('SongComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SongComponent],
+      imports: [SongComponent],
+      providers: [provideRouter([])],
     });
     fixture = TestBed.createComponent(SongComponent);
     component = fixture.componentInstance;
