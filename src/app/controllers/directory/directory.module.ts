@@ -6,7 +6,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { DirectoryComponent } from './directory.component';
 import { CompasDeHierroComponent } from './compas-de-hierro/compas-de-hierro.component';
 import { FormsModule } from '@angular/forms';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import { OfficialAccountsComponent } from './official-accounts/official-accounts.component';
 import { ImageModule } from 'primeng/image';
 import { ContextMenuModule } from 'primeng/contextmenu';
