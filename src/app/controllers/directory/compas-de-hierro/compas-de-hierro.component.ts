@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
-import { type MenuItem, MessageService } from 'primeng/api';
+import { type MenuItem, MessageService, PrimeTemplate } from 'primeng/api';
 import * as Leaflet from 'leaflet';
-import { type ContextMenu } from 'primeng/contextmenu';
+import { type ContextMenu, ContextMenu as ContextMenu_1 } from 'primeng/contextmenu';
 import { type SelectItemGroupThreeValues } from './model/SelectItemGroupThreeValues';
 import { type City } from './model/city';
 import { type CellDetails, type CellLocation } from './model/CellLocation';
 import { SedeslcdhService } from './services/sedeslcdh.service';
 import { type LatLngExpression } from 'leaflet';
+import { Card } from 'primeng/card';
+import { Toast } from 'primeng/toast';
+import { Listbox } from 'primeng/listbox';
+import { FormsModule } from '@angular/forms';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 @Component({
   selector: 'app-compas-de-hierro',
   templateUrl: './compas-de-hierro.component.html',
   styleUrls: ['./compas-de-hierro.component.scss'],
-  standalone: false,
+  imports: [Card, Toast, Listbox, FormsModule, PrimeTemplate, ContextMenu_1, LeafletModule],
 })
 export class CompasDeHierroComponent {
   selectedCity: City | null = null;

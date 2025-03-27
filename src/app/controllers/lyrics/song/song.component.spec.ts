@@ -8,7 +8,7 @@ describe('SongComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SongComponent],
+      imports: [SongComponent],
     });
     fixture = TestBed.createComponent(SongComponent);
     component = fixture.componentInstance;

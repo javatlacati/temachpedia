@@ -12,7 +12,6 @@ import { TooltipModule } from 'primeng/tooltip';
 import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  declarations: [SignInComponent],
   imports: [
     CommonModule,
     ImageModule,
@@ -24,6 +23,7 @@ import { InputTextModule } from 'primeng/inputtext';
     TooltipModule,
     InputTextModule,
     RouterModule.forChild([{ path: 'signin', component: SignInComponent }]),
+    SignInComponent,
   ],
 })
 export class AuthModule {}

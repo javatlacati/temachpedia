@@ -4,15 +4,31 @@ import { MultipleOptionQuestion } from '../model/MultipleOptionQuestion';
 import { Question } from '../model/Question';
 import { AnswerData } from '../model/AnswerData';
 import { Answer } from '../model/Answer';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormsModule } from '@angular/forms';
 import { Survey } from '../model/Survey';
 import { SurveyService } from '../services/survey.service';
+import { Card } from 'primeng/card';
+import { NgFor, NgSwitch, NgSwitchCase } from '@angular/common';
+import { InputText } from 'primeng/inputtext';
+import { Tooltip } from 'primeng/tooltip';
+import { DropdownModule } from 'primeng/dropdown';
+import { Calendar } from 'primeng/calendar';
 
 @Component({
   selector: 'app-examenmach',
   templateUrl: './examenmach.component.html',
   styleUrls: ['./examenmach.component.scss'],
-  standalone: false,
+  imports: [
+    Card,
+    FormsModule,
+    NgFor,
+    NgSwitch,
+    NgSwitchCase,
+    InputText,
+    Tooltip,
+    DropdownModule,
+    Calendar,
+  ],
 })
 export class ExamenmachComponent implements OnInit {
   item: SurveyTemplate | null = null;

@@ -8,7 +8,7 @@ describe('DirectoryComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DirectoryComponent],
+      imports: [DirectoryComponent],
     });
     fixture = TestBed.createComponent(DirectoryComponent);
     component = fixture.componentInstance;

@@ -8,7 +8,7 @@ describe('TrophyRoomComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TrophyRoomComponent],
+      imports: [TrophyRoomComponent],
     });
     fixture = TestBed.createComponent(TrophyRoomComponent);
     component = fixture.componentInstance;

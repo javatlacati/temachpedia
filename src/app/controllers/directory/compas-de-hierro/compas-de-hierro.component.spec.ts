@@ -8,7 +8,7 @@ describe('CompasDeHierroComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CompasDeHierroComponent],
+      imports: [CompasDeHierroComponent],
     });
     fixture = TestBed.createComponent(CompasDeHierroComponent);
     component = fixture.componentInstance;

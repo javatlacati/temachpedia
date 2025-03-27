@@ -9,7 +9,6 @@ import { CarouselModule } from 'primeng/carousel';
 import { ChipModule } from 'primeng/chip';
 
 @NgModule({
-  declarations: [TrophyRoomComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: TrophyRoomComponent }]),
@@ -18,6 +17,7 @@ import { ChipModule } from 'primeng/chip';
     ButtonModule,
     CarouselModule,
     ChipModule,
+    TrophyRoomComponent,
   ],
 })
 export class AchievementsModule {}

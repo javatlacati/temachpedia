@@ -8,7 +8,6 @@ import { CardModule } from 'primeng/card';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
-  declarations: [SongListComponent, SongComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
@@ -17,6 +16,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     ]),
     YouTubePlayerModule,
     CardModule,
+    SongListComponent,
+    SongComponent,
   ],
 })
 export class LyricsModule {}

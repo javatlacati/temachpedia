@@ -8,7 +8,7 @@ describe('OfficialAccountsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OfficialAccountsComponent],
+      imports: [OfficialAccountsComponent],
     });
     fixture = TestBed.createComponent(OfficialAccountsComponent);
     component = fixture.componentInstance;

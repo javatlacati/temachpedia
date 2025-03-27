@@ -7,13 +7,13 @@ import { InplaceModule } from 'primeng/inplace';
 import { PanelModule } from 'primeng/panel';
 
 @NgModule({
-  declarations: [FaqComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: FaqComponent }]),
     CardModule,
     InplaceModule,
     PanelModule,
+    FaqComponent,
   ],
 })
 export class FaqModule {}

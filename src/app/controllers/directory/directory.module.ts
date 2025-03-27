@@ -14,7 +14,6 @@ import { ToastModule } from 'primeng/toast';
 import { MusicPlatformsComponent } from './music-platforms/music-platforms.component';
 
 @NgModule({
-  declarations: [DirectoryComponent, CompasDeHierroComponent, OfficialAccountsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: DirectoryComponent }]),
@@ -26,6 +25,9 @@ import { MusicPlatformsComponent } from './music-platforms/music-platforms.compo
     ContextMenuModule,
     ToastModule,
     MusicPlatformsComponent,
+    DirectoryComponent,
+    CompasDeHierroComponent,
+    OfficialAccountsComponent,
   ],
 })
 export class DirectoryModule {}

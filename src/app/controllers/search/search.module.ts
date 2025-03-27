@@ -11,7 +11,6 @@ import { SearchComponent } from './search.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [SearchComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: SearchComponent }]),
@@ -21,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     ToastModule,
     InputTextModule,
     FormsModule,
+    SearchComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
 })

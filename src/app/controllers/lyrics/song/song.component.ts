@@ -9,12 +9,15 @@ import {
 import { LyricsService } from '../services/lyrics.service';
 import { Lyric } from '../model/Lyric';
 import { ActivatedRoute } from '@angular/router';
+import { Card } from 'primeng/card';
+import { YouTubePlayer } from '@angular/youtube-player';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-song',
   templateUrl: './song.component.html',
   styleUrls: ['./song.component.scss'],
-  standalone: false,
+  imports: [Card, YouTubePlayer, NgFor, NgIf],
 })
 export class SongComponent implements AfterViewInit, OnDestroy {
   song: Lyric | undefined;
