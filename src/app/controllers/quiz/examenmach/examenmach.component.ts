@@ -11,14 +11,14 @@ import { Card } from 'primeng/card';
 
 import { InputText } from 'primeng/inputtext';
 import { Tooltip } from 'primeng/tooltip';
-import { DropdownModule } from 'primeng/dropdown';
-import { Calendar } from 'primeng/calendar';
+import { Select } from 'primeng/select';
+import { DatePicker } from 'primeng/datepicker';
 
 @Component({
   selector: 'app-examenmach',
   templateUrl: './examenmach.component.html',
   styleUrls: ['./examenmach.component.scss'],
-  imports: [Card, FormsModule, InputText, Tooltip, DropdownModule, Calendar],
+  imports: [Card, FormsModule, InputText, Tooltip, Select, DatePicker],
 })
 export class ExamenmachComponent implements OnInit {
   item: SurveyTemplate | null = null;

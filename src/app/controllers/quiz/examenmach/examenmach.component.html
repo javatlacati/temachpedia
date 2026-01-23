@@ -27,23 +27,23 @@
                 @case ('MULTIPLE_OPTION') {
                   <div>
                     {{ question.statement }}
-                    <p-dropdown
+                    <p-select
                       [options]="getOptions(question)"
                       [(ngModel)]="userResponses[sectionIndex][questionIndex]"
                       [ngModelOptions]="{ standalone: true }"
                       name="question_{{ sectionIndex }}"
                       [showClear]="true"
-                    ></p-dropdown>
+                    ></p-select>
                   </div>
                 }
                 @case ('DATE') {
                   <div>
                     {{ question.statement }}
-                    <p-calendar
+                    <p-date-picker
                       [(ngModel)]="userResponses[sectionIndex][questionIndex]"
                       [ngModelOptions]="{ standalone: true }"
                       dateFormat="dd/M"
-                    ></p-calendar>
+                    ></p-date-picker>
                   </div>
                 }
               }
