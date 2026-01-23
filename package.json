@@ -23,7 +23,7 @@
     "@angular/router": "^20.3.16",
     "@angular/service-worker": "^20.3.16",
     "@angular/youtube-player": "^20.2.14",
-    "@bluehalo/ngx-leaflet": "^19.0.0",
+    "@bluehalo/ngx-leaflet": "^20.0.0",
     "@primeng/themes": "^19.0.10",
     "leaflet": "^1.9.4",
     "primeicons": "^7.0.0",
