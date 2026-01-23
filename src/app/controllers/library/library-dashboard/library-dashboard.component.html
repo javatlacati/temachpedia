@@ -42,40 +42,48 @@
     </div>
   </form>
 
-  <div *ngIf="books.length > 0" class="pt-2">
-    <p-table [value]="books">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Título</th>
-          <th>Autores</th>
-          <th>Acciones</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-book>
-        <tr>
-          <td>{{ book.title }}</td>
-          <td>
-            <span *ngFor="let author of book.authors">{{ author.name }}&nbsp;</span>
-          </td>
-          <td>
-            <button
-              pButton
-              type="button"
-              label="Abrir/Solicitar"
-              (click)="openOrRequestBook(book.id)"
-              class="p-button-success"
-            ></button>
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
+  @if (books.length > 0) {
+    <div class="pt-2">
+      <p-table [value]="books">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Título</th>
+            <th>Autores</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-book>
+          <tr>
+            <td>{{ book.title }}</td>
+            <td>
+              @for (author of book.authors; track author) {
+                <span>{{ author.name }}&nbsp;</span>
+              }
+            </td>
+            <td>
+              <button
+                pButton
+                type="button"
+                label="Abrir/Solicitar"
+                (click)="openOrRequestBook(book.id)"
+                class="p-button-success"
+              ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  }
 
-  <div *ngIf="books.length == 0" class="pt-2">
-    <p-card header="No se hallaron resultados"></p-card>
-  </div>
+  @if (books.length == 0) {
+    <div class="pt-2">
+      <p-card header="No se hallaron resultados"></p-card>
+    </div>
+  }
 
-  <div *ngIf="errorMessage" class="p-mt-4">
-    <p-message severity="danger" text="{{ errorMessage }}"></p-message>
-  </div>
+  @if (errorMessage) {
+    <div class="p-mt-4">
+      <p-message severity="danger" text="{{ errorMessage }}"></p-message>
+    </div>
+  }
 </p-card>

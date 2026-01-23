@@ -4,19 +4,23 @@
     subheader="La música de muchos de estos artistas ha llegado a los en vivo del Temach"
   >
     <ul class="grid grid-cols-2">
-      <li *ngFor="let platform of musicPlatforms" class="font-bold p-2">
-        <span [ngClass]="platform.icon"></span> {{ platform.name }}
-        <ul>
-          <li *ngFor="let artist of platform.artists" class="font-normal">
-            <a
-              href="{{ artist.url }}"
-              target="_blank"
-              attr.aria-label="Listen to {{ artist.name }} on {{ platform.name }}"
-              >{{ artist.name }}</a
-            >
-          </li>
-        </ul>
-      </li>
+      @for (platform of musicPlatforms; track platform) {
+        <li class="font-bold p-2">
+          <span [ngClass]="platform.icon"></span> {{ platform.name }}
+          <ul>
+            @for (artist of platform.artists; track artist) {
+              <li class="font-normal">
+                <a
+                  href="{{ artist.url }}"
+                  target="_blank"
+                  attr.aria-label="Listen to {{ artist.name }} on {{ platform.name }}"
+                  >{{ artist.name }}</a
+                >
+              </li>
+            }
+          </ul>
+        </li>
+      }
     </ul>
   </p-card>
 </nav>

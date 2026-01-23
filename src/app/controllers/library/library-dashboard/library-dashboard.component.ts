@@ -4,7 +4,7 @@ import { Card } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
 import { InputText } from 'primeng/inputtext';
 import { Button, ButtonDirective } from 'primeng/button';
-import { NgIf, NgFor } from '@angular/common';
+
 import { TableModule } from 'primeng/table';
 import { PrimeTemplate } from 'primeng/api';
 import { Message } from 'primeng/message';
@@ -19,10 +19,8 @@ import { Message } from 'primeng/message';
     InputText,
     Button,
     ButtonDirective,
-    NgIf,
     TableModule,
     PrimeTemplate,
-    NgFor,
     Message,
   ],
 })

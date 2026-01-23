@@ -11,20 +11,25 @@
     </youtube-player>
   </div>
   <br />
-  <div *ngFor="let paragraph of song?.paragraphs">
-    <div *ngFor="let verse of paragraph.verses; let i = index">
-      <span *ngIf="paragraph.chords && paragraph.chords[i]; else nochords">
-        <p>
-          <span *ngFor="let line of paragraph.chords[i].lines">
-            {{ '&nbsp;'.repeat(line.spacesBefore) }} {{ line.chordName }}
-          </span>
-        </p>
-        <p>{{ verse }}</p>
-      </span>
-      <ng-template #nochords>
-        <p>{{ verse }}</p>
-      </ng-template>
+  @for (paragraph of song?.paragraphs; track paragraph) {
+    <div>
+      @for (verse of paragraph.verses; track verse; let i = $index) {
+        <div>
+          @if (paragraph.chords && paragraph.chords[i]) {
+            <span>
+              <p>
+                @for (line of paragraph.chords[i].lines; track line) {
+                  <span> {{ '&nbsp;'.repeat(line.spacesBefore) }} {{ line.chordName }} </span>
+                }
+              </p>
+              <p>{{ verse }}</p>
+            </span>
+          } @else {
+            <p>{{ verse }}</p>
+          }
+        </div>
+      }
+      <br />
     </div>
-    <br />
-  </div>
+  }
 </p-card>

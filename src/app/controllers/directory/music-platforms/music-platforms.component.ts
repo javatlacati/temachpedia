@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CardModule } from 'primeng/card';
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-music-platforms',
-  imports: [CardModule, NgClass, NgFor],
+  imports: [CardModule, NgClass],
   templateUrl: './music-platforms.component.html',
   styleUrl: './music-platforms.component.scss',
 })

@@ -11,13 +11,12 @@ import { Lyric } from '../model/Lyric';
 import { ActivatedRoute } from '@angular/router';
 import { Card } from 'primeng/card';
 import { YouTubePlayer } from '@angular/youtube-player';
-import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-song',
   templateUrl: './song.component.html',
   styleUrls: ['./song.component.scss'],
-  imports: [Card, YouTubePlayer, NgFor, NgIf],
+  imports: [Card, YouTubePlayer],
 })
 export class SongComponent implements AfterViewInit, OnDestroy {
   song: Lyric | undefined;

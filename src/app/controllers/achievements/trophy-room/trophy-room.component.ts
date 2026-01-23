@@ -2,7 +2,7 @@ import { Component, Renderer2 } from '@angular/core';
 import { AchievementService } from '../services/achievement.service';
 import { Achievement } from '../model/Achievement';
 import { Card } from 'primeng/card';
-import { NgFor } from '@angular/common';
+
 import { Chip } from 'primeng/chip';
 import { Carousel } from 'primeng/carousel';
 import { PrimeTemplate } from 'primeng/api';
@@ -12,7 +12,7 @@ import { Button } from 'primeng/button';
   selector: 'app-trophy-room',
   templateUrl: './trophy-room.component.html',
   styleUrls: ['./trophy-room.component.scss'],
-  imports: [Card, NgFor, Chip, Carousel, PrimeTemplate, Button],
+  imports: [Card, Chip, Carousel, PrimeTemplate, Button],
 })
 export class TrophyRoomComponent {
   layout: 'grid' | 'list' = 'list';

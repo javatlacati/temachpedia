@@ -1,9 +1,9 @@
-import { Component, Inject, type OnInit, Renderer2 } from '@angular/core';
+import { Component, Inject, type OnInit, Renderer2, DOCUMENT } from '@angular/core';
 import { type Transcription } from './model/Transcription';
 import { type PaginatorState, Paginator } from 'primeng/paginator';
 import { TranscriptService } from './services/transcript.service';
 import { MessageService } from 'primeng/api';
-import { DOCUMENT, NgIf, NgFor } from '@angular/common';
+
 import { Card } from 'primeng/card';
 import { Toast } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,8 @@ import { Button } from 'primeng/button';
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  imports: [Card, Toast, FormsModule, InputText, Button, NgIf, Paginator, NgFor],
+  imports: [Card, Toast, FormsModule, InputText, Button, Paginator],
+  providers: [MessageService],
 })
 export class SearchComponent implements OnInit {
   searchQuery: string = '';

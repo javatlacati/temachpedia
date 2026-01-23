@@ -18,6 +18,7 @@ import { LeafletModule } from '@bluehalo/ngx-leaflet';
   templateUrl: './compas-de-hierro.component.html',
   styleUrls: ['./compas-de-hierro.component.scss'],
   imports: [Card, Toast, Listbox, FormsModule, PrimeTemplate, ContextMenu_1, LeafletModule],
+  providers: [MessageService],
 })
 export class CompasDeHierroComponent {
   selectedCity: City | null = null;

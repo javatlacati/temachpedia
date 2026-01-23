@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Card } from 'primeng/card';
-import { NgFor } from '@angular/common';
+
 import { Panel } from 'primeng/panel';
 import { Inplace } from 'primeng/inplace';
 import { PrimeTemplate } from 'primeng/api';
@@ -15,7 +15,7 @@ interface Faq {
   selector: 'app-faq',
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.scss'],
-  imports: [Card, NgFor, Panel, Inplace, PrimeTemplate],
+  imports: [Card, Panel, Inplace, PrimeTemplate],
 })
 export class FaqComponent {
   faqs: Faq[] = [];

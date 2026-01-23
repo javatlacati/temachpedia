@@ -1,11 +1,8 @@
 <p-card header="Trofeos de caza" subheader="Aquí mostraremos tus cabezas de mamut">
   <div class="card flex align-items-center gap-2 flex-wrap">
-    <p-chip
-      *ngFor="let category of categories"
-      [label]="category"
-      icon="pi pi-user"
-      [removable]="true"
-    ></p-chip>
+    @for (category of categories; track category) {
+      <p-chip [label]="category" icon="pi pi-user" [removable]="true"></p-chip>
+    }
   </div>
   <p-carousel
     [value]="heads"

@@ -25,28 +25,32 @@
     ></span>
   </div>
   <span class="col">
-    <small style="color: red" *ngIf="searchText.invalid && searchQuery.length != 0"
-      >Agregue m&aacute;s letras mi compa</small
-    >
+    @if (searchText.invalid && searchQuery.length != 0) {
+      <small style="color: red">Agregue m&aacute;s letras mi compa</small>
+    }
   </span>
 
-  <div class="flex flex-col card-container" *ngIf="matches && matches.length">
-    <p-paginator
-      [first]="first"
-      [rows]="1"
-      [totalRecords]="matches.length"
-      (onPageChange)="onPageChange($event)"
-      [showJumpToPageDropdown]="false"
-      [showPageLinks]="false"
-      [showCurrentPageReport]="true"
-    ></p-paginator>
-    <p-card header="{{ matches[first].video_title }}">
-      <div *ngFor="let transcript of matches[first].transcript">
-        {{ transcript.text }}
-        <a [href]="transcript.url" target="_blank">Abrir</a>
-      </div>
-    </p-card>
-  </div>
+  @if (matches && matches.length) {
+    <div class="flex flex-col card-container">
+      <p-paginator
+        [first]="first"
+        [rows]="1"
+        [totalRecords]="matches.length"
+        (onPageChange)="onPageChange($event)"
+        [showJumpToPageDropdown]="false"
+        [showPageLinks]="false"
+        [showCurrentPageReport]="true"
+      ></p-paginator>
+      <p-card header="{{ matches[first].video_title }}">
+        @for (transcript of matches[first].transcript; track transcript) {
+          <div>
+            {{ transcript.text }}
+            <a [href]="transcript.url" target="_blank">Abrir</a>
+          </div>
+        }
+      </p-card>
+    </div>
+  }
   <br />
   <p>
     Para realizar búsquedas más efectivas, le proporcionamos algunas herramientas útiles. Si desea
