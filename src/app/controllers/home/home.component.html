@@ -1,80 +1,39 @@
-<p-card>
-  <div class="md:mt-96"></div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5">
-    <div class="bg-neutral-800 rounded p-4">
-      <h2 class="text-2xl pb-5">¿Qué desea hacer?</h2>
-      <div class="grid grid-cols-2">
-        <div>
-          <a routerLink="/faq">Registros de la tribu</a>&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="Preguntas frecuentes"
-          ></span>
-        </div>
-        <div>
-          Adentrarse en las
-          <a routerLink="/search">visiones del brujo</a>&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="buscador"
-          ></span>
-        </div>
-        <div>
-          <a routerLink="/directory">Silbatos de guerra</a>&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="Directorio"
-          ></span>
-        </div>
-        <div>
-          <a routerLink="/lyrics">Cantares de Gesta</a>&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="Música"
-          ></span>
-        </div>
-        <div>
-          Realizar la
-          <a href="https://github.com/javatlacati/temachpedia/issues" target="_blank"
-            >Danza de la lluvia</a
-          >&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="Reportar un problema o solicitar una nueva
-      funcionalidad"
-          ></span>
-        </div>
-        <div>
-          <a routerLink="/achievements">Salón de trofeos</a> de caza&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="Logros de la comunidad"
-          ></span>
-        </div>
-        <div>
-          Adentrate en <a routerLink="/library">el santuario del conocimiento</a
-          ><span class="pi pi-question-circle" pTooltip="Logros de la comunidad"></span>
-        </div>
-        <div>
-          <a routerLink="/quiz">Pruebas de valor</a>&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="Cuestionarios"
-          ></span>
-        </div>
-      </div>
+<div
+  class="relative min-h-screen bg-cover bg-center bg-fixed bg-no-repeat"
+  style="
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/peacuful male warrior.webp');
+  "
+>
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+  <div class="relative z-10 pt-8 pb-16 px-4 md:px-12">
+    <div class="text-center mb-12">
+      <h1
+        class="text-5xl font-bold text-yellow-400 mb-4 tracking-wider"
+        style="
+          text-shadow:
+            0 0 10px rgba(255, 215, 0, 0.5),
+            0 0 20px rgba(255, 215, 0, 0.3);
+        "
+      >
+        LA JORNADA DEL HÉROE
+      </h1>
+      <p class="text-xl text-gray-300 italic">Elige tu camino, guerrero, y forja tu leyenda</p>
     </div>
-    <div class="bg-neutral-800 rounded p-4">
-      <h2 class="text-2xl pb-5">Trabajo a futuro</h2>
-      <div class="grid grid-cols-2">
-        <div>
-          Viaje del Héroe&nbsp;<span
-            class="pi pi-question-circle"
-            pTooltip="Ruta de aprendizaje"
-          ></span>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- Main Quest Board -->
+      <p-card
+        class="bg-neutral-900 bg-opacity-80 border-2 border-yellow-700 rounded-lg shadow-2xl transform transition-all duration-300 hover:scale-105"
+      >
+        <div class="p-4">
+          <h2
+            class="text-3xl font-bold text-yellow-500 mb-6 text-center border-b-2 border-yellow-700 pb-2"
+          >
+            MISIONES PRINCIPALES
+          </h2>
         </div>
-      </div>
-      <br />
-      <br />
+      </p-card>
     </div>
   </div>
-  <p-footer>
-    Oráculo&nbsp;<span
-      class="pi pi-question-circle"
-      pTooltip="Para contactarme usa el hilo #Programación en el discord oficial"
-    ></span>
-  </p-footer>
-</p-card>
+</div>

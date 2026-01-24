@@ -14,11 +14,8 @@
 @import 'tailwindcss/variants.css' layer(tw-variants);
 //@import "tailwindcss/base.css" layer(tw-base);
 
-//@layer tw-base {
-//  * {
-//    @apply transition-all duration-300 ease-in-out;
-//  }
-//}
+@layer tw-base {
+}
 
 @layer tw-components {
   // tailwind component classes here
@@ -28,16 +25,9 @@
   // tailwind utitlity classes here
 }
 
-//@layer tailwind-base, primeng, tailwind-utilities;
-
-//@layer tailwind-base {
-//  @tailwind base;
-//}
-//
-//@layer tailwind-utilities {
-//  @tailwind components;
-//  @tailwind utilities;
-//}
+:root {
+  --font-family: 'arial', 'sans-serif';
+}
 
 body {
   font-family: var(--font-family);
@@ -82,12 +72,6 @@ iframe {
   height: 390px;
 }
 
-//.p-toast .p-toast-message.p-toast-message-info {
-//.p-toast-message-content {
-//  background: var(--maskbg) !important;
-//  color: darkgray !important;
-//}
-
 .p-password-input {
   width: 100% !important;
 }
@@ -95,18 +79,8 @@ iframe {
 @media (min-width: 1250px) {
   .p-card {
     $color1: rgb(from var(--primary-color) r g b / 50%);
-    //--new-color: rgb(from var(--primary-color) r g b / 50%);
-    //--transparency: 20%;
-    //--color-with-transparency: color-mix(in srgb, $color1 var(--transparency, 100%), transparent);
-    //background: radial-gradient(circle at top right, $color1 10%, var(--primary-800) 10%, var(--primary-500)) 10%, radial-gradient(circle at top right,var(--maskbg) 40%, var(--primary-300) 20%, var(--primary-100)) 10%;
-    //background: radial-gradient(circle at top right, $color1 10%, var(--primary-800) 10%, var(--primary-500)) 10%, radial-gradient(circle at top right,var(--maskbg) 40%, var(--primary-300) 20%, var(--primary-100)) 10%;
-    //ideal:
-    //background: radial-gradient(circle at top right, rgb(from #9fa8da69 r g b/50%) 10%, #575c7866 10%, #9fa8da7d) 10%, radial-gradient(circle at top right, var(--maskbg) 40%, #c3c9e83b 20%, #e8eaf65e) 10%;
-    //background: radial-gradient(circle at top right, var(--primary-600),var(--primary-700), var(--primary-800)), radial-gradient(circle at top right,var(--primary-200),var(--primary-500),var(--maskbg));
-    //background: radial-gradient(circle at top right, rgba(97, 7, 110, 0.2), rgba(209, 37, 67, 0.1803921569), rgb(100 0 255 / 13%)), radial-gradient(circle at top right, rgba(29, 78, 216, 0.2784313725), rgba(165, 25, 192, 0.1803921569), rgba(139, 92, 246, 0.0392156863));
     background: radial-gradient(circle at top right, #528cd563, #4374af4f, #355b8aa1),
       radial-gradient(circle at top right, #bbd8fd70, #60a5fa4d, rgb(0 0 0 / 17%));
-
     background-blend-mode: luminosity;
     color: #f9e9fb;
 
